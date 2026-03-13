@@ -1,0 +1,55 @@
+{
+  "name": "VS M.Dragonite",
+  "author": "Saint Dio ᗜˬᗜ",
+  "description": " Si vous avez la memory Flash Pyro, vous pouvez transmettre le talent à mammochon et détruire le combat RAPIDEMENT (1:22 montre en main). Si votre mammochon est shiny et/ou que vous avez ice punch à la place d'ice fang, ça prendre encore moins de temps.",
+  "team": [
+    {
+      "pokemon": "gholdengo",
+      "shiny": false,
+      "ability": "steelGuard",
+      "item": "abilityCapsule",
+      "moves": [
+        "memento",
+        "hyperBeam",
+        "superpower",
+        "gigaImpact"
+      ]
+    },
+    {
+      "pokemon": "mamoswine",
+      "shiny": false,
+      "ability": "flashPyro",
+      "item": "choiceBand",
+      "moves": [
+        "swordsDance",
+        "avalanche",
+        "iceFang",
+        "icicleCrash"
+      ]
+    },
+    {
+      "pokemon": "musharna",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "hyperBeam",
+        "gigaImpact",
+        "overheat",
+        "superpower"
+      ]
+    },
+    {
+      "pokemon": "sunflora",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "gigaImpact",
+        "hyperBeam",
+        "superpower",
+        "overheat"
+      ]
+    }
+  ]
+}

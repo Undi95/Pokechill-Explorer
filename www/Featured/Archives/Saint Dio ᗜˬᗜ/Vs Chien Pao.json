@@ -1,0 +1,67 @@
+{
+  "name": "Vs Chien Pao",
+  "author": "Saint Dio ᗜˬᗜ",
+  "description": "Iron Hands claps Chien Pao's cheeks for 45 seconds (uncensored 1440p). À part le terrain, Memento et le kit d'Iron Hands, les moves/talents sont aléatoires vu que ça change rien.",
+  "team": [
+    {
+      "pokemon": "unownC",
+      "shiny": false,
+      "ability": "psychicGuard",
+      "item": "electricSeed",
+      "moves": [
+        "electricTerrain",
+        "memento",
+        "hyperBeam",
+        "gigaImpact"
+      ]
+    },
+    {
+      "pokemon": "gholdengo",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "shinyCharm",
+      "moves": [
+        "memento",
+        "hyperBeam",
+        "gigaImpact",
+        "superpower"
+      ]
+    },
+    {
+      "pokemon": "ironHands",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "choiceBand",
+      "moves": [
+        "swordsDance",
+        "brickBreak",
+        "forcePalm",
+        "crossChop"
+      ]
+    },
+    {
+      "pokemon": "galarianRapidash",
+      "shiny": false,
+      "ability": "psychicAbsorb",
+      "item": "abilityCapsule",
+      "moves": [
+        "disarmingVoice",
+        "nuzzle",
+        "drainingKiss",
+        "fairyWind"
+      ]
+    },
+    {
+      "pokemon": "musharna",
+      "shiny": false,
+      "ability": "poisonGuard",
+      "item": "abilityCapsule",
+      "moves": [
+        "outrage",
+        "hammerArm",
+        "freezyFrost",
+        "brutalSwing"
+      ]
+    }
+  ]
+}

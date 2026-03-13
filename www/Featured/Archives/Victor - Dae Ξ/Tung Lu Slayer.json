@@ -1,0 +1,31 @@
+{
+  "name": "Tung Lu Slayer",
+  "author": "Victor - Dae Ξ",
+  "description": "Team permettant de tuer Ting-Lu, nécessitant que très peu de génétique.",
+  "team": [
+    {
+      "pokemon": "pangoro",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "terrainExtender",
+      "moves": [
+        "crossRoom",
+        "memento",
+        "quickAttack",
+        "vacuumWave"
+      ]
+    },
+    {
+      "pokemon": "galarianZapdos",
+      "shiny": true,
+      "ability": "immunity",
+      "item": "fairyGem",
+      "moves": [
+        "featherDance",
+        "willOWisp",
+        "spiritBreak",
+        "lowSweep"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Factory A - Ground Weakness (30000 Score)",
+  "author": "Darkaufeu",
+  "description": "Peut remplacer Donphan par presque n'importe quel poké de rang A qui a Sand Force.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "helioptile",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "smoothRock",
+      "moves": [
+        "electrify",
+        "sandstorm",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "mamoswine",
+      "shiny": true,
+      "ability": "sandForce",
+      "item": "ghostGem",
+      "moves": [
+        "earthquake",
+        "dig",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "excadrill",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "darkGem",
+      "moves": [
+        "earthquake",
+        "dig",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "donphan",
+      "shiny": true,
+      "ability": "sandForce",
+      "item": "groundGem",
+      "moves": [
+        "earthquake",
+        "dig",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "marowak",
+      "shiny": false,
+      "ability": "sandForce",
+      "item": "bugGem",
+      "moves": [
+        "boneRush",
+        "earthquake",
+        "dig",
+        "uTurn"
+      ]
+    }
+  ]
+}

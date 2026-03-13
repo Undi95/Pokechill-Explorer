@@ -1,0 +1,43 @@
+{
+  "name": "M.Dracolosse - Easy Mode",
+  "author": "Kridx",
+  "description": " Sunflora + Mushama juste pour éviter paralysie + burn. Mamoswine pas d'ability particulière, parcontre requis will o whisp (génétic => CT 5silver + capslock 30silver).",
+  "team": [
+    {
+      "pokemon": "mamoswine",
+      "shiny": true,
+      "ability": "iceBody",
+      "item": "occaBerry",
+      "moves": [
+        "willOWisp",
+        "rototiller",
+        "avalanche",
+        "icicleCrash"
+      ]
+    },
+    {
+      "pokemon": "sunflora",
+      "shiny": false,
+      "ability": "hydratation",
+      "item": "abilityCapsule",
+      "moves": [
+        "energyBall",
+        "seedBomb",
+        "magicalLeaf",
+        "razorLeaf"
+      ]
+    },
+    {
+      "pokemon": "musharna",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "abilityCapsule",
+      "moves": [
+        "confusion",
+        "psybeam",
+        "futureSight",
+        "calmMind"
+      ]
+    }
+  ]
+}

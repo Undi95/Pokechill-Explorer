@@ -1,0 +1,79 @@
+{
+  "name": "Factory B - Ice",
+  "author": "RaptorduChnord",
+  "description": "Team automatique contre un poke de type Glace pur, avec 1 de def physique (30k+ points).",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "noGuard",
+      "item": "electricGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "pupitar",
+      "shiny": false,
+      "ability": "sandForce",
+      "item": "smoothRock",
+      "moves": [
+        "screech",
+        "rockThrow",
+        "rockTomb",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "rhyhorn",
+      "shiny": true,
+      "ability": "sandForce",
+      "item": "bugGem",
+      "moves": [
+        "screech",
+        "rockWrecker",
+        "stoneEdge",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "archen",
+      "shiny": false,
+      "ability": "sandForce",
+      "item": "darkGem",
+      "moves": [
+        "screech",
+        "stoneEdge",
+        "rockSlide",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "stonjourner",
+      "shiny": false,
+      "ability": "sandForce",
+      "item": "dragonGem",
+      "moves": [
+        "screech",
+        "stoneEdge",
+        "rockTomb",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "graveler",
+      "shiny": true,
+      "ability": "sandForce",
+      "item": "hardStone",
+      "moves": [
+        "screech",
+        "rockWrecker",
+        "stoneEdge",
+        "rockTomb"
+      ]
+    }
+  ]
+}

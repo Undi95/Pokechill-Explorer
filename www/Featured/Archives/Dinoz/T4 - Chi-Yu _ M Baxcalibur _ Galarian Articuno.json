@@ -1,0 +1,79 @@
+{
+  "name": "T4 - Chi-Yu / M Baxcalibur / Galarian Articuno",
+  "author": "Dinoz",
+  "description": "Chandelure solo Chi-Yu Embargo / Flash Electro ou Volt Absorb obligatoire, 3 autres attaques au choix. Galarian Ponyta pour empêcher le poison. Phantump/Primarina duo M. Baxcalibur, n'importe quel Clima Tact + Misty Seed en plus de Phantump peut poser le terrain. Malamar solo Articuno de Galar. Audino peut aider pour supprimer la hax de la confusion.",
+  "team": [
+    {
+      "pokemon": "chandelure",
+      "shiny": true,
+      "ability": "flashElectro",
+      "item": "fightingGem",
+      "moves": [
+        "embargo",
+        "agility",
+        "auraSphere",
+        "focusBlast"
+      ]
+    },
+    {
+      "pokemon": "galarianPonyta",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "phantump",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "mistySeed",
+      "moves": [
+        "forestCurse",
+        "mistyTerrain",
+        "memento",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "primarina",
+      "shiny": true,
+      "ability": "ambidextrous",
+      "item": "choiceSpecs",
+      "moves": [
+        "metalSound",
+        "bugBuzz",
+        "echoedVoice",
+        "alluringVoice"
+      ]
+    },
+    {
+      "pokemon": "malamar",
+      "shiny": true,
+      "ability": "frostAbsorb",
+      "item": "electricGem",
+      "moves": [
+        "screech",
+        "brutalSwing",
+        "supercellSlam",
+        "wildCharge"
+      ]
+    },
+    {
+      "pokemon": "audino",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    }
+  ]
+}

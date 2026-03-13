@@ -1,0 +1,79 @@
+{
+  "name": "Factory C - Faiblesses Ground (29800 score)",
+  "author": "Kridx",
+  "description": "Team automatique. Helioptile peut aussi faire la pose de terrain/météo, génétique plus facile à réaliser.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "smoothRock",
+      "moves": [
+        "rototiller",
+        "batonPass",
+        "sandstorm",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "helioptile",
+      "shiny": true,
+      "ability": "insomnia",
+      "item": "fireGem",
+      "moves": [
+        "tailwind",
+        "electrify",
+        "screech",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "gible",
+      "shiny": true,
+      "ability": "ownTempo",
+      "item": "darkGem",
+      "moves": [
+        "bulldoze",
+        "earthquake",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "golett",
+      "shiny": true,
+      "ability": "wonderSkin",
+      "item": "waterGem",
+      "moves": [
+        "earthquake",
+        "dig",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "drilbur",
+      "shiny": true,
+      "ability": "limber",
+      "item": "bugGem",
+      "moves": [
+        "dig",
+        "earthquake",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "cubone",
+      "shiny": true,
+      "ability": "skillLink",
+      "item": "dragonGem",
+      "moves": [
+        "boneRush",
+        "earthquake",
+        "dig",
+        "uTurn"
+      ]
+    }
+  ]
+}

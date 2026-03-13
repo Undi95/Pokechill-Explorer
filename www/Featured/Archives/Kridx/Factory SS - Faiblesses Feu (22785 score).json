@@ -1,0 +1,79 @@
+{
+  "name": "Factory SS - Faiblesses Feu (22785 score)",
+  "author": "Kridx",
+  "description": "Réalisé avec une ancienne team feu de rang A.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "heatRock",
+      "moves": [
+        "rototiller",
+        "batonPass",
+        "sunnyDay",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "trevenant",
+      "shiny": true,
+      "ability": "immunity",
+      "item": "lightClay",
+      "moves": [
+        "tailwind",
+        "forestCurse",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "skeledirge",
+      "shiny": false,
+      "ability": "solarPower",
+      "item": "bugGem",
+      "moves": [
+        "torchSong",
+        "fireBlast",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "magmortar",
+      "shiny": false,
+      "ability": "solarPower",
+      "item": "darkGem",
+      "moves": [
+        "flamethrower",
+        "fireBlast",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "houndoom",
+      "shiny": true,
+      "ability": "flareAbsorb",
+      "item": "electricGem",
+      "moves": [
+        "fireBlast",
+        "flamethrower",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "typhlosion",
+      "shiny": false,
+      "ability": "brittleArmor",
+      "item": "flameOrb",
+      "moves": [
+        "inferno",
+        "fireBlast",
+        "flamethrower",
+        "uTurn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Tower B ice",
+  "author": "bluegriffin",
+  "description": "klang vs ice / lairon vs normal / magneton vs vol,sol,bug / remoraid vs water et floette blue vs fée juste la pour le talent / dernier poke prendre un poke res roche iv up si besoin.",
+  "team": [
+    {
+      "pokemon": "klang",
+      "shiny": false,
+      "ability": "flashCryo",
+      "item": "darkGem",
+      "moves": [
+        "shiftGear",
+        "ironTail",
+        "ironHead",
+        "magnetBomb"
+      ]
+    },
+    {
+      "pokemon": "lairon",
+      "shiny": false,
+      "ability": "plainGuard",
+      "item": "assaultVest",
+      "moves": [
+        "stoneEdge",
+        "rockSmash",
+        "ironHead",
+        "ironTail"
+      ]
+    },
+    {
+      "pokemon": "magneton",
+      "shiny": true,
+      "ability": "flyingGuard",
+      "item": "eviolite",
+      "moves": [
+        "toxic",
+        "chargeBeam",
+        "thunder",
+        "thunderbolt"
+      ]
+    },
+    {
+      "pokemon": "remoraid",
+      "shiny": true,
+      "ability": "flashAqua",
+      "item": "abilityCapsule",
+      "moves": [
+        "liquidation",
+        "iceBeam",
+        "sharkJaws",
+        "bubbleBeam"
+      ]
+    },
+    {
+      "pokemon": "floetteBlue",
+      "shiny": false,
+      "ability": "lightAbsorb",
+      "item": "abilityCapsule",
+      "moves": [
+        "waterGun",
+        "sweetKiss",
+        "babydollEyes",
+        "drainingKiss"
+      ]
+    }
+  ]
+}

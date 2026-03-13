@@ -1,0 +1,43 @@
+{
+  "name": "Team Tower Electric B",
+  "author": "Darkaufeu",
+  "description": "Krokorok pour electrique. Salandit pour les fée/insecte (le switch t1 pour tuer le premier poké fée et reswitch sur Krokorok pendant l'animation du kill). Magneton pour combat/roche/sol/vol. Débloquer le ha de tous les pokémon. Les talents de Krokorok et Magneton sont obligatoires.",
+  "team": [
+    {
+      "pokemon": "krokorok",
+      "shiny": true,
+      "ability": "flashElectro",
+      "item": "poisonGem",
+      "moves": [
+        "rototiller",
+        "earthquake",
+        "dig",
+        "bulldoze"
+      ]
+    },
+    {
+      "pokemon": "salandit",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "assaultVest",
+      "moves": [
+        "fireLash",
+        "sludgeWave",
+        "poisonJab",
+        "poisonFang"
+      ]
+    },
+    {
+      "pokemon": "magneton",
+      "shiny": true,
+      "ability": "flyingGuard",
+      "item": "eviolite",
+      "moves": [
+        "toxic",
+        "chargeBeam",
+        "thunder",
+        "thunderbolt"
+      ]
+    }
+  ]
+}

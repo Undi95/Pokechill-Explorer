@@ -1,0 +1,79 @@
+{
+  "name": "Team SPEED Farm v3.2 - (Team alternative a v3 - lategame)",
+  "author": "Kridx & Dinoz",
+  "description": "Similaire a la v3, mais permet de retirer Azelf et Regieleki pour d'autre contenu.",
+  "team": [
+    {
+      "pokemon": "gholdengo",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "shinyCharm",
+      "moves": [
+        "payDay",
+        "memento",
+        "metalSound",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "pheromosa",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "quickClaw",
+      "moves": [
+        "meFirst",
+        "bulletPunch",
+        "iceShard",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "quaquaval",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "lightClay",
+      "moves": [
+        "agility",
+        "aquaStep",
+        "accelerock",
+        "aquaJet"
+      ]
+    },
+    {
+      "pokemon": "ninjask",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "powerHerb",
+      "moves": [
+        "agility",
+        "aquaJet",
+        "iceShard",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "jumpluff",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "luckIncense",
+      "moves": [
+        "hurricane",
+        "silverWind",
+        "gust",
+        "icyWind"
+      ]
+    },
+    {
+      "pokemon": "noivern",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "pureIncense",
+      "moves": [
+        "alluringVoice",
+        "bugBuzz",
+        "disarmingVoice",
+        "echoedVoice"
+      ]
+    }
+  ]
+}

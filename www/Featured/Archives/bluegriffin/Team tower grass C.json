@@ -1,0 +1,55 @@
+{
+  "name": "Team tower grass C",
+  "author": "bluegriffin",
+  "description": "Torchic vs move plante, Tinkatink pour applin sur les dernier étage, Oddish et Remoraid sont là que pour imu, possible de mettre n'importe qui, les 2 dernier slot sont pas utile mais prendre un poke pour envoyer sur les attaque roche et vol si besoin.",
+  "team": [
+    {
+      "pokemon": "torchic",
+      "shiny": false,
+      "ability": "flashHerba",
+      "item": "fireGem",
+      "moves": [
+        "rototiller",
+        "overheat",
+        "flareBlitz",
+        "blazeKick"
+      ]
+    },
+    {
+      "pokemon": "tinkatink",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "fairyGem",
+      "moves": [
+        "swordsDance",
+        "spiritBreak",
+        "auroraPunch",
+        "playRough"
+      ]
+    },
+    {
+      "pokemon": "oddish",
+      "shiny": true,
+      "ability": "flashVenum",
+      "item": "abilityCapsule",
+      "moves": [
+        "smog",
+        "acid",
+        "mudShot",
+        "leafage"
+      ]
+    },
+    {
+      "pokemon": "remoraid",
+      "shiny": true,
+      "ability": "flashAqua",
+      "item": "abilityCapsule",
+      "moves": [
+        "liquidation",
+        "iceBeam",
+        "sharkJaws",
+        "bubbleBeam"
+      ]
+    }
+  ]
+}

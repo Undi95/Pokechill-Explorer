@@ -1,0 +1,79 @@
+{
+  "name": "Factory B - Faiblesses Bug (23175 score)",
+  "author": "Kridx",
+  "description": "Ajout du type plante, pour avoir un meilleur multiplicateur sur Bug. La Météo peut être posé par un autre poké qu'Eevee. Utilisation de rang C car Poké déjà up dans le passé et flemme d'en up des nouveaux.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "grassySeed",
+      "moves": [
+        "rototiller",
+        "batonPass",
+        "grassyTerrain",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "phantump",
+      "shiny": true,
+      "ability": "immunity",
+      "item": "groundGem",
+      "moves": [
+        "tailwind",
+        "forestCurse",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "shedinja",
+      "shiny": true,
+      "ability": "curseAbsorb",
+      "item": "bugGem",
+      "moves": [
+        "firstImpression",
+        "xScissor",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "larvesta",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "waterGem",
+      "moves": [
+        "firstImpression",
+        "xScissor",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "venonat",
+      "shiny": false,
+      "ability": "wonderSkin",
+      "item": "dragonGem",
+      "moves": [
+        "firstImpression",
+        "xScissor",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "karrablast",
+      "shiny": true,
+      "ability": "synchronize",
+      "item": "darkGem",
+      "moves": [
+        "pounce",
+        "firstImpression",
+        "xScissor",
+        "uTurn"
+      ]
+    }
+  ]
+}

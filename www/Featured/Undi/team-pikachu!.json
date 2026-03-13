@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "teams": [
+    {
+      "id": "team_1773403499667",
+      "name": "Pikachu!",
+      "author": "Undi",
+      "description": "Team full PikaPower!",
+      "created": "2026-03-13T12:04:59.667Z",
+      "slots": [
+        {
+          "pokemon": "pikachuGmax",
+          "moves": [
+            "agility",
+            "voltSwitch",
+            "ironTail",
+            "wildCharge"
+          ],
+          "ability": "climaTact",
+          "item": "electricSeed",
+          "shiny": true,
+          "starSign": null,
+          "nature": "adamant",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "pikachuBelle",
+          "moves": [
+            "swordsDance",
+            "voltTackle",
+            "facade",
+            "thunderPunch"
+          ],
+          "ability": "magicGuard",
+          "item": "toxicOrb",
+          "shiny": true,
+          "starSign": null,
+          "nature": "adamant",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "pikachuRockstar",
+          "moves": [
+            "rototiller",
+            "waveCrash",
+            "overheat",
+            "supercellSlam"
+          ],
+          "ability": "hyperconductor",
+          "item": "clearAmulet",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "pikachuPhd",
+          "moves": [
+            "agility",
+            "thunder",
+            "futureSight",
+            "wildCharge"
+          ],
+          "ability": "reckless",
+          "item": "laggingTail",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "pikachuPopstar",
+          "moves": [
+            "leer",
+            "thunderPunch",
+            "auroraPunch",
+            "voltTackle"
+          ],
+          "ability": "ironFist",
+          "item": "luckyPunch",
+          "shiny": true,
+          "starSign": null,
+          "nature": "adamant",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "pikachuLibre",
+          "moves": [
+            "forcePalm",
+            "thunderPunch",
+            "brickBreak",
+            "voltTackle"
+          ],
+          "ability": "sheerForce",
+          "item": "choiceBand",
+          "shiny": true,
+          "starSign": null,
+          "nature": "adamant",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        }
+      ]
+    }
+  ]
+}

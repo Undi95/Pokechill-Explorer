@@ -1,0 +1,79 @@
+{
+  "name": "Team SPEED Farm v2",
+  "author": "Kridx",
+  "description": "Version 2 pour farmer encore plus de silver. Gholdengo récupère Payday, on retire Polteageist + Persian. Les pokés sont trier dans l'ordre de vitesse.",
+  "team": [
+    {
+      "pokemon": "gholdengo",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "shinyCharm",
+      "moves": [
+        "payDay",
+        "memento",
+        "metalSound",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "pheromosa",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "lightClay",
+      "moves": [
+        "agility",
+        "bugBite",
+        "twineedle",
+        "xScissor"
+      ]
+    },
+    {
+      "pokemon": "noivern",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "powerHerb",
+      "moves": [
+        "agility",
+        "alluringVoice",
+        "disarmingVoice",
+        "echoedVoice"
+      ]
+    },
+    {
+      "pokemon": "azelf",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "darkGem",
+      "moves": [
+        "agility",
+        "nightDaze",
+        "snarl",
+        "darkPulse"
+      ]
+    },
+    {
+      "pokemon": "regieleki",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "luckIncense",
+      "moves": [
+        "agility",
+        "xScissor",
+        "thunderCage",
+        "smartStrike"
+      ]
+    },
+    {
+      "pokemon": "megaAerodactyl",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "pureIncense",
+      "moves": [
+        "rockPolish",
+        "stoneEdge",
+        "drillPeck",
+        "rollout"
+      ]
+    }
+  ]
+}

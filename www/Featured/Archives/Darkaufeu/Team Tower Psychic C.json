@@ -1,0 +1,79 @@
+{
+  "name": "Team Tower Psychic C",
+  "author": "Darkaufeu",
+  "description": "Slowpoke pour psy/acier. Drifloon pour combat. Magnemite pour vol/sol. Skiploom imu grass. Spheal imu water. Varoom pour fairy. Les plus important a monté sont Slowpoke et Drifloon. Slowpoke tank toutes les attaques psy. Peut utilisé n'importe quel pokémon qui à les imu water et grass.",
+  "team": [
+    {
+      "pokemon": "slowpoke",
+      "shiny": false,
+      "ability": "flashPsycha",
+      "item": "ghostGem",
+      "moves": [
+        "toxic",
+        "nastyPlot",
+        "hex",
+        "ominousWind"
+      ]
+    },
+    {
+      "pokemon": "drifloon",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "eviolite",
+      "moves": [
+        "willOWisp",
+        "shadowBall",
+        "hex",
+        "phantomForce"
+      ]
+    },
+    {
+      "pokemon": "magnemite",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "assaultVest",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "skiploom",
+      "shiny": false,
+      "ability": "growthAbsorb",
+      "item": "abilityCapsule",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "spheal",
+      "shiny": false,
+      "ability": "waterAbsorb",
+      "item": "abilityCapsule",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "varoom",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    }
+  ]
+}

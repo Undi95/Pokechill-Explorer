@@ -1,0 +1,79 @@
+{
+  "name": "Tower rock SS",
+  "author": "bluegriffin",
+  "description": "Remettre helioptile quand la sand part pas besoin de switch autrement.",
+  "team": [
+    {
+      "pokemon": "helioptile",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "pursuitTm",
+      "moves": [
+        "electrify",
+        "sandsearStorm",
+        "scorchingSands",
+        "twinBeam"
+      ]
+    },
+    {
+      "pokemon": "megaGarchomp",
+      "shiny": false,
+      "ability": "sandRush",
+      "item": "flamethrowerTm",
+      "moves": [
+        "rollout",
+        "earthquake",
+        "dig",
+        "bulldoze"
+      ]
+    },
+    {
+      "pokemon": "ironTreads",
+      "shiny": false,
+      "ability": "noGuard",
+      "item": "charizarditeY",
+      "moves": [
+        "rollout",
+        "earthquake",
+        "bulldoze",
+        "dig"
+      ]
+    },
+    {
+      "pokemon": "megaBlastoise",
+      "shiny": true,
+      "ability": "reckless",
+      "item": "blackPeltMemory",
+      "moves": [
+        "mysticalPower",
+        "hydroCannon",
+        "hydroPump",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "ironValiant",
+      "shiny": false,
+      "ability": "magicGuard",
+      "item": "angerPointMemory",
+      "moves": [
+        "sketch",
+        "crossChop",
+        "focusBlast",
+        "auraSphere"
+      ]
+    },
+    {
+      "pokemon": "megaSwampert",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "redStar",
+      "moves": [
+        "aquaTail",
+        "liquidation",
+        "waterGun",
+        "earthquake"
+      ]
+    }
+  ]
+}

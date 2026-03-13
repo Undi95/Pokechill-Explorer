@@ -1,0 +1,79 @@
+{
+  "name": "Team facto dragon/grass C",
+  "author": "bluegriffin",
+  "description": "Possibilité de mettre adaptability sur les 4 pokemon pour changer doduo pour snorunt normal.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "ambidextrous",
+      "item": "flyingGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "phantump",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "icyRock",
+      "moves": [
+        "forestCurse",
+        "hail",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "smoochum",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "fireGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "snoruntEvent",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "iceGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "frigibax",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "grassGem",
+      "moves": [
+        "icicleCrash",
+        "icePunch",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "doduo",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "ghostGem",
+      "moves": [
+        "icicleCrash",
+        "icePunch",
+        "iceFang",
+        "uTurn"
+      ]
+    }
+  ]
+}

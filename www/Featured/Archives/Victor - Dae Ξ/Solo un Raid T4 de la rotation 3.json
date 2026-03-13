@@ -1,0 +1,43 @@
+{
+  "name": "Solo un Raid T4 de la rotation 3",
+  "author": "Victor - Dae Ξ",
+  "description": "C'est une équipe qui contient 3 pokémons. Chacun de ces pokémon solo un Raid T4 de la rotation 3 (celle actuelle). Le Gliscor pour Regieleki, le Flutter Mane pour Regidrago et le Magikarp Sakura (ou n'importe quel Flying/Fairy qui a un talent d'absorb feu) pour le Gouging Fire.",
+  "team": [
+    {
+      "pokemon": "gliscor",
+      "shiny": true,
+      "ability": "frostAbsorb",
+      "item": "toxicOrb",
+      "moves": [
+        "toxic",
+        "bulldoze",
+        "earthquake",
+        "skyDrop"
+      ]
+    },
+    {
+      "pokemon": "flutterMane",
+      "shiny": true,
+      "ability": "flareAbsorb",
+      "item": "babiriBerry",
+      "moves": [
+        "toxic",
+        "echoedVoice",
+        "dazzlingGleam",
+        "moonblast"
+      ]
+    },
+    {
+      "pokemon": "magikarpSakura",
+      "shiny": true,
+      "ability": "flareAbsorb",
+      "item": "rockGem",
+      "moves": [
+        "toxic",
+        "hurricane",
+        "dazzlingGleam",
+        "echoedVoice"
+      ]
+    }
+  ]
+}

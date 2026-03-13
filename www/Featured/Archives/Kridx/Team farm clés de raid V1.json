@@ -1,0 +1,79 @@
+{
+  "name": "Team farm clés de raid V1",
+  "author": "Kridx",
+  "description": "Team passe partout pour chaque rotation (1 seul move peu être immune). Pour ChienPao vous pouvez remplacer les 2 moves fairy, du moment où vous avez le cross power activeé en permanance (et si possible le STAB).",
+  "team": [
+    {
+      "pokemon": "thundurusTherian",
+      "shiny": true,
+      "ability": "strategist",
+      "item": "darkGem",
+      "moves": [
+        "nastyPlot",
+        "nightDaze",
+        "snarl",
+        "darkPulse"
+      ]
+    },
+    {
+      "pokemon": "chienPao",
+      "shiny": true,
+      "ability": "ambidextrous",
+      "item": "fairyGem",
+      "moves": [
+        "ruination",
+        "auroraPunch",
+        "nightSlash",
+        "playRough"
+      ]
+    },
+    {
+      "pokemon": "megaBlaziken",
+      "shiny": true,
+      "ability": "moxie",
+      "item": "lightClay",
+      "moves": [
+        "flareBlitz",
+        "agility",
+        "blazeKick",
+        "firePunch"
+      ]
+    },
+    {
+      "pokemon": "megaSceptile",
+      "shiny": true,
+      "ability": "strategist",
+      "item": "sceptilite",
+      "moves": [
+        "agility",
+        "energyBall",
+        "magicalLeaf",
+        "solarBeam"
+      ]
+    },
+    {
+      "pokemon": "tingLu",
+      "shiny": true,
+      "ability": "ambidextrous",
+      "item": "rockGem",
+      "moves": [
+        "ruination",
+        "earthquake",
+        "crunch",
+        "stoneEdge"
+      ]
+    },
+    {
+      "pokemon": "megaGyarados",
+      "shiny": true,
+      "ability": "moxie",
+      "item": "gyaradosite",
+      "moves": [
+        "aquaTail",
+        "crunch",
+        "waterfall",
+        "nightSlash"
+      ]
+    }
+  ]
+}

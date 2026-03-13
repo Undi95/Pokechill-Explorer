@@ -1,0 +1,79 @@
+{
+  "name": "Team Farm 1",
+  "author": "Undi",
+  "description": "Gholdingo Payday+Memento, Polteageist Teatime+Memento, inclu 3 Pickpocket, Shiny Charm + Pure Incense + Luck Incensore maxxé. Agility/tailwind pas obligatoire mais ca rend le farm plus rapide.",
+  "team": [
+    {
+      "pokemon": "gholdengo",
+      "shiny": true,
+      "ability": "immunity",
+      "item": "shinyCharm",
+      "moves": [
+        "payDay",
+        "memento",
+        "magnetBomb",
+        "playNice"
+      ]
+    },
+    {
+      "pokemon": "polteageist",
+      "shiny": true,
+      "ability": "noGuard",
+      "item": "pureIncense",
+      "moves": [
+        "teatime",
+        "memento",
+        "shadowSneak",
+        "thunderWave"
+      ]
+    },
+    {
+      "pokemon": "regieleki",
+      "shiny": true,
+      "ability": "libero",
+      "item": "quickClaw",
+      "moves": [
+        "swift",
+        "bulletPunch",
+        "thunderCage",
+        "extremeSpeed"
+      ]
+    },
+    {
+      "pokemon": "megaAerodactyl",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "aerodactylite",
+      "moves": [
+        "tailwind",
+        "fly",
+        "rollout",
+        "drillPeck"
+      ]
+    },
+    {
+      "pokemon": "megaPidgeot",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "luckIncense",
+      "moves": [
+        "agility",
+        "bounce",
+        "hyperBeam",
+        "fly"
+      ]
+    },
+    {
+      "pokemon": "blissey",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "leftovers",
+      "moves": [
+        "agility",
+        "eggBomb",
+        "iceBeam",
+        "hyperVoice"
+      ]
+    }
+  ]
+}

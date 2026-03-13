@@ -1,0 +1,79 @@
+{
+  "name": "Steel/Poison DPS - Any Raid Tier Clear // Baton Pass + Trick Room",
+  "author": "MsieurPex",
+  "description": "Slow and bulky pokemon becoming the fastest pokemon in the game, spamming steel type giga impacts (poison hyper beam when mega dragalge comes out) - Cleared every rotation 5 T4 - WORKS WITH U-TURN ON 4TH MOVE FOR EVERY DPS -Can swap stoned for reckless on melmetal and ferrothorn.",
+  "team": [
+    {
+      "pokemon": "huntail",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "terrainExtender",
+      "moves": [
+        "tailwind",
+        "trickRoom",
+        "batonPass",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "shuckle",
+      "shiny": true,
+      "ability": "multiscale",
+      "item": "luckyPunch",
+      "moves": [
+        "powerupPunch",
+        "rototiller",
+        "batonPass",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "klefki",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "powerHerb",
+      "moves": [
+        "fairyLock",
+        "thunderWave",
+        "leer",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "melmetal",
+      "shiny": true,
+      "ability": "stoned",
+      "item": "laggingTail",
+      "moves": [
+        "screech",
+        "gigatonHammer",
+        "gigaImpact",
+        "ironTail"
+      ]
+    },
+    {
+      "pokemon": "ferrothorn",
+      "shiny": true,
+      "ability": "stoned",
+      "item": "toxicOrb",
+      "moves": [
+        "screech",
+        "gigaImpact",
+        "facade",
+        "ironTail"
+      ]
+    },
+    {
+      "pokemon": "megaMawile",
+      "shiny": true,
+      "ability": "stoned",
+      "item": "choiceBand",
+      "moves": [
+        "screech",
+        "metalClaw",
+        "poisonFang",
+        "sharkJaws"
+      ]
+    }
+  ]
+}

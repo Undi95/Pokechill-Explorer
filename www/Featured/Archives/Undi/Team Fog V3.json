@@ -1,0 +1,79 @@
+{
+  "name": "Team Fog V3",
+  "author": "Undi",
+  "description": "Team Fog sympatoche! Ajout de Thundurus full Ghost/Dark, retrait de Weavile (trop fragile).",
+  "team": [
+    {
+      "pokemon": "gourgeist",
+      "shiny": true,
+      "ability": "somberField",
+      "item": "foggySeed",
+      "moves": [
+        "trickOrTreat",
+        "memento",
+        "poisonPowder",
+        "stunSpore"
+      ]
+    },
+    {
+      "pokemon": "thundurusTherian",
+      "shiny": true,
+      "ability": "intangible",
+      "item": "ghostGem",
+      "moves": [
+        "shadowBall",
+        "nightDaze",
+        "shadowPunch",
+        "nightSlash"
+      ]
+    },
+    {
+      "pokemon": "megaGengar",
+      "shiny": true,
+      "ability": "intangible",
+      "item": "gengarite",
+      "moves": [
+        "sludge",
+        "shadowBall",
+        "sludgeBomb",
+        "hex"
+      ]
+    },
+    {
+      "pokemon": "megaRaichuX",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "darkGem",
+      "moves": [
+        "agility",
+        "voltTackle",
+        "nightSlash",
+        "phantomForce"
+      ]
+    },
+    {
+      "pokemon": "dragapult",
+      "shiny": true,
+      "ability": "technician",
+      "item": "dragonGem",
+      "moves": [
+        "dragonDance",
+        "shadowPunch",
+        "dragonDarts",
+        "shadowClaw"
+      ]
+    },
+    {
+      "pokemon": "marshadow",
+      "shiny": true,
+      "ability": "ironFist",
+      "item": "luckyPunch",
+      "moves": [
+        "spectralThief",
+        "powerupPunch",
+        "shadowPunch",
+        "forcePalm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Team vs Galarian Moltres",
+  "author": "Kridx",
+  "description": "Musharna pour immune au burn. M-Mawile peu solo si le freez de IceFang touche , dans le doute rajouté le Mamoswine build pour solo MDragocolosse ca devrai passer ou un autre Poké.",
+  "team": [
+    {
+      "pokemon": "megaMawile",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "iceGem",
+      "moves": [
+        "swordsDance",
+        "iceFang",
+        "playRough",
+        "auroraPunch"
+      ]
+    },
+    {
+      "pokemon": "mamoswine",
+      "shiny": true,
+      "ability": "iceBody",
+      "item": "occaBerry",
+      "moves": [
+        "willOWisp",
+        "rototiller",
+        "avalanche",
+        "icicleCrash"
+      ]
+    },
+    {
+      "pokemon": "musharna",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "abilityCapsule",
+      "moves": [
+        "toxic",
+        "psybeam",
+        "futureSight",
+        "calmMind"
+      ]
+    }
+  ]
+}

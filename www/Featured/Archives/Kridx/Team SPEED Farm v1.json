@@ -1,0 +1,79 @@
+{
+  "name": "Team SPEED Farm v1",
+  "author": "Kridx",
+  "description": "Team pour farm des silvers coin, trier du Poké le + rapide au + lent.",
+  "team": [
+    {
+      "pokemon": "polteageist",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "pureIncense",
+      "moves": [
+        "teatime",
+        "memento",
+        "nastyPlot",
+        "shadowBall"
+      ]
+    },
+    {
+      "pokemon": "alolanPersian",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "luckIncense",
+      "moves": [
+        "payDay",
+        "memento",
+        "nightDaze",
+        "darkPulse"
+      ]
+    },
+    {
+      "pokemon": "pheromosa",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "lightClay",
+      "moves": [
+        "agility",
+        "bugBite",
+        "twineedle",
+        "xScissor"
+      ]
+    },
+    {
+      "pokemon": "azelf",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "shinyCharm",
+      "moves": [
+        "agility",
+        "nightDaze",
+        "snarl",
+        "darkPulse"
+      ]
+    },
+    {
+      "pokemon": "megaBeedrill",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "beedrillite",
+      "moves": [
+        "agility",
+        "xScissor",
+        "pounce",
+        "bugBite"
+      ]
+    },
+    {
+      "pokemon": "megaAerodactyl",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "aerodactylite",
+      "moves": [
+        "rockPolish",
+        "stoneEdge",
+        "drillPeck",
+        "rollout"
+      ]
+    }
+  ]
+}

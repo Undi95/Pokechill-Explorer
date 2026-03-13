@@ -1,0 +1,79 @@
+{
+  "name": "Tower A Spectre",
+  "author": "bluegriffin",
+  "description": "tower avec énormément de move pas du type spectre. team : tangela pour spectre/poison , cacnea pour plante/eau , magneton pour vol/acier , klang pour glace , bronzong pour sol/fée , chandelure pour fire (possibilité de prendre l'évolution de cacnea et changer klang pour laturn flash cryo et avoir l'imunité électrique en plus et bug guard de chandelure inutile possibilité de mettre flash psychia) vers la fin de la tower spectreval avec des move psy et combat essayer de répartir les dégâts pour pas perdre de pokemon",
+  "team": [
+    {
+      "pokemon": "tangelaEvent",
+      "shiny": false,
+      "ability": "flashVenum",
+      "item": "bugGem",
+      "moves": [
+        "willOWisp",
+        "ominousWind",
+        "hex",
+        "shadowBall"
+      ]
+    },
+    {
+      "pokemon": "cacnea",
+      "shiny": false,
+      "ability": "flashHerba",
+      "item": "fairyGem",
+      "moves": [
+        "toxic",
+        "rototiller",
+        "needleArm",
+        "energyBall"
+      ]
+    },
+    {
+      "pokemon": "magneton",
+      "shiny": true,
+      "ability": "flyingGuard",
+      "item": "eviolite",
+      "moves": [
+        "toxic",
+        "chargeBeam",
+        "thunder",
+        "thunderbolt"
+      ]
+    },
+    {
+      "pokemon": "klang",
+      "shiny": false,
+      "ability": "flashCryo",
+      "item": "electricGem",
+      "moves": [
+        "shiftGear",
+        "ironTail",
+        "ironHead",
+        "magnetBomb"
+      ]
+    },
+    {
+      "pokemon": "bronzong",
+      "shiny": true,
+      "ability": "flashFae",
+      "item": "flyingGem",
+      "moves": [
+        "toxic",
+        "meteorBeam",
+        "ironTail",
+        "zenHeadbut"
+      ]
+    },
+    {
+      "pokemon": "chandelure",
+      "shiny": false,
+      "ability": "bugGuard",
+      "item": "assaultVest",
+      "moves": [
+        "flamethrower",
+        "hex",
+        "ominousWind",
+        "shadowBall"
+      ]
+    }
+  ]
+}

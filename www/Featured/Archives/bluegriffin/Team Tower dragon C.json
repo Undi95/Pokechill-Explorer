@@ -1,0 +1,67 @@
+{
+  "name": "Team Tower dragon C",
+  "author": "bluegriffin",
+  "description": " Tinkatink/Spritzee resiste au dragon, faire un switch sur Spritzee et revenir sur Tinkatink lors du Applin, Bronzor sol, 2 poke glace changeable pour finir les dernier poke après que Tinkatink et Spritzee soient KO.",
+  "team": [
+    {
+      "pokemon": "tinkatink",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "grassGem",
+      "moves": [
+        "swordsDance",
+        "spiritBreak",
+        "auroraPunch",
+        "playRough"
+      ]
+    },
+    {
+      "pokemon": "spritzee",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "assaultVest",
+      "moves": [
+        "spiritBreak",
+        "moonblast",
+        "playRough",
+        "dazzlingGleam"
+      ]
+    },
+    {
+      "pokemon": "bronzor",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "fairyGem",
+      "moves": [
+        "toxic",
+        "echoedVoice",
+        "drainingKiss",
+        "alluringVoice"
+      ]
+    },
+    {
+      "pokemon": "snoruntEvent",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "flyingGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "accelerock",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "smoochum",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "iceGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "accelerock",
+        "accelerock"
+      ]
+    }
+  ]
+}
