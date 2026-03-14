@@ -4422,7 +4422,7 @@ const CONFIG = {
         { name: 'shop', path: 'scripts/shop.js' },
         { name: 'explore', path: 'scripts/explore.js' }
     ],
-    dbName: 'PokeChillExplorerV112', dbVersion: 112, storeName: 'gameData'
+    dbName: 'PokeChillExplorerV1', dbVersion: 1, storeName: 'gameData'
 };
 
 // Division calculation from game (explore.js)
@@ -8047,7 +8047,7 @@ async function loadData(force = false) {
         if (!force) {
             updateLoadingUI(t('checkingCache'), 10);
             try {
-                const cached = await getFromDB('parsedDataV112');
+                const cached = await getFromDB('parsedDataV1');
                 if (cached?.abilities && Object.keys(cached.abilities).length > 0) {
                     updateLoadingUI(t('loadingCache'), 50);
                     abilities = cached.abilities; moves = cached.moves; pokemons = cached.pokemons; 
@@ -8283,7 +8283,7 @@ async function loadData(force = false) {
                 }
             });
             updateLoadingUI(t('saving'), 95);
-            await saveToDB('parsedDataV112', { abilities, moves, pokemons, items, areas, trainers, shopItems, decorItems, shopDecorItems, signatureMoves: [...signatureMoves], skills, pkmnContent, areasContent, exploreContent, gameConstants: { T4_BASE, EVOLUTION_LEVELS, ROTATION_MAX, EVENT_NAMES }, TYPES, ADDABLE_TYPES: GAME_CONFIG.ADDABLE_TYPES, INGREDIENTS: GAME_CONFIG.INGREDIENTS, STAR_SIGNS: GAME_CONFIG.STAR_SIGNS, NATURES: GAME_CONFIG.NATURES, timestamp: Date.now() });
+            await saveToDB('parsedDataV1', { abilities, moves, pokemons, items, areas, trainers, shopItems, decorItems, shopDecorItems, signatureMoves: [...signatureMoves], skills, pkmnContent, areasContent, exploreContent, gameConstants: { T4_BASE, EVOLUTION_LEVELS, ROTATION_MAX, EVENT_NAMES }, TYPES, ADDABLE_TYPES: GAME_CONFIG.ADDABLE_TYPES, INGREDIENTS: GAME_CONFIG.INGREDIENTS, STAR_SIGNS: GAME_CONFIG.STAR_SIGNS, NATURES: GAME_CONFIG.NATURES, timestamp: Date.now() });
         }
         // Build droppable items map and evolution families
         updateLoadingUI(t('buildingIndexes'), 96);
