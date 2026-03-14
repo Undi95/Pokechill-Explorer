@@ -3581,18 +3581,55 @@
                 <div class="search-section" style="background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,165,0,0.1));border:2px solid var(--accent-gold)">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px">
                         <h3 style="margin:0;color:var(--accent-gold);display:flex;align-items:center;gap:10px">
-                            📖 Guide du Débutant
-                            <span style="font-size:0.7rem;background:var(--accent-gold);color:black;padding:2px 8px;border-radius:4px">FR</span>
+                            📖 <span data-i18n="guideTitle">Guide du Débutant</span>
+                            <span style="font-size:0.7rem;background:var(--accent-gold);color:black;padding:2px 8px;border-radius:4px" id="guide-lang-badge">FR</span>
                         </h3>
                         <div style="display:flex;gap:10px;align-items:center">
-                            <input type="text" id="guide-search" placeholder="Rechercher dans le guide..." style="padding:8px 12px;border-radius:20px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-main);min-width:250px" oninput="searchGuide()">
-                            <button onclick="expandAllGuide()" class="btn" style="padding:6px 12px;font-size:0.8rem">📂 Tout déplier</button>
-                            <button onclick="collapseAllGuide()" class="btn" style="padding:6px 12px;font-size:0.8rem">📁 Tout replier</button>
+                            <input type="text" id="guide-search" placeholder="" data-i18n-placeholder="guideSearchPlaceholder" style="padding:8px 12px;border-radius:20px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-main);min-width:250px" oninput="searchGuide()">
+                            <button onclick="expandAllGuide()" class="btn" style="padding:6px 12px;font-size:0.8rem" data-i18n="expandAll">📂 Tout déplier</button>
+                            <button onclick="collapseAllGuide()" class="btn" style="padding:6px 12px;font-size:0.8rem" data-i18n="collapseAll">📁 Tout replier</button>
                         </div>
                     </div>
-                    <p style="margin:0;font-size:0.9rem;color:var(--text-dim)">Tout ce que vous devez savoir pour bien débuter sur PokeChill !</p>
+                    <p style="margin:0;font-size:0.9rem;color:var(--text-dim)" data-i18n="guideDesc">Tout ce que vous devez savoir pour bien débuter sur PokeChill !</p>
                 </div>
                 <div id="guide-content" style="margin-top:20px">
+                    <!-- Guide content loaded dynamically via JavaScript -->
+                    <div id="guide-dynamic-content"></div>
+                    <script>
+                        // Load guide based on current language - GLOBAL function
+                        window.loadGuideContent = function() {
+                            const guideContainer = document.getElementById('guide-dynamic-content');
+                            if (!guideContainer) return;
+                            
+                            const lang = window.currentLang || 'fr';
+                            console.log('[Guide] Loading guide for lang:', lang);
+                            // Use absolute path from root
+                            const guideFile = lang === 'fr' ? './guides/guide-fr.html' : './guides/guide-en.html';
+                            
+                            fetch(guideFile)
+                                .then(response => {
+                                    if (!response.ok) throw new Error('Failed to load guide: ' + response.status);
+                                    return response.text();
+                                })
+                                .then(html => {
+                                    guideContainer.innerHTML = html;
+                                    console.log('[Guide] Loaded:', guideFile);
+                                    // Re-initialize guide after loading
+                                    if (typeof initGuide === 'function') initGuide();
+                                })
+                                .catch(error => {
+                                    console.error('[Guide] Error loading guide:', error);
+                                    guideContainer.innerHTML = '<div style="text-align:center;padding:40px;"><p>Failed to load guide content. Please refresh the page.</p></div>';
+                                });
+                        };
+                        
+                        // Load guide on initial page load
+                        document.addEventListener('DOMContentLoaded', function() {
+                            window.loadGuideContent();
+                        });
+                    </script>
+                    <!-- Fallback static content (will be replaced by dynamic content) -->
+                    <noscript>
                     <!-- Section 1: Inspection -->
                     <div class="guide-section" data-keywords="inspection clic droit information aide tooltip">
                         <div class="guide-header" onclick="toggleGuideSection(this)">
@@ -4285,6 +4322,7 @@
                         <h4>Aucun résultat trouvé</h4>
                         <p>Essayez un autre mot-clé</p>
                     </div>
+                    </noscript>
                 </div>
             </div>
 
@@ -4471,6 +4509,7 @@ const GAME_CONFIG = {
 // Backward compatibility - TYPES will be dynamically populated
 let TYPES = [];
 let currentLang = localStorage.getItem('pokechill-lang') || (navigator.language?.startsWith('fr') ? 'fr' : 'en');
+window.currentLang = currentLang; // Expose to window for guide loading
 document.documentElement.lang = currentLang;
 let abilities = {}, moves = {}, pokemons = {}, items = {}, areas = {}, trainers = {}, shopItems = {};
 
@@ -5556,12 +5595,17 @@ function searchText(name, rename) {
     const display = format(name, rename);
     return `${name.toLowerCase()} ${display.toLowerCase()}`;
 }
-function toggleLang() { currentLang = currentLang === 'fr' ? 'en' : 'fr'; localStorage.setItem('pokechill-lang', currentLang); document.documentElement.lang = currentLang; applyI18n(); if (typeof updateDataInfo === 'function') updateDataInfo(); updateGuideTabVisibility(); }
-// Guide Tab Visibility (only in French)
+function toggleLang() { currentLang = currentLang === 'fr' ? 'en' : 'fr'; window.currentLang = currentLang; localStorage.setItem('pokechill-lang', currentLang); document.documentElement.lang = currentLang; applyI18n(); if (typeof updateDataInfo === 'function') updateDataInfo(); updateGuideTabVisibility(); console.log('[toggleLang] Switching to:', currentLang); if (typeof window.loadGuideContent === 'function') { console.log('[toggleLang] Calling loadGuideContent'); window.loadGuideContent(); } else { console.error('[toggleLang] loadGuideContent not found!'); } }
+// Guide Tab Visibility (available in both languages)
 function updateGuideTabVisibility() {
     const guideTab = document.getElementById('guide-tab');
     if (guideTab) {
-        guideTab.style.display = currentLang === 'fr' ? 'inline-block' : 'none';
+        guideTab.style.display = 'inline-block';
+    }
+    // Update guide language badge
+    const guideBadge = document.getElementById('guide-lang-badge');
+    if (guideBadge) {
+        guideBadge.textContent = currentLang.toUpperCase();
     }
 }
 function initGuide() {
@@ -22340,9 +22384,19 @@ async function exchangeCancel() {
     I18N.fr.exchangeSecretsHint = "À vous de les découvrir...";
     I18N.fr.secretClickHint = "💡 Cliquez sur un Pokémon pour voir ses détails";
     I18N.fr.tabGuide = "Guide";
+    I18N.fr.guideTitle = "Guide du Débutant";
+    I18N.fr.guideSearchPlaceholder = "Rechercher dans le guide...";
+    I18N.fr.guideDesc = "Tout ce que vous devez savoir pour bien débuter sur PokeChill !";
+    I18N.fr.expandAll = "📂 Tout déplier";
+    I18N.fr.collapseAll = "📁 Tout replier";
     
     // EN
     I18N.en.tabGuide = "Guide";
+    I18N.en.guideTitle = "Beginner's Guide";
+    I18N.en.guideSearchPlaceholder = "Search in guide...";
+    I18N.en.guideDesc = "Everything you need to know to get started with PokeChill!";
+    I18N.en.expandAll = "📂 Expand All";
+    I18N.en.collapseAll = "📁 Collapse All";
     I18N.en.tabExchange = "Trade";
     I18N.en.exchangeSubtitle = "Trade your Pokémon live with another trainer";
     I18N.en.exchangeCreate = "Create Trade";
