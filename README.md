@@ -7,7 +7,7 @@
 > **L'outil ultime pour les dresseurs PokeChill**  
 > Explorez, créez et optimisez vos équipes avec des données précises et une interface intuitive.
 
-🔗 **Accéder au site** : *[pokechill-explorer.alwaysdata.net](https://pokechill-explorer.alwaysdata.net)* 
+🔗 **Accéder au site** : [pokechill-explorer.alwaysdata.net](https://pokechill-explorer.alwaysdata.net) 
 📁 **Repository** : [github.com/play-pokechill/play-pokechill.github.io](https://github.com/play-pokechill/play-pokechill.github.io)
 
 ---
@@ -47,14 +47,18 @@
 ## 🚀 Technologies
 
 - **Frontend** : Vanilla HTML5, CSS3, JavaScript (ES6+)
-- **Hébergement** : GitHub Pages
 - **Données** : Parsing automatique des fichiers du jeu PokeChill
 - **Cache** : IndexedDB pour les performances
 - **Export** : Bibliothèque GIF.js pour les animations
 
 ---
 
+les actions pénalisantes (celles qui réduisent une statistique) ont été améliorées, passant de 130 à 150
+
 ## 🎯 Versions & Updates
+
+### v4.9 - Nature Update
+- ✅ Les BP des attaques qui donnent un debuff (celles qui réduisent une statistique) ont été améliorées, passant de 130 à 150.
 
 ### v4.8 - Nature Update
 - ✅ 6 Natures intégrées (Adamant, Modest, Jolly, Relaxed, Quiet, Bold)
@@ -81,7 +85,7 @@
 
 - 🎮 **Site officiel** : [play-pokechill.github.io](https://play-pokechill.github.io)
 - 💻 **Code source** : [github.com/play-pokechill/play-pokechill.github.io](https://github.com/play-pokechill/play-pokechill.github.io)
-- 🐛 **Signaler un bug** : [Issues](https://github.com/play-pokechill/play-pokechill.github.io/issues)
+- 🐛 **Signaler un bug du jeu** : [Issues](https://github.com/play-pokechill/play-pokechill.github.io/issues)
 
 ---
 
