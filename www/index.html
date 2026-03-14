@@ -1794,6 +1794,49 @@
             text-align: center;
             margin: 15px 0;
         }
+        /* ===== GUIDE STYLES ===== */
+        .guide-section { margin-bottom: 15px; border-radius: 12px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.3s ease; }
+        .guide-section:hover { border-color: var(--accent-gold); box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1); }
+        .guide-section.highlighted { border-color: var(--accent-gold); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); animation: guidePulse 2s infinite; }
+        @keyframes guidePulse { 0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); } 50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.5); } }
+        .guide-header { display: flex; align-items: center; gap: 12px; padding: 15px 20px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05)); cursor: pointer; transition: all 0.2s; user-select: none; }
+        .guide-header:hover { background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1)); }
+        .guide-icon { font-size: 1.5rem; }
+        .guide-title { flex: 1; font-weight: 600; font-size: 1.1rem; color: var(--text-main); }
+        .guide-toggle { font-size: 0.9rem; color: var(--accent-gold); transition: transform 0.3s; }
+        .guide-section.open .guide-toggle { transform: rotate(180deg); }
+        .guide-content { display: none; padding: 20px; border-top: 1px solid var(--border); }
+        .guide-section.open .guide-content { display: block; animation: guideFadeIn 0.3s ease; }
+        @keyframes guideFadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .guide-card { background: var(--bg-input); border-radius: 10px; padding: 20px; margin-bottom: 15px; border: 1px solid var(--border); }
+        .guide-card:last-child { margin-bottom: 0; }
+        .guide-card h4 { margin: 0 0 12px 0; color: var(--accent-gold); font-size: 1rem; }
+        .guide-card p { margin: 0 0 10px 0; line-height: 1.6; }
+        .guide-card ul { margin: 10px 0; padding-left: 20px; }
+        .guide-card li { margin-bottom: 8px; line-height: 1.5; }
+        .guide-link { color: var(--accent-blue); text-decoration: none; font-weight: 500; padding: 2px 6px; border-radius: 4px; transition: all 0.2s; }
+        .guide-link:hover { background: rgba(0, 212, 255, 0.2); text-decoration: underline; }
+        .guide-highlight { font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+        .guide-highlight.shiny { background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.3)); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
+        .guide-tip { background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 200, 83, 0.1)); border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 8px; padding: 12px 15px; margin-top: 15px; font-size: 0.9rem; color: var(--text-main); }
+        .guide-warning { background: rgba(255, 68, 68, 0.1); border: 1px solid var(--accent-red); border-radius: 8px; padding: 12px 15px; margin-top: 15px; color: var(--text-main); }
+        .guide-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0; }
+        .guide-stat { display: flex; align-items: center; gap: 8px; padding: 10px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; }
+        .guide-stat span { font-weight: 600; }
+        .stat-hp { color: #ff6b6b; }
+        .stat-atk { color: #ffa500; }
+        .stat-def { color: #4ecdc4; }
+        .stat-spa { color: #9b59b6; }
+        .stat-spd { color: #3498db; }
+        .stat-spe { color: #2ecc71; }
+        .division-badge { display: inline-block; padding: 2px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; margin-right: 8px; }
+        .division-sss { background: linear-gradient(135deg, #ff0000, #ff6b6b, #ffd700); color: #000; border: 2px solid #ffd700; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+        .division-ss { background: linear-gradient(135deg, #ff6b6b, #ffd700); color: #000; border: 2px solid #ffd700; }
+        .division-s { background: linear-gradient(135deg, #ffd700, #ffb347); color: #000; }
+        .division-a { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); color: #000; }
+        .division-b { background: linear-gradient(135deg, #cd7f32, #b87333); color: #fff; }
+        .division-c { background: linear-gradient(135deg, #666, #444); color: #fff; }
+        #guide-search:focus { outline: none; border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
     </style>
 </head>
 <body>
@@ -1847,6 +1890,7 @@
 
             <div class="tabs">
                 <button class="tab active" data-tab="active" style="background:linear-gradient(135deg,rgba(0,255,136,0.2),rgba(0,212,255,0.2));border-color:#00ff88">🟢 <span data-i18n="tabActive">Actif</span></button>
+                <button class="tab" data-tab="guide" id="guide-tab" style="background:linear-gradient(135deg,rgba(255,215,0,0.3),rgba(255,165,0,0.3));border-color:var(--accent-gold)">📖 <span data-i18n="tabGuide">Guide</span></button>
                 <button class="tab" data-tab="pokemon">🔍 <span data-i18n="pokemon">Pokémon</span></button>
                 <button class="tab" data-tab="division">🏆 <span data-i18n="tabDivision">Division</span></button>
                 <button class="tab" data-tab="bst">📈 <span data-i18n="tabBST">BST</span></button>
@@ -3532,6 +3576,718 @@
                 <p id="dmg-credits" style="text-align:center;margin-top:15px;font-size:0.85rem;color:var(--text-dim);"><strong style="color:var(--accent-blue)">Calculator</strong> by <strong>Undi</strong> & <strong>otpoke</strong> · Powered by <strong style="color:var(--accent-gold)">AI/IA (Kimi Code)</strong></p>
             </div>
 
+            <!-- GUIDE -->
+            <div id="guide-panel" class="panel">
+                <div class="search-section" style="background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(255,165,0,0.1));border:2px solid var(--accent-gold)">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;flex-wrap:wrap;gap:10px">
+                        <h3 style="margin:0;color:var(--accent-gold);display:flex;align-items:center;gap:10px">
+                            📖 Guide du Débutant
+                            <span style="font-size:0.7rem;background:var(--accent-gold);color:black;padding:2px 8px;border-radius:4px">FR</span>
+                        </h3>
+                        <div style="display:flex;gap:10px;align-items:center">
+                            <input type="text" id="guide-search" placeholder="Rechercher dans le guide..." style="padding:8px 12px;border-radius:20px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-main);min-width:250px" oninput="searchGuide()">
+                            <button onclick="expandAllGuide()" class="btn" style="padding:6px 12px;font-size:0.8rem">📂 Tout déplier</button>
+                            <button onclick="collapseAllGuide()" class="btn" style="padding:6px 12px;font-size:0.8rem">📁 Tout replier</button>
+                        </div>
+                    </div>
+                    <p style="margin:0;font-size:0.9rem;color:var(--text-dim)">Tout ce que vous devez savoir pour bien débuter sur PokeChill !</p>
+                </div>
+                <div id="guide-content" style="margin-top:20px">
+                    <!-- Section 1: Inspection -->
+                    <div class="guide-section" data-keywords="inspection clic droit information aide tooltip">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🔍</span>
+                            <span class="guide-title">Inspection des Éléments</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Comment inspecter ?</h4>
+                                <p>Un <strong>clic droit</strong> ou <strong>appui long</strong> sur la plupart des éléments donne des informations supplémentaires. Vous pouvez même inspecter les informations dans les informations !</p>
+                                <div class="guide-tip">
+                                    💡 <strong>Éléments inspectables :</strong> zones, dresseurs, attaques, effets de statut, Pokémon sauvages, Pokémon d'équipe et objets.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 2: Stats -->
+                    <div class="guide-section" data-keywords="stats statistiques bst division iv combat hp atk def">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">📊</span>
+                            <span class="guide-title">Les Stats en Combat</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Les 6 Stats de Base</h4>
+                                <p>Chaque espèce de Pokémon partage les mêmes stats de base (BST) qui déterminent les stats réelles à un niveau donné :</p>
+                                <div class="guide-stats-grid">
+                                    <div class="guide-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="color:#ff6b6b;min-width:24px"><path fill="currentColor" fill-opacity="0.3" d="M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9c0 0 -7.43 -7.79 -8.24 -9c-0.48 -0.71 -0.76 -1.57 -0.76 -2.5c0 -2.49 2.01 -4.5 4.5 -4.5c1.56 0 2.87 0.84 3.74 2c0.76 1 0.76 1 0.76 1Z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c0 0 0 0 -0.76 -1c-0.88 -1.16 -2.18 -2 -3.74 -2c-2.49 0 -4.5 2.01 -4.5 4.5c0 0.93 0.28 1.79 0.76 2.5c0.81 1.21 8.24 9 8.24 9M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9"/></svg>
+                                        <div><strong>HP</strong> - Points de vie</div>
+                                    </div>
+                                    <div class="guide-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="color:#ffa500;min-width:24px"><path fill="currentColor" d="m12 16.975l1.475-1.475H15.5v-2.025L16.975 12L15.5 10.525V8.5h-2.025L12 7.025L10.525 8.5H8.5v2.025L7.025 12L8.5 13.475V15.5h2.025zm0 6.325L8.65 20H4v-4.65L.7 12L4 8.65V4h4.65L12 .7L15.35 4H20v4.65L23.3 12L20 15.35V20h-4.65z"/></svg>
+                                        <div><strong>ATK</strong> - Attaque physique</div>
+                                    </div>
+                                    <div class="guide-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="color:#4ecdc4;min-width:24px"><path fill="currentColor" d="M3 11.991c0 5.638 4.239 8.375 6.899 9.536c.721.315 1.082.473 2.101.473V8l-9 3z"/><path fill="currentColor" d="M14.101 21.527C16.761 20.365 21 17.63 21 11.991V11l-9-3v14c1.02 0 1.38-.158 2.101-.473M8.838 2.805L8.265 3c-3.007 1.03-4.51 1.545-4.887 2.082C3 5.62 3 7.22 3 10.417V11l9-3V2c-.811 0-1.595.268-3.162.805" opacity="0.5"/><path fill="currentColor" d="m15.735 3l-.573-.195C13.595 2.268 12.812 2 12 2v6l9 3v-.583c0-3.198 0-4.797-.378-5.335c-.377-.537-1.88-1.052-4.887-2.081"/></svg>
+                                        <div><strong>DEF</strong> - Défense physique</div>
+                                    </div>
+                                    <div class="guide-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" style="color:#9b59b6;min-width:24px"><path fill="currentColor" d="M306.72 22.688c-87.212.763-181.58 53.14-238.19 140.406c-.944 1.46-1.677 3.068-2.593 4.53c.455-.397.86-.917 1.313-1.31c-40.253 56.984-35.183 136.503 15.813 187.5c54.553 54.552 141.745 56.65 199.093 6.78c-4.676 6.576-9.916 13.137-15.812 19.03c-57 57-149.53 57-206.53 0c-17.814-17.81-30.103-38.73-36.783-61.312c2.928 65.605 34.97 122.74 93.907 151.97c103.593 51.374 250.2-2.8 326.875-121C510.904 245.856 502.47 127.374 429.938 65c-10.36-8.91-22.206-16.483-35.156-22.906c-25.897-12.844-54.454-19.11-83.905-19.407c-1.38-.013-2.772-.012-4.156 0zm1.06 62.406c47.14-.705 82.63 23.414 90.376 58.906v.03c1.417 6.492 1.806 13.565 1.344 21.032c-3.682 59.742-68.786 126.655-145.438 149.563c-.945.282-1.872.422-2.812.688l.938-.47c-37.843 12.718-74.086-.708-84.438-33.624c-7.03-22.36-.468-48.544 15.25-70.408c-1.695 7.2-.05 13.91 5.344 18.375c10.643 8.816 31.83 5.575 47.312-7.25c15.483-12.824 19.394-30.37 8.75-39.187c-6.294-5.214-16.287-6.21-26.594-3.5l.532-.313c-.755.257-1.52.54-2.28.813c-.344.123-.69.217-1.033.344a54 54 0 0 0-8 3.344c-.656.307-1.315.61-1.968.937c-42.374 21.24-83.226 68.335-71.656 105.125c3.616 11.497 10.213 20.614 19.094 27.094c-30.253-10.44-48.35-34.526-46.563-68.53c3.682-70.837 83.193-133.31 159.844-156.22c14.673-4.385 28.802-6.553 42-6.75z"/></svg>
+                                        <div><strong>SPA</strong> - Attaque spéciale</div>
+                                    </div>
+                                    <div class="guide-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" style="color:#3498db;min-width:24px"><path fill="currentColor" fill-rule="evenodd" d="m311.874 171.817l65.452-99.754l-.865-.367l50.206 12.144l-.221 17.259l.049 93.284l.119 25.42c.562 109.632-58.957 176.828-107.749 213.459l-11.037 7.917l-15.418 9.91l-9.239 5.345l-8.181 4.374l-12.415 5.962l-6.126 2.563l-6.403-2.682l-5.725-2.644l-7.222-3.591l-10.821-5.871l-12.434-7.468l-10.839-7.169c-48.347-33.416-112.698-97.735-117.398-205.151l-.274-12.587V84.09L256.45 42.668l22.726 5.497l-62.978 142.683l48.901 20.757l-80.615 154.048l176.882-172.827z" clip-rule="evenodd"/></svg>
+                                        <div><strong>SPD</strong> - Défense spéciale</div>
+                                    </div>
+                                    <div class="guide-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="color:#2ecc71;min-width:24px"><path fill="currentColor" d="M9 19v-2H5.675q-.5 0-.7-.45t.125-.8l6.15-6.9q.3-.35.75-.35t.75.35l6.15 6.9q.325.35.125.8t-.7.45H15v2q0 .425-.288.713T14 20h-4q-.425 0-.712-.288T9 19m3-13l-5.025 5.675q-.15.15-.35.238t-.4.087q-.65 0-.912-.575t.162-1.075l5.775-6.5q.3-.35.75-.35t.75.35l5.775 6.5q.425.5.163 1.075t-.913.575q-.2 0-.4-.075t-.35-.25z"/></svg>
+                                        <div><strong>SPE</strong> - Vitesse</div>
+                                    </div>
+                                </div>
+                                <p>Les stats déterminent combien de dégâts le Pokémon inflige et reçoit. La vitesse détermine aussi la rapidité d'exécution d'une attaque. Consultez l'onglet <a href="#tab=bst" onclick="switchTab('bst');return false" class="guide-link">BST</a> pour plus de détails.</p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>IVs - Individual Values</h4>
+                                <p>Les <strong>IVs</strong> multiplient les stats de base. Il existe plusieurs façons d'améliorer les IVs de vos Pokémon :</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;"><strong>Entraînement</strong> - Utilisez l'onglet <strong>Entraînement</strong> dédié : effectuez 30 combats pour gagner 2 IVs. Plus les IVs sont élevés, plus les ennemis sont forts (leur niveau augmente).</li>
+                                    <li style="margin-bottom: 8px;"><strong>Vitamines</strong> - Utilisez des objets comme le <strong>PV Plus</strong> (HP), <strong>Protéine</strong> (ATK), <strong>Fer</strong> (DEF), <strong>Calcium</strong> (SPA), <strong>Zinc</strong> (SPD) et <strong>Carbone</strong> (SPE) pour augmenter les stats spécifiques. Vous recevez 1 vitamine aléatoire toutes les 12h (soit 2 par jour) en faisant un export de sauvegarde (backup).
+                                        <div style="margin-top:12px;padding:12px;background:var(--bg-card);border-radius:8px;display:flex;gap:15px;flex-wrap:wrap;justify-content:center;">
+                                            <div style="text-align:center"><img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/hpUp.png" style="width:28px;height:28px" title="HP Up"><div style="font-size:0.75rem;color:var(--text-secondary)">HP</div></div>
+                                            <div style="text-align:center"><img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/protein.png" style="width:28px;height:28px" title="Protein"><div style="font-size:0.75rem;color:var(--text-secondary)">ATK</div></div>
+                                            <div style="text-align:center"><img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/iron.png" style="width:28px;height:28px" title="Iron"><div style="font-size:0.75rem;color:var(--text-secondary)">DEF</div></div>
+                                            <div style="text-align:center"><img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/calcium.png" style="width:28px;height:28px" title="Calcium"><div style="font-size:0.75rem;color:var(--text-secondary)">SPA</div></div>
+                                            <div style="text-align:center"><img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/zinc.png" style="width:28px;height:28px" title="Zinc"><div style="font-size:0.75rem;color:var(--text-secondary)">SPD</div></div>
+                                            <div style="text-align:center"><img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/carbos.png" style="width:28px;height:28px" title="Carbos"><div style="font-size:0.75rem;color:var(--text-secondary)">SPE</div></div>
+                                        </div>
+                                    </li>
+                                    <li><strong>Génétique</strong> - Pour les modifications avancées, consultez l'onglet <a href="#tab=genetics" onclick="switchTab('genetics');return false" class="guide-link">Génétique</a>.</li>
+                                </ol>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Système de Division</h4>
+                                <p>Selon leurs stats de base, une <strong>Division</strong> est assignée aux Pokémon. Utilisez cette lettre pour évaluer rapidement quels Pokémon peuvent performer mieux à court terme. Consultez l'onglet <a href="#tab=division" onclick="switchTab('division');return false" class="guide-link">Division</a> pour plus de détails :</p>
+                                <ul>
+                                    <li><span class="division-badge division-sss">SSS</span> - Grade SSS</li>
+                                    <li><span class="division-badge division-ss">SS</span> - Grade SS</li>
+                                    <li><span class="division-badge division-s">S</span> - Grade S</li>
+                                    <li><span class="division-badge division-a">A</span> - Grade A</li>
+                                    <li><span class="division-badge division-b">B</span> - Grade B</li>
+                                    <li><span class="division-badge division-c">C</span> - Grade C</li>
+                                </ul>
+                                <div class="guide-tip">
+                                    💡 Les Pokémon de plus haut grade ont plus de chances d'avoir un talent ou une attaque unique !
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 3: Natures -->
+                    <div class="guide-section" data-keywords="natures stats caractere adamant modest jolly relaxed quiet bold">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🌱</span>
+                            <span class="guide-title">Les Natures</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Effets des Natures sur les Stats</h4>
+                                <p>Les <strong>Natures</strong> modifient les étoiles BST (stats de base) d'un Pokémon. Chaque nature augmente certaines stats et en diminue d'autres :</p>
+                                <table style="width:100%;border-collapse:collapse;font-size:0.9rem;margin:15px 0;">
+                                    <thead>
+                                        <tr style="border-bottom:2px solid var(--border);background:var(--bg-dark);">
+                                            <th style="text-align:left;padding:10px;">Nature</th>
+                                            <th style="text-align:center;padding:10px;color:#4ade80;">Stats ▲</th>
+                                            <th style="text-align:center;padding:10px;color:#f87171;">Stats ▼</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid var(--border);">
+                                            <td style="padding:10px;font-weight:600;"><span class="division-badge division-s">Adamant</span> (Rigide)</td>
+                                            <td style="text-align:center;padding:10px;color:#4ade80;font-weight:600;">ATK +1</td>
+                                            <td style="text-align:center;padding:10px;color:#f87171;">S.ATK -1</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid var(--border);">
+                                            <td style="padding:10px;font-weight:600;"><span class="division-badge division-s">Modest</span> (Modeste)</td>
+                                            <td style="text-align:center;padding:10px;color:#4ade80;font-weight:600;">S.ATK +1</td>
+                                            <td style="text-align:center;padding:10px;color:#f87171;">ATK -1</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid var(--border);">
+                                            <td style="padding:10px;font-weight:600;"><span class="division-badge division-a">Jolly</span> (Jovial)</td>
+                                            <td style="text-align:center;padding:10px;color:#4ade80;font-weight:600;">SPE +1</td>
+                                            <td style="text-align:center;padding:10px;color:#f87171;">DEF -1, S.DEF -1</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid var(--border);">
+                                            <td style="padding:10px;font-weight:600;"><span class="division-badge division-a">Relaxed</span> (Relax)</td>
+                                            <td style="text-align:center;padding:10px;color:#4ade80;font-weight:600;">HP +1</td>
+                                            <td style="text-align:center;padding:10px;color:#f87171;">SPE -1</td>
+                                        </tr>
+                                        <tr style="border-bottom:1px solid var(--border);">
+                                            <td style="padding:10px;font-weight:600;"><span class="division-badge division-b">Quiet</span> (Calme)</td>
+                                            <td style="text-align:center;padding:10px;color:#4ade80;font-weight:600;">HP +1</td>
+                                            <td style="text-align:center;padding:10px;color:#f87171;">ATK -1, S.ATK -1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:10px;font-weight:600;"><span class="division-badge division-b">Bold</span> (Assuré)</td>
+                                            <td style="text-align:center;padding:10px;color:#4ade80;font-weight:600;">DEF +1, S.DEF +1</td>
+                                            <td style="text-align:center;padding:10px;color:#f87171;">HP -1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Obtention des Natures</h4>
+                                <p>Les natures s'obtiennent via l'onglet <strong>Entraînement</strong> :</p>
+                                <ul>
+                                    <li><strong>Entraînement</strong> - Permet de <strong>reroll</strong> la nature du Pokémon (obtention aléatoire parmi les natures disponibles selon les restrictions)</li>
+                                    <li><strong>Mint Neutre</strong> - Objet achetable au shop qui <strong>retire la nature actuelle</strong> et reset le Pokémon à "sans nature"</li>
+                                </ul>
+                            </div> 
+                            <div class="guide-card">
+                                <h4>⚠️ Restrictions Important</h4>
+                                <div class="guide-warning">
+                                    <p><strong>Adamant et Modest ont des restrictions :</strong></p>
+                                    <ul style="margin:10px 0;">
+                                        <li><strong>Adamant</strong> ne peut pas être obtenue si l'<strong>ATK</strong> du Pokémon est déjà supérieure ou égale à son <strong>S.ATK</strong></li>
+                                        <li><strong>Modest</strong> ne peut pas être obtenue si le <strong>S.ATK</strong> est déjà supérieur ou égal à l'<strong>ATK</strong></li>
+                                    </ul>
+                                    <p style="margin:10px 0 0 0;"><strong>Règles générales :</strong></p>
+                                    <ul style="margin:10px 0;">
+                                        <li>Une nature ne peut jamais faire dépasser <strong>6 étoiles</strong> à une stat</li>
+                                        <li>Une nature ne peut pas faire descendre une stat en dessous de <strong>1 étoile</strong> (minimum 1)</li>
+                                    </ul>
+                                </div>
+                                <div class="guide-tip">
+                                    💡 <strong>Exemple :</strong> Un Pokémon avec 5 en ATK et 3 en S.ATK ne pourra pas obtenir Adamant car ATK > S.ATK. Par contre Modest sera possible !
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 5: Talents -->
+                    <div class="guide-section" data-keywords="talents abilities capacite cache hidden ability ha capsule">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">✨</span>
+                            <span class="guide-title">Les Talents (Abilities)</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Talents Normaux</h4>
+                                <p>Les talents sont des traits qu'un Pokémon peut avoir. Bien qu'ils soient aléatoires, certains talents n'apparaissent que sur des types spécifiques. Les talents sont classés en trois catégories :</p>
+                                <ul>
+                                    <li><strong>Common</strong> (Commun)</li>
+                                    <li><strong>Uncommon</strong> (Peu commun)</li>
+                                    <li><strong>Rare</strong> (Rare)</li>
+                                </ul>
+                                <p>Découvrez tous les talents dans l'onglet <a href="#tab=abilities" onclick="switchTab('abilities');return false" class="guide-link">Talents</a>.</p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Talents Cachés (HA)</h4>
+                                <p>Les <strong>Talents Cachés</strong> sont des traits innés propres à l'espèce qui peuvent être débloqués de deux façons :</p>
+                                <ul>
+                                    <li>Utiliser une <strong>Capsule de Talent</strong> (disponible dans la <a href="#tab=shop" onclick="switchTab('shop');return false" class="guide-link">Boutique</a>)</li>
+                                    <li>Via l'<strong>entraînement</strong> du Pokémon</li>
+                                </ul>
+                                <p>Une fois débloqué, leur effet est actif en permanence aux côtés de l'autre talent.</p>
+                                <div class="guide-warning">
+                                    ⚠️ Deux talents qui font exactement la même chose ne se cumulent pas (même si c'est un HA + un talent normal différents avec le même effet). Une seule sera active.
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Mémoires de Talent</h4>
+                                <p>Les <strong>Mémoires</strong> sont des objets qui permettent d'enseigner un talent à un Pokémon compatible :</p>
+                                <ul>
+                                    <li><strong>Compatibilité</strong> - Le Pokémon doit avoir un type compatible avec la mémoire. Certains talents sont universels (tous types), d'autres sont réservés à certains types spécifiques.</li>
+                                    <li><strong>Utilisation</strong> - Utilisez la mémoire depuis votre sac, puis sélectionnez un Pokémon compatible dans le Pokédex pour lui apprendre le talent.</li>
+                                    <li><strong>Transmission</strong> - Une fois appliquée, la mémoire devient le <strong>talent principal</strong> du Pokémon (slot 1) et peut être transmis par <a href="#tab=genetics" onclick="switchTab('genetics');return false" class="guide-link">génétique</a> comme n'importe quel autre talent.</li>
+                                </ul>
+                                <p><strong>Où les obtenir :</strong></p>
+                                <ul>
+                                    <li><a href="#tab=shop&category=memory" onclick="switchTab('shop');setTimeout(()=>filterShopCategory('memory'),50);return false" class="guide-link">Magasin Mémoire</a> - Mémoires basiques contre des PB (20-50 PB selon le talent)</li>
+                                    <li><a href="#tab=shop&category=apricorn" onclick="switchTab('shop');setTimeout(()=>filterShopCategory('apricorn'),50);return false" class="guide-link">Magasin Noigrumes</a> - Mémoires aléatoires en rotation quotidienne contre des Noigrumes de différentes couleurs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 6: Experience -->
+                    <div class="guide-section" data-keywords="experience xp niveau level up evolution">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">📈</span>
+                            <span class="guide-title">L'Expérience</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Gain d'Expérience</h4>
+                                <p>Les Pokémon gagnent de l'expérience en battant des ennemis et en partagent une portion avec l'équipe. Cela s'applique même si les Pokémon de l'équipe sont vaincus.</p>
+                                <ul>
+                                    <li>Différence de niveau de <strong>±5 niveaux</strong> entre votre Pokémon et l'ennemi = même quantité d'XP</li>
+                                    <li>Plus de <strong>5 niveaux de différence</strong> (ennemi plus fort) = XP grandement augmentée</li>
+                                    <li>La limite est fixée à <strong>10 niveaux supérieur</strong>, si vous battez un pokémon avec 11 niveaux de plus que vous, vous obtiendrez la même chose que si il avait 10 niveaux de plus</li>
+                                    <li>Un Pokémon ayant <strong>10 niveaux de moins</strong> que l'ennemi ne recevra pas d'XP</li>
+                                </ul>
+                                <div class="guide-tip">
+                                    💡 Les attaques sont apprises tous les <strong>7 niveaux</strong>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 7: Attaques -->
+                    <div class="guide-section" data-keywords="attaques moves physique special stab signature egg restricted">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">⚔️</span>
+                            <span class="guide-title">Les Attaques</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Types d'Attaques</h4>
+                                <p>Les attaques peuvent être changées via clic droit/appui long sur un Pokémon d'équipe.</p>
+                                <ul>
+                                    <li><strong>Physiques</strong> - Dégâts basés sur l'ATK du lanceur et la DEF de la cible</li>
+                                    <li><strong>Spéciales</strong> - Dégâts basés sur la SPA du lanceur et la SPD de la cible</li>
+                                    <li><strong>Status</strong> - Modifient les stats ou infligent des altérations</li>
+                                </ul>
+                            </div>
+                            <div class="guide-card">
+                                <h4>STAB - Same Type Attack Bonus</h4>
+                                <p>Si un Pokémon utilise une attaque offensive du même type que l'un de ses types, les dégâts sont augmentés de <strong>x1.5</strong>.</p>
+                                <p>De plus, les Pokémon à type unique reçoivent <strong>+0.2</strong> de STAB supplémentaire !</p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Cross-Power</h4>
+                                <p>Si un Pokémon utilise une attaque offensive précédée par une attaque offensive d'un type différent, il reçoit un multiplicateur de dégâts de <strong>1.3x</strong>.</p>
+                                <p>Ceci est indiqué par un motif en croix sur la barre d'attaque du move affecté.</p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Attaques Signature et Egg Moves</h4>
+                                <p><strong>Attaques Signature</strong> - Ce sont des attaques propres à chaque espèce de Pokémon. Elles sont apprises automatiquement au niveau 100 et ne peuvent pas être héritées par génétique, à moins que le Pokémon hôte ne possède déjà l'Egg Move correspondant (dans ce cas, c'est considéré comme une attaque normale).</p>
+                                <p><strong>Egg Moves</strong> - Ce sont des attaques spéciales que certains Pokémon possèdent naturellement. Elles peuvent être transmises à d'autres Pokémon via la <a href="#tab=genetics" onclick="switchTab('genetics');return false" class="guide-link">génétique</a> :</p>
+                                <ul>
+                                    <li>Utilisez un Pokémon "sample" qui connaît l'Egg Move souhaitée</li>
+                                    <li>L'Egg Move sera transmise à l'hôte avec les probabilités normales de transfert d'attaque</li>
+                                    <li>Chaque espèce de Pokémon a sa propre Egg Move spécifique (visible dans le Pokédex avec l'icône d'œuf)</li>
+                                </ul>
+                                <p><strong>Attaques Restreintes</strong> - Certaines attaques puissantes sont marquées comme "restreintes". Seule une attaque restreinte peut être équipée à la fois sur le Pokémon actif.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 8: Combat -->
+                    <div class="guide-section" data-keywords="combat battle fatigue fatigue buff debuff status">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">⚔️</span>
+                            <span class="guide-title">Mécaniques de Combat</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Fatigue de Combat</h4>
+                                <p>Les Pokémon perdent une très petite fraction de leur santé maximale lorsqu'ils attaquent. Ces dégâts peuvent être atténués par la somme des stats HP, DEF et SPD du Pokémon.</p>
+                                <div class="guide-tip">
+                                    💡 Les Pokémon plus tank peuvent donc combattre plus longtemps.
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Effets de Statut</h4>
+                                <p>Certaines attaques infligent des effets de statut (Confus, Brûlé, Empoisonné, Gelé, Paralysé, Endormi).</p>
+                                <ul>
+                                    <li>Durent <strong>3 tours</strong> par défaut (sauf Paralysie qui dure <strong>2 tours</strong>)</li>
+                                    <li>Un seul effet de statut à la fois</li>
+                                </ul>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Buffs et Debuffs</h4>
+                                <p>Les augmentations ou diminutions de stats durent <strong>3 tours</strong> par défaut (sauf les diminutions de vitesse qui durent 2 tours).</p>
+                                <p>Les buffs/debuffs de même ampleur ne se cumulent pas, mais les différents oui :</p>
+                                <ul>
+                                    <li><strong>+1 puis +1</strong> = reste +1 (même ampleur, ne cumule pas)</li>
+                                    <li><strong>+2 puis +2</strong> = reste +2 (même ampleur, ne cumule pas)</li>
+                                    <li><strong>+1 puis +2</strong> = +3 total (ampleurs différentes, cumule)</li>
+                                    <li><strong>-1 puis -2</strong> = -3 total (ampleurs différentes, cumule)</li>
+                                </ul>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Météo et Terrains</h4>
+                                <p>Certaines attaques peuvent changer la météo : Soleil, Pluie, Tempête de Sable, Grêle, Brouillard, Terrains Électrik/Herbu/Brumeux, Trick Room, Weird Room, Cross Room...</p>
+                                <ul>
+                                    <li>Durent <strong>15 tours</strong> par défaut</li>
+                                    <li>Ne peuvent être changées qu'après <strong>30 tours</strong> (cooldown)</li>
+                                </ul>
+                                <div class="guide-tip">
+                                    💡 <strong>Prolongation :</strong> Certains talents et objets permettent de faire durer la météo <strong>30 tours</strong> au lieu de 15, et de la remettre immédiatement après (sans attendre le cooldown de 30 tours) ! Consultez les talents météo et les objets de terrain dans le Pokédex.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 9: Shiny -->
+                    <div class="guide-section" data-keywords="shiny star sign etoile rarete couleur">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">⭐</span>
+                            <span class="guide-title">Shiny & Star Signs</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Pokémon Shiny</h4>
+                                <p>Au taux de <strong>1/400</strong> (0.25%), les Pokémon peuvent apparaître en version shiny. Ces chances peuvent être augmentées :</p>
+                                <ul>
+                                    <li>Les Pokémon Shiny infligent <strong>+15% de dégâts</strong></li>
+                                    <li>La distinction visuelle peut être activée/désactivée (n'affecte pas le bonus)</li>
+                                    <li>Les Shiny ne se transmettent pas aux évolutions - il faut utiliser la <a href="#tab=genetics" onclick="switchTab('genetics');return false" class="guide-link">génétique</a></li>
+                                </ul>
+                                <div style="margin-top:15px;padding:12px;background:var(--bg-card);border-radius:8px;">
+                                    <h5 style="margin:0 0 10px 0;color:var(--text-primary)">Boosts de chance Shiny</h5>
+                                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/pkmn/sprite/gholdengo.png" style="width:32px;height:32px" title="Gholdengo">
+                                        <div><strong>Gholdengo</strong> - Son talent caché <strong>Good As Gold</strong> augmente les chances de shiny de <strong>+15%</strong> pour toute l'équipe</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:10px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/shinyCharm.png" style="width:32px;height:32px" title="Charme Chroma">
+                                        <div><strong>Charme Chroma</strong> - Objet à tenir. Augmente les chances de <strong>+10% par niveau</strong> (max +50% au niveau 5)</div>
+                                    </div>
+                                </div>
+                                <div style="margin-top:15px;padding:12px;background:var(--bg-card);border-radius:8px;">
+                                    <h5 style="margin:0 0 10px 0;color:var(--text-primary)">📊 Taux de Shiny Comparatifs</h5>
+                                    <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+                                        <thead>
+                                            <tr style="border-bottom:1px solid var(--border);">
+                                                <th style="text-align:left;padding:8px;">Configuration</th>
+                                                <th style="text-align:center;padding:8px;">Taux</th>
+                                                <th style="text-align:center;padding:8px;">Pourcentage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom:1px solid var(--border);">
+                                                <td style="padding:8px;">Sans rien</td>
+                                                <td style="text-align:center;padding:8px;">1/400</td>
+                                                <td style="text-align:center;padding:8px;">0.25%</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid var(--border);">
+                                                <td style="padding:8px;">Gholdengo uniquement (+15%)</td>
+                                                <td style="text-align:center;padding:8px;">~1/348</td>
+                                                <td style="text-align:center;padding:8px;">0.29%</td>
+                                            </tr>
+                                            <tr style="border-bottom:1px solid var(--border);">
+                                                <td style="padding:8px;">Charme Chroma max (+50%)</td>
+                                                <td style="text-align:center;padding:8px;">~1/267</td>
+                                                <td style="text-align:center;padding:8px;">0.375%</td>
+                                            </tr>
+                                            <tr style="background:rgba(255,215,0,0.1);">
+                                                <td style="padding:8px;"><strong>Gholdengo + Charme max (+65%)</strong></td>
+                                                <td style="text-align:center;padding:8px;"><strong>~1/242</strong></td>
+                                                <td style="text-align:center;padding:8px;"><strong>0.41%</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Star Signs</h4>
+                                <p>Si les étoiles s'alignent, un Pokémon shiny peut recevoir un <strong>Star Sign</strong> (signe cosmique), une pigmentation encore plus rare :</p>
+                                <ul>
+                                    <li><strong>Taux de base</strong> : 1/1200 sur un shiny capturé dans la nature</li>
+                                    <li><strong>Taux sur œuf</strong> : 1/4000 sur un shiny éclos</li>
+                                </ul>
+                                <div style="margin-top:15px;padding:12px;background:var(--bg-card);border-radius:8px;">
+                                    <h5 style="margin:0 0 10px 0;color:var(--text-primary)">📊 Taux de Star Sign Comparatifs</h5>
+                                    <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+                                        <thead>
+                                            <tr style="border-bottom:1px solid var(--border);">
+                                                <th style="text-align:left;padding:8px;">Source du Shiny</th>
+                                                <th style="text-align:center;padding:8px;">Taux Star Sign</th>
+                                                <th style="text-align:center;padding:8px;">Pourcentage</th>
+                                                <th style="text-align:center;padding:8px;">Taux final*</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom:1px solid var(--border);">
+                                                <td style="padding:8px;">Shiny capturé (nature)</td>
+                                                <td style="text-align:center;padding:8px;">1/1200</td>
+                                                <td style="text-align:center;padding:8px;">0.083%</td>
+                                                <td style="text-align:center;padding:8px;">1/480 000</td>
+                                            </tr>
+                                            <tr style="background:rgba(255,215,0,0.1);">
+                                                <td style="padding:8px;"><strong>Shiny éclos (œuf)</strong></td>
+                                                <td style="text-align:center;padding:8px;"><strong>1/4000</strong></td>
+                                                <td style="text-align:center;padding:8px;"><strong>0.025%</strong></td>
+                                                <td style="text-align:center;padding:8px;"><strong>1/1 600 000</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p style="margin:8px 0 0 0;font-size:0.8rem;color:var(--text-dim);">* Taux final = chance d'obtenir un Pokémon avec Star Sign (taux shiny × taux Star Sign)</p>
+                                </div>
+                                <div class="guide-warning" style="margin-top:15px;">
+                                    ⚠️ <strong>Important :</strong> Les Star Signs n'ont <strong>aucun bénéfice pratique</strong> - c'est purement cosmétique ! Ils ne peuvent pas être hérités ou mutés par génétique.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 10: Genetique -->
+                    <div class="guide-section" data-keywords="genetique genetics iv heredite sample host destiny knot">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🧬</span>
+                            <span class="guide-title">Génétique</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Vue d'Ensemble</h4>
+                                <p>La génétique permet de modifier un Pokémon au-delà de ce qui est considéré comme normal pour l'espèce :</p>
+                                <ul>
+                                    <li><strong>Mutation Shiny</strong> - Hériter la mutation shiny avec 100% de chances aux membres de la même famille. Ou tenter de propager une nouvelle mutation avec un échantillon shiny.</li>
+                                    <li><strong>Boost d'IVs</strong> - Toute opération tente d'augmenter les IVs de l'hôte.</li>
+                                    <li><strong>Héritage d'IVs</strong> - Hériter des IVs d'une espèce à une autre selon la compatibilité.</li>
+                                    <li><strong>Réapprentissage</strong> - Toutes les attaques sauf les 4 sélectionnées sont réinitialisées.</li>
+                                    <li><strong>Héritage d'Attaques</strong> - Hériter des attaques de l'échantillon.</li>
+                                    <li><strong>Héritage de Talent</strong> - Avec un Nœud du Destin (Destiny Knot), échanger les talents avec l'échantillon.</li>
+                                </ul>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Compatibilité</h4>
+                                <p>La compatibilité détermine à quel point l'échantillon ressemble à l'hôte :</p>
+                                <ul>
+                                    <li>Partager un type = <strong>+1 niveau</strong> de compatibilité</li>
+                                    <li>Partager deux types = <strong>+2 niveaux</strong> de compatibilité</li>
+                                    <li>Même ligne évolutive = <strong>compatibilité maximale</strong></li>
+                                </ul>
+                                <p style="margin-top:15px;font-size:0.9rem;">Testez le calculateur de génétique : <a href="#tab=genetics" onclick="switchTab('genetics');setTimeout(()=>{document.getElementById('genetics-host-select').value='pikachu';document.getElementById('genetics-sample-select').value='pichu';document.getElementById('genetics-shiny-sample').checked=true;calculateGenetics();},200);return false" class="guide-link">Pré-rempli Pikachu × Pichu (Shiny)</a></p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Coût en Puissance</h4>
+                                <p>Le coût en puissance détermine à quel point il est difficile de modifier l'hôte. Cela influence le temps pour compléter l'opération.</p>
+                                <p>Une division plus élevée augmente exponentiellement le temps requis.</p>
+                                <div class="guide-tip">
+                                    💡 <strong>Racine Énergie</strong> - Utilisez cet objet (achetable au <a href="#tab=shop" onclick="switchTab('shop');return false" class="guide-link">shop</a>) pour accélérer une opération génétique en cours de 30 minutes.
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Objets de Génétique</h4>
+                                <p>Équipez un objet sur le Pokémon avant l'opération pour obtenir des effets spéciaux :</p>
+                                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:10px;">
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/destinyKnot.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Nœud Destin</strong> - Échange les talents avec l'échantillon</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/everstone.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Pierre Stase</strong> - Force un nouveau talent aléatoire (meilleures chances pour talents rares)</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/powerWeight.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Poids Pouvoir</strong> - Garantit l'héritage des IVs HP</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/powerBracer.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Poignée Pouvoir</strong> - Garantit l'héritage des IVs ATK</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/powerBelt.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Ceinture Pouvoir</strong> - Garantit l'héritage des IVs DEF</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/powerLens.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Lentille Pouvoir</strong> - Garantit l'héritage des IVs SPA</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/powerBand.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Ruban Pouvoir</strong> - Garantit l'héritage des IVs SPD</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/powerAnklet.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Chaîne Pouvoir</strong> - Garantit l'héritage des IVs SPE</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg-dark);border-radius:6px;">
+                                        <img src="https://raw.githubusercontent.com/play-pokechill/play-pokechill.github.io/main/img/items/machoBrace.png" style="width:24px;height:24px">
+                                        <div style="font-size:0.85rem"><strong>Bracelet Macho</strong> - Multiplie par 10 les chances d'hériter les IVs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 11: Zones -->
+                    <div class="guide-section" data-keywords="zones areas donjons dungeons rotation wild event frontier">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🗺️</span>
+                            <span class="guide-title">Les Zones & Rotations</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Types de Zones</h4>
+                                <p>Le monde de PokeChill est divisé en plusieurs types de zones, chacune avec ses particularités :</p>
+                                <ul>
+                                    <li><strong>🌿 Wild Zones</strong> - Zones sauvages standard où vous pouvez capturer des Pokémon. Différents biomes (forêt, plage, montagne, etc.) apparaissent selon les rotations.</li>
+                                    <li><strong>🏰 Dungeons</strong> - Donjons plus difficiles avec des ennemis plus forts. Les Pokémon y sont <strong>incapturables</strong>, mais les récompenses en objets sont meilleures (pierres d'évolution, gemmes, CTs).</li>
+                                    <li><strong>🎪 Event Zones</strong> - Zones spéciales à durée limitée avec des Pokémon exclusifs et des récompenses uniques. Ne sont pas toujours disponibles.</li>
+                                    <li><strong>🌌 Mega Dimension</strong> - Zone endgame extrêmement difficile avec des Mega Pokémon. Nécessite un niveau et des équipements élevés.</li>
+                                    <li><strong>🏆 Frontier Tower</strong> - Zone de combat en escalade avec des rotations spéciales et des restrictions de divisions.</li>
+                                </ul>
+                                <p>Consultez l'onglet <a href="#tab=zones" onclick="switchTab('zones');return false" class="guide-link">Zones</a> pour explorer toutes les zones disponibles et leurs détails.</p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Système de Rotation</h4>
+                                <p>Les zones actives changent automatiquement selon un calendrier fixe :</p>
+                                <ul>
+                                    <li><strong>Wild & Dungeon</strong> - Rotation toutes les <strong>12 heures</strong> (00h et 12h UTC)</li>
+                                    <li><strong>Event Zones</strong> - Rotation tous les <strong>3 jours</strong></li>
+                                    <li><strong>Frontier Tower</strong> - Rotation toutes les <strong>12 heures</strong> avec des restrictions de division différentes</li>
+                                    <li><strong>Seasonal Zones</strong> - Disponibles uniquement pendant certaines périodes de l'année (Halloween, Noël, etc.)</li>
+                                </ul>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Récompenses par Type de Zone</h4>
+                                <p>Chaque zone offre des récompenses différentes :</p>
+                                <ul>
+                                    <li><strong>Wild Zones</strong> - Pokémon capturables, objets basiques, vitamines rares</li>
+                                    <li><strong>Dungeons</strong> - Pierres d'évolution, gemmes, CTs, objets rares</li>
+                                    <li><strong>Event Zones</strong> - Pokémon exclusifs, objets événementiels, récompenses uniques</li>
+                                    <li><strong>Mega Dimension</strong> - Fragments Mega, objets endgame très rares, défis extrêmes</li>
+                                </ul>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Conseils d'Exploration</h4>
+                                <ul>
+                                    <li>Utilisez l'onglet <a href="#tab=active" onclick="switchTab('active');return false" class="guide-link">Actif</a> pour voir les zones disponibles actuellement et le temps restant avant la prochaine rotation</li>
+                                    <li>Activez les notifications pour être alerté 15 minutes avant chaque rotation</li>
+                                    <li>Certaines zones nécessitent des objets spéciaux pour être débloquées (tickets, clés)</li>
+                                    <li>Le niveau des ennemis augmente avec le niveau de votre équipe - adaptez votre stratégie !</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 12: Battle Frontier -->
+                    <div class="guide-section" data-keywords="frontier raids combat arene factory tower tier">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🏆</span>
+                            <span class="guide-title">Battle Frontier & Raids</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Battle Frontier</h4>
+                                <p>La Frontier propose des combats difficiles contre des dresseurs puissants. Les récompenses incluent des <strong>Capsules d'Or</strong> (Golden Bottle Caps) et des <strong>Pokémon exclusifs</strong> :</p>
+                                <ul>
+                                    <li><strong>🏭 Factory</strong> - Affrontez un Pokémon cible passif qui n'attaque pas (ne connaît que Trempette). Infligez un maximum de dégâts pour augmenter votre score. Récompenses tous les 200 points après 1000 points.</li>
+                                    <li><strong>🗼 Tower</strong> - Tour infinie avec difficulté croissante. Chaque étage vaincu donne +2 Capsules d'Or. Maximum 50 récompenses d'items et 100 Capsules d'Or. Ruban spécial à l'étage 30.</li>
+                                    <li><strong>⚔️ Arena</strong> - Affrontez 5 dresseurs puissants à la suite avec des effets de terrain aléatoires. Choisissez une carte de défi avant de commencer (1, 2 ou 3 effets de terrain). Reset toutes les 12 heures.</li>
+                                </ul>
+                                <div class="guide-warning">
+                                    ⚠️ <strong>Restrictions de division</strong> selon la rotation (les divisions inférieures sont toujours autorisées) :
+                                    <ul style="margin:5px 0 0 15px">
+                                        <li>Rotation 1 : Divisions <strong>C, D</strong></li>
+                                        <li>Rotation 2 : Divisions <strong>B, C, D</strong></li>
+                                        <li>Rotation 3 : Divisions <strong>A, B, C, D</strong></li>
+                                        <li>Rotation 4 (débloquée après Ultra Lusamine) : <strong>Aucune restriction (S, SS, SSS)</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>🌀 Raids T1-T4 (Mega Dimension)</h4>
+                                <p>Combats solo contre des boss ultra-puissants avec <strong>timer de 5 minutes</strong>. Nécessitent des items d'entrée (Mega-Shard/Piece/Chunk/Cluster) :</p>
+                                <ul>
+                                    <li><strong>Tier 1</strong> - 45,250 HP. Récompenses : Pokémon exclusifs, Méga-Fragments.</li>
+                                    <li><strong>Tier 2</strong> - 139,300 HP. Récompenses : Pokémon exclusifs, Méga-Pièces.</li>
+                                    <li><strong>Tier 3</strong> - 398,000 HP. Mécaniques spéciales (No Mercy, Stealth Rocks, Pledge). Récompenses : Pokémon exclusifs, Méga-Morceaux.</li>
+                                    <li><strong>Tier 4</strong> - 1,302,000 HP. Skills uniques (Omniboost, Wonder Guard). Récompenses endgame : Pokémon exclusifs, Méga-Clusters.</li>
+                                </ul>
+                                <div class="guide-tip">
+                                    💡 Boss avec <strong>effets de terrain actifs</strong>. Le timer de 5 minutes rend le DPS crucial. Farm les <strong>Dimensional Rifts</strong> pour obtenir les items d'entrée.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 13: Restaurant -->
+                    <div class="guide-section" data-keywords="restaurant cuisine curry cooking plat ingrédients misty">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🍵</span>
+                            <span class="guide-title">Le Restaurant (Cooking)</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Débloquer le Restaurant</h4>
+                                <p>Le <strong>Restaurant</strong> est disponible dans le <strong>Poké-Mart</strong> après avoir battu la <strong>Championne Misty</strong> en mode VS. C'est un endroit où vous pouvez cuisiner des plats qui donnent des bonus temporaires à votre équipe.</p>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Fonctionnement</h4>
+                                <p>Le système de cuisine permet de créer des plats avec des effets durant <strong>1 heure</strong> :</p>
+                                <ul>
+                                    <li>Sélectionnez <strong>1 à 3 ingrédients</strong> pour composer votre plat</li>
+                                    <li>Chaque ingrédient coûte des <strong>Capsules d'Or</strong> (Golden Bottle Caps)</li>
+                                    <li>Chaque ingrédient confère un <strong>talent spécifique</strong> au plat</li>
+                                    <li>Une fois cuit, votre <strong>équipe entière</strong> bénéficie des effets pendant 1h</li>
+                                </ul>
+                                <div class="guide-tip">
+                                    💡 <strong>Limité à 1 plat par rotation :</strong> Vous ne pouvez cuisiner qu'<strong>une seule fois</strong> par rotation des zones sauvages (toutes les 12h). Choisissez bien vos ingrédients !
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Liste des Ingrédients</h4>
+                                <p>Les ingrédients disponibles donnent chacun un talent spécifique :</p>
+                                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:10px;font-size:0.85rem;">
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Œuf Bouilli</strong> - Wonder Skin (10 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Pain</strong> - Big Pecks (10 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Lait de Coco</strong> - Hyper Cutter (10 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Crème Fraîche</strong> - Synchronize (10 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Os Fragiles</strong> - Natural Cure (10 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Fromage Moomoo</strong> - Unaware (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Grappes de Fruits</strong> - Magic Guard (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Nourriture Frite</strong> - Rivalry (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Champignons Mixés</strong> - Filter (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Pâtes</strong> - Flame Body (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Saucisses</strong> - Poison Point (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Pommes de Terre</strong> - Imposter (20 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Curry en Sachet</strong> - Ambidextrous (30 GB)</div>
+                                    <div style="padding:8px;background:var(--bg-dark);border-radius:6px;"><strong>Burger Précuit</strong> - Adaptability (30 GB)</div>
+                                </div>
+                            </div>
+                            <div class="guide-card">
+                                <h4>Stratégies de Cuisine</h4>
+                                <ul>
+                                    <li><strong>Stack de talents :</strong> Combinez plusieurs ingrédients pour avoir plusieurs talents actifs en même temps</li>
+                                    <li><strong>Flame Body</strong> (Pâtes) - Très utile pour augmenter les dégâts des attaques physiques</li>
+                                    <li><strong>Magic Guard</strong> (Grappes de Fruits) - Protège des dégâts indirects</li>
+                                    <li><strong>Adaptability</strong> (Burger Précuit) - Augmente considérablement le STAB</li>
+                                    <li><strong>Imposter</strong> (Pommes de Terre) - Copie les stats adverses</li>
+                                </ul>
+                                <div class="guide-warning">
+                                    ⚠️ <strong>Attention :</strong> Les effets ne durent que 1 heure réelle et s'appliquent à toute l'équipe. Pensez à recuisiner avant expiration !
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section 14: Outils Explorer -->
+                    <div class="guide-section" data-keywords="explorer outils tools calculateur team builder build damage genetics compare">
+                        <div class="guide-header" onclick="toggleGuideSection(this)">
+                            <span class="guide-icon">🛠️</span>
+                            <span class="guide-title">Outils de l'Explorer</span>
+                            <span class="guide-toggle">▼</span>
+                        </div>
+                        <div class="guide-content">
+                            <div class="guide-card">
+                                <h4>Les Outils Disponibles</h4>
+                                <ul>
+                                    <li><a href="#tab=build" onclick="switchTab('build');return false" class="guide-link">🥘 Build</a> - Créer et sauvegarder des builds</li>
+                                    <li><a href="#tab=team" onclick="switchTab('team');return false" class="guide-link">🏠 Team Builder</a> - Construire des équipes de 6</li>
+                                    <li><a href="#tab=damage" onclick="switchTab('damage');return false" class="guide-link">⚔️ Damage Calc</a> - Calculer les dégâts</li>
+                                    <li><a href="#tab=genetics" onclick="switchTab('genetics');return false" class="guide-link">🧬 Genetics</a> - Calculateur d'IVs et génétique</li>
+                                    <li><a href="#tab=compare" onclick="switchTab('compare');return false" class="guide-link">⚖️ Compare</a> - Comparer deux Pokémon</li>
+                                    <li><a href="#tab=exchange" onclick="switchTab('exchange');return false" class="guide-link">🔌 Échange</a> - Cable Link pour échanger des Pokémon (débloqué après Lusamine)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aucun resultat -->
+                    <div id="guide-no-results" style="display:none;padding:40px;text-align:center;color:var(--text-dim)">
+                        <div style="font-size:3rem;margin-bottom:10px">🔍</div>
+                        <h4>Aucun résultat trouvé</h4>
+                        <p>Essayez un autre mot-clé</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- SHOP -->
             <div id="shop-panel" class="panel">
                 <div class="search-section">
@@ -3611,7 +4367,7 @@
                 </div>
                 <p data-i18n="footer">This tool is not affiliated with PokeChill or Pokémon. All data is fetched from the official repository.</p>
                 <p style="margin-top:8px;font-size:0.8rem"><span data-i18n="madeWith">Made with ❤️ by</span> <strong>Undi</strong> <span data-i18n="forCommunity">for the PokeChill community</span></p>
-                <p style="margin-top:6px;font-size:0.7rem;opacity:0.6">Explorer v4.8 - Nature 🌿 & Neutral Mint 🍃 Update</p>
+                <p style="margin-top:6px;font-size:0.7rem;opacity:0.6">Explorer v4.9 - Tag System 🏷️ & Demerit Buff ⚔️</p>
             </footer>
         </div>
     </div>
@@ -3628,7 +4384,7 @@ const CONFIG = {
         { name: 'shop', path: 'scripts/shop.js' },
         { name: 'explore', path: 'scripts/explore.js' }
     ],
-    dbName: 'PokeChillExplorerV87', dbVersion: 87, storeName: 'gameData'
+    dbName: 'PokeChillExplorerV112', dbVersion: 112, storeName: 'gameData'
 };
 
 // Division calculation from game (explore.js)
@@ -3753,7 +4509,7 @@ let EVENT_NAMES = {
     4: 'Aether Takeover', 5: 'Science Future', 6: 'Sinnoh Expedition'
 };
 let T4_BASE = 120; // Parsed from game: const t4Base
-let DEMERIT_BP = 130; // Parsed from game: const demeritBp
+let DEMERIT_BP = 150; // Parsed from game: const demeritBp (v4.9: buffed from 130)
 let EVOLUTION_LEVELS = { 1: 30, 2: 50, 3: 70 }; // Parsed from game: const evolutionLevelN
 
 // Zone level defaults (will be overridden by parsing areasDictionary)
@@ -4800,7 +5556,63 @@ function searchText(name, rename) {
     const display = format(name, rename);
     return `${name.toLowerCase()} ${display.toLowerCase()}`;
 }
-function toggleLang() { currentLang = currentLang === 'fr' ? 'en' : 'fr'; localStorage.setItem('pokechill-lang', currentLang); document.documentElement.lang = currentLang; applyI18n(); if (typeof updateDataInfo === 'function') updateDataInfo(); }
+function toggleLang() { currentLang = currentLang === 'fr' ? 'en' : 'fr'; localStorage.setItem('pokechill-lang', currentLang); document.documentElement.lang = currentLang; applyI18n(); if (typeof updateDataInfo === 'function') updateDataInfo(); updateGuideTabVisibility(); }
+// Guide Tab Visibility (only in French)
+function updateGuideTabVisibility() {
+    const guideTab = document.getElementById('guide-tab');
+    if (guideTab) {
+        guideTab.style.display = currentLang === 'fr' ? 'inline-block' : 'none';
+    }
+}
+function initGuide() {
+    const firstSection = document.querySelector('.guide-section');
+    if (firstSection && !firstSection.classList.contains('open')) {
+        firstSection.classList.add('open');
+    }
+}
+function toggleGuideSection(header) {
+    const section = header.parentElement;
+    section.classList.toggle('open');
+    
+    // Update URL hash for sharing if opening a section
+    if (section.classList.contains('open')) {
+        const title = header.querySelector('.guide-title')?.textContent.trim().toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+            .replace(/[^a-z0-9\s]/g, '') // Remove special chars except spaces
+            .replace(/\s+/g, '-'); // Replace spaces with dashes
+        if (title) {
+            window.location.hash = `tab=guide&section=${encodeURIComponent(title)}`;
+        }
+    }
+}
+function expandAllGuide() {
+    document.querySelectorAll('.guide-section').forEach(s => s.classList.add('open'));
+}
+function collapseAllGuide() {
+    document.querySelectorAll('.guide-section').forEach(s => s.classList.remove('open'));
+}
+function searchGuide() {
+    const query = document.getElementById('guide-search')?.value.toLowerCase() || '';
+    const sections = document.querySelectorAll('.guide-section');
+    const noResults = document.getElementById('guide-no-results');
+    let hasResults = false;
+    sections.forEach(section => {
+        const keywords = section.dataset.keywords || '';
+        const title = section.querySelector('.guide-title')?.textContent.toLowerCase() || '';
+        const content = section.querySelector('.guide-content')?.textContent.toLowerCase() || '';
+        if (!query || keywords.includes(query) || title.includes(query) || content.includes(query)) {
+            section.style.display = '';
+            if (query) {
+                section.classList.add('highlighted');
+                setTimeout(() => section.classList.remove('highlighted'), 2000);
+            }
+            hasResults = true;
+        } else {
+            section.style.display = 'none';
+        }
+    });
+    if (noResults) noResults.style.display = hasResults ? 'none' : 'block';
+}
 function setTheme(theme) {
     // Remove all theme classes
     document.body.classList.remove('halloween-theme', 'mega-dimension-theme', 'game-theme');
@@ -7191,7 +8003,7 @@ async function loadData(force = false) {
         if (!force) {
             updateLoadingUI(t('checkingCache'), 10);
             try {
-                const cached = await getFromDB('parsedDataV111');
+                const cached = await getFromDB('parsedDataV112');
                 if (cached?.abilities && Object.keys(cached.abilities).length > 0) {
                     updateLoadingUI(t('loadingCache'), 50);
                     abilities = cached.abilities; moves = cached.moves; pokemons = cached.pokemons; 
@@ -7427,7 +8239,7 @@ async function loadData(force = false) {
                 }
             });
             updateLoadingUI(t('saving'), 95);
-            await saveToDB('parsedDataV111', { abilities, moves, pokemons, items, areas, trainers, shopItems, decorItems, shopDecorItems, signatureMoves: [...signatureMoves], skills, pkmnContent, areasContent, exploreContent, gameConstants: { T4_BASE, EVOLUTION_LEVELS, ROTATION_MAX, EVENT_NAMES }, TYPES, ADDABLE_TYPES: GAME_CONFIG.ADDABLE_TYPES, INGREDIENTS: GAME_CONFIG.INGREDIENTS, STAR_SIGNS: GAME_CONFIG.STAR_SIGNS, NATURES: GAME_CONFIG.NATURES, timestamp: Date.now() });
+            await saveToDB('parsedDataV112', { abilities, moves, pokemons, items, areas, trainers, shopItems, decorItems, shopDecorItems, signatureMoves: [...signatureMoves], skills, pkmnContent, areasContent, exploreContent, gameConstants: { T4_BASE, EVOLUTION_LEVELS, ROTATION_MAX, EVENT_NAMES }, TYPES, ADDABLE_TYPES: GAME_CONFIG.ADDABLE_TYPES, INGREDIENTS: GAME_CONFIG.INGREDIENTS, STAR_SIGNS: GAME_CONFIG.STAR_SIGNS, NATURES: GAME_CONFIG.NATURES, timestamp: Date.now() });
         }
         // Build droppable items map and evolution families
         updateLoadingUI(t('buildingIndexes'), 96);
@@ -7453,7 +8265,7 @@ async function loadData(force = false) {
         dataLoaded = true; updateLoadingUI(t('done'), 100);
         setTimeout(() => {
             ls.style.display = 'none'; app.classList.add('loaded');
-            applyI18n(); initDropdowns(); initSeasonDropdowns(); initAreaItems(); initEventItemDropdown(); initGeneticsDropdowns(); initDataLists(); updateDataInfo(); updateShopCategoryIcons(); initBuildBuilder(); initTeamBuilder(); initCompare(); initAccessoryTab(); renderAllDecor(); renderExchangeSecrets();
+            applyI18n(); initDropdowns(); initSeasonDropdowns(); initAreaItems(); initEventItemDropdown(); initGeneticsDropdowns(); initDataLists(); updateDataInfo(); updateShopCategoryIcons(); initBuildBuilder(); initTeamBuilder(); initCompare(); initAccessoryTab(); renderAllDecor(); renderExchangeSecrets(); initGuide(); updateGuideTabVisibility();
             // Apply URL hash parameters if present, default to active otherwise
             const hashApplied = applyURLHash();
             if (!hashApplied) {
@@ -7958,6 +8770,7 @@ function getTabFilterValues(tabName) {
             filters.type1 = document.getElementById('types-type1')?.value || '';
             filters.type2 = document.getElementById('types-type2')?.value || '';
             filters.type3 = document.getElementById('types-type3')?.value || '';
+            filters.inverted = document.getElementById('types-inverted')?.checked ? '1' : '0';
             break;
         case 'damage': {
             // Use base64 encoded data for damage calc (same as share link)
@@ -8132,42 +8945,20 @@ function getTabFilterValues(tabName) {
 
 // Switch to a specific tab
 function switchToTab(tabName) {
+    if (!tabName) return;
     const tab = document.querySelector(`.tab[data-tab="${tabName}"]`);
-    if (tab) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tabName + '-panel').classList.add('active');
-        
-        // Reset zones subtabs when leaving zones tab
-        if (tabName !== 'zones') {
-            resetZonesSubtabs();
-        }
-        
-        // Update search mode toggle UI for abilities and moves tabs
-        if (tabName === 'abilities') {
-            const abModeKey = abilitiesSearchMode === 'name' ? 'searchModeName' : 'searchModeDesc';
-            const modeText = document.getElementById('abilities-mode-text');
-            const track = document.getElementById('abilities-mode-track');
-            const searchInput = document.getElementById('ability-search');
-            const searchLabel = document.getElementById('ability-search-label');
-            if (modeText) { modeText.textContent = t(abModeKey); modeText.dataset.i18n = abModeKey; }
-            if (track) track.classList.toggle('right', abilitiesSearchMode === 'description');
-            if (searchInput) searchInput.placeholder = abilitiesSearchMode === 'name' ? 'technician...' : 'power boost...';
-            if (searchLabel) { searchLabel.textContent = t(abModeKey).toUpperCase(); searchLabel.dataset.i18n = abModeKey; }
-        }
-        if (tabName === 'moves') {
-            const mvModeKey = movesSearchMode === 'name' ? 'searchModeName' : 'searchModeDesc';
-            const modeText = document.getElementById('moves-mode-text');
-            const track = document.getElementById('moves-mode-track');
-            const searchInput = document.getElementById('move-search');
-            const searchLabel = document.getElementById('move-search-label');
-            if (modeText) { modeText.textContent = t(mvModeKey); modeText.dataset.i18n = mvModeKey; }
-            if (track) track.classList.toggle('right', movesSearchMode === 'description');
-            if (searchInput) searchInput.placeholder = movesSearchMode === 'name' ? 'earthquake...' : 'power boost...';
-            if (searchLabel) { searchLabel.textContent = t(mvModeKey).toUpperCase(); searchLabel.dataset.i18n = mvModeKey; }
-        }
-    }
+    // Always switch panel even if tab button is hidden (e.g., guide in English)
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    if (tab) tab.classList.add('active');
+    const panel = document.getElementById(tabName + '-panel');
+    if (panel) panel.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Alias for backward compatibility (guide links use switchTab)
+function switchTab(tabName) {
+    return switchToTab(tabName);
 }
 
 // Reset zones subtabs to default state (hide all content, reset active button)
@@ -8363,7 +9154,7 @@ function applyURLHash() {
                 if (params.has('search')) document.getElementById('shop-search').value = decodeURIComponent(params.get('search'));
                 if (params.has('currency')) document.getElementById('shop-currency').value = decodeURIComponent(params.get('currency'));
                 if (params.has('category')) {
-                    filterShopCategory(decodeURIComponent(params.get('category')));
+                    setTimeout(() => filterShopCategory(decodeURIComponent(params.get('category'))), 50);
                 } else {
                     // Show empty state with category selection message
                     currentShopCategory = '';
@@ -8381,6 +9172,7 @@ function applyURLHash() {
                 if (params.has('type1')) document.getElementById('types-type1').value = decodeURIComponent(params.get('type1'));
                 if (params.has('type2')) document.getElementById('types-type2').value = decodeURIComponent(params.get('type2'));
                 if (params.has('type3')) document.getElementById('types-type3').value = decodeURIComponent(params.get('type3'));
+                if (params.has('inverted')) document.getElementById('types-inverted').checked = params.get('inverted') === '1';
                 if (params.has('mode3')) toggle3TypesMode();
                 renderTypeChart();
                 break;
@@ -8566,6 +9358,34 @@ function applyURLHash() {
                 initDamageCalc();
                 // Load parameters from URL
                 setTimeout(() => loadDamageCalcFromURL(), 200);
+                break;
+            case 'guide':
+                // Open specific guide section if specified
+                if (params.has('section')) {
+                    const sectionSlug = decodeURIComponent(params.get('section')).toLowerCase();
+                    setTimeout(() => {
+                        // Close all sections first
+                        document.querySelectorAll('.guide-section').forEach(s => s.classList.remove('open'));
+                        // Find and open the matching section
+                        const sections = document.querySelectorAll('.guide-section');
+                        sections.forEach(section => {
+                            const titleEl = section.querySelector('.guide-title');
+                            if (!titleEl) return;
+                            // Create slug from title for comparison
+                            const titleSlug = titleEl.textContent.trim().toLowerCase()
+                                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                                .replace(/[^a-z0-9\s]/g, '')
+                                .replace(/\s+/g, '-');
+                            const keywords = section.dataset.keywords || '';
+                            if (titleSlug === sectionSlug || keywords.includes(sectionSlug.replace(/-/g, ''))) {
+                                section.classList.add('open');
+                                setTimeout(() => {
+                                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }, 100);
+                            }
+                        });
+                    }, 200);
+                }
                 break;
         }
     }, 100);
@@ -15480,7 +16300,8 @@ function renderTypeChart() {
         mode3: mode3Enabled ? '1' : '0', 
         view: viewMode, 
         highlight: highlightType,
-        type1, type2, type3 
+        type1, type2, type3,
+        inverted: isTypeChartInverted ? '1' : '0'
     });
     
     let html = '<div style="overflow-x:auto">';
@@ -21518,8 +22339,10 @@ async function exchangeCancel() {
     I18N.fr.exchangeSecretsDesc = "Les Pokémon secrets découverts en jeu ne peuvent pas être échangés. Cliquez pour voir leurs détails !";
     I18N.fr.exchangeSecretsHint = "À vous de les découvrir...";
     I18N.fr.secretClickHint = "💡 Cliquez sur un Pokémon pour voir ses détails";
+    I18N.fr.tabGuide = "Guide";
     
     // EN
+    I18N.en.tabGuide = "Guide";
     I18N.en.tabExchange = "Trade";
     I18N.en.exchangeSubtitle = "Trade your Pokémon live with another trainer";
     I18N.en.exchangeCreate = "Create Trade";
