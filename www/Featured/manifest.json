@@ -1,4 +1,4 @@
-﻿{
+{
     "teams":  [
                   {
                       "description":  "Basic stamina team",
@@ -746,6 +746,7 @@
                       "version":  1,
                       "name":  "team-team speed farm v3.2 - (team lategame).json",
                       "author":  "Kridx",
+                      "_isMemberSubmitted":  true,
                       "file":  "Featured/Kridx/team-team_speed_farm_v3.2_-_(team_lategame).json"
                   },
                   {
@@ -3938,6 +3939,7 @@
                                    }
                                ],
                       "author":  "Undi",
+                      "_isMemberSubmitted":  true,
                       "name":  "team-pikachu!.json",
                       "slots":  [
                                     {
@@ -4227,6 +4229,7 @@
                                    }
                                ],
                       "author":  "Undi",
+                      "_isMemberSubmitted":  true,
                       "name":  "team-speed v2.json",
                       "slots":  [
                                     {
@@ -7700,7 +7703,7 @@
                       "file":  "Featured/Zenith/member_Zenith_Trick_Room_Ground_Blitz_-_G_Pika_Farm_20260410_074356.json"
                   }
               ],
-    "generated":  "2026-04-12T15:08:48.828Z",
+    "generated":  "2026-04-12T22:32:21.690Z",
     "authors":  [
                     "Adaves",
                     "Aigris_num__ro_2",
