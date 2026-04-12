@@ -1,0 +1,283 @@
+{
+    "name": "Reverso B- Physical",
+    "author": "Undi",
+    "description": "Team played in reverse, making small division usefull with genetic. Surskit is a must to boost the team, and Breloom is obligatory for his moves (-3 Def.)",
+    "slots": [
+        {
+            "pokemon": "surskit",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "powerHerb",
+            "ability": "stoned",
+            "moves": [
+                "noRetreat",
+                "stringShot",
+                "stickyWeb",
+                "batonPass"
+            ]
+        },
+        {
+            "pokemon": "breloom",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectPack",
+            "nature": "bold",
+            "ability": "costar",
+            "moves": [
+                "stunSpore",
+                "nobleRoar",
+                "screech",
+                "thunderousKick"
+            ]
+        },
+        {
+            "pokemon": "prinplup",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceSpecs",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "hydroCannon",
+                "freezeDry",
+                "snipeShot",
+                "blizzard"
+            ]
+        },
+        {
+            "pokemon": "morpeko",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "darkGem",
+            "nature": "jolly",
+            "ability": "stoned",
+            "moves": [
+                "auraWheel",
+                "ruination",
+                "thunderCage",
+                "falseSurrender"
+            ]
+        },
+        {
+            "pokemon": "lairon",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceBand",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "noRetreat",
+                "rockWrecker",
+                "ironHead",
+                "stoneEdge"
+            ]
+        },
+        {
+            "pokemon": "honedge",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "fireGem",
+            "ability": "costar",
+            "moves": [
+                "bitterBlade",
+                "slash",
+                "smartStrike",
+                "razorShell"
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-30T16:29:41+02:00",
+    "team": [
+        {
+            "pokemon": "surskit",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "powerHerb",
+            "ability": "stoned",
+            "moves": [
+                "noRetreat",
+                "stringShot",
+                "stickyWeb",
+                "batonPass"
+            ]
+        },
+        {
+            "pokemon": "breloom",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectPack",
+            "nature": "bold",
+            "ability": "costar",
+            "moves": [
+                "stunSpore",
+                "nobleRoar",
+                "screech",
+                "thunderousKick"
+            ]
+        },
+        {
+            "pokemon": "prinplup",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceSpecs",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "hydroCannon",
+                "freezeDry",
+                "snipeShot",
+                "blizzard"
+            ]
+        },
+        {
+            "pokemon": "morpeko",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "darkGem",
+            "nature": "jolly",
+            "ability": "stoned",
+            "moves": [
+                "auraWheel",
+                "ruination",
+                "thunderCage",
+                "falseSurrender"
+            ]
+        },
+        {
+            "pokemon": "lairon",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceBand",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "noRetreat",
+                "rockWrecker",
+                "ironHead",
+                "stoneEdge"
+            ]
+        },
+        {
+            "pokemon": "honedge",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "fireGem",
+            "ability": "costar",
+            "moves": [
+                "bitterBlade",
+                "slash",
+                "smartStrike",
+                "razorShell"
+            ]
+        }
+    ]
+}

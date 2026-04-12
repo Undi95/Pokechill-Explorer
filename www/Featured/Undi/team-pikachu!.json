@@ -1,0 +1,435 @@
+{
+    "version": 1,
+    "teams": [
+        {
+            "id": "team_1773403499667",
+            "name": "Pikachu!",
+            "author": "Undi",
+            "description": "Team full PikaPower!",
+            "created": "2026-03-13T12:04:59.667Z",
+            "slots": [
+                {
+                    "pokemon": "pikachuGmax",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "electricSeed",
+                    "nature": "adamant",
+                    "ability": "climaTact",
+                    "hiddenAbilityUnlocked": true,
+                    "moves": [
+                        "agility",
+                        "voltSwitch",
+                        "ironTail",
+                        "wildCharge"
+                    ]
+                },
+                {
+                    "pokemon": "pikachuBelle",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "toxicOrb",
+                    "nature": "adamant",
+                    "ability": "magicGuard",
+                    "moves": [
+                        "swordsDance",
+                        "voltTackle",
+                        "facade",
+                        "thunderPunch"
+                    ]
+                },
+                {
+                    "pokemon": "pikachuRockstar",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "clearAmulet",
+                    "nature": "jolly",
+                    "ability": "hyperconductor",
+                    "moves": [
+                        "rototiller",
+                        "waveCrash",
+                        "overheat",
+                        "supercellSlam"
+                    ]
+                },
+                {
+                    "pokemon": "pikachuPhd",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "laggingTail",
+                    "nature": "jolly",
+                    "ability": "reckless",
+                    "moves": [
+                        "agility",
+                        "thunder",
+                        "futureSight",
+                        "wildCharge"
+                    ]
+                },
+                {
+                    "pokemon": "pikachuPopstar",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "luckyPunch",
+                    "nature": "adamant",
+                    "ability": "ironFist",
+                    "moves": [
+                        "leer",
+                        "thunderPunch",
+                        "auroraPunch",
+                        "voltTackle"
+                    ]
+                },
+                {
+                    "pokemon": "pikachuLibre",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "choiceBand",
+                    "nature": "adamant",
+                    "ability": "sheerForce",
+                    "moves": [
+                        "forcePalm",
+                        "thunderPunch",
+                        "brickBreak",
+                        "voltTackle"
+                    ]
+                }
+            ]
+        }
+    ],
+    "team": [
+        {
+            "pokemon": "pikachuGmax",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricSeed",
+            "nature": "adamant",
+            "ability": "climaTact",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "agility",
+                "voltSwitch",
+                "ironTail",
+                "wildCharge"
+            ]
+        },
+        {
+            "pokemon": "pikachuBelle",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "toxicOrb",
+            "nature": "adamant",
+            "ability": "magicGuard",
+            "moves": [
+                "swordsDance",
+                "voltTackle",
+                "facade",
+                "thunderPunch"
+            ]
+        },
+        {
+            "pokemon": "pikachuRockstar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "clearAmulet",
+            "nature": "jolly",
+            "ability": "hyperconductor",
+            "moves": [
+                "rototiller",
+                "waveCrash",
+                "overheat",
+                "supercellSlam"
+            ]
+        },
+        {
+            "pokemon": "pikachuPhd",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "laggingTail",
+            "nature": "jolly",
+            "ability": "reckless",
+            "moves": [
+                "agility",
+                "thunder",
+                "futureSight",
+                "wildCharge"
+            ]
+        },
+        {
+            "pokemon": "pikachuPopstar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "luckyPunch",
+            "nature": "adamant",
+            "ability": "ironFist",
+            "moves": [
+                "leer",
+                "thunderPunch",
+                "auroraPunch",
+                "voltTackle"
+            ]
+        },
+        {
+            "pokemon": "pikachuLibre",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceBand",
+            "nature": "adamant",
+            "ability": "sheerForce",
+            "moves": [
+                "forcePalm",
+                "thunderPunch",
+                "brickBreak",
+                "voltTackle"
+            ]
+        }
+    ],
+    "slots": [
+        {
+            "pokemon": "pikachuGmax",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricSeed",
+            "nature": "adamant",
+            "ability": "climaTact",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "agility",
+                "voltSwitch",
+                "ironTail",
+                "wildCharge"
+            ]
+        },
+        {
+            "pokemon": "pikachuBelle",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "toxicOrb",
+            "nature": "adamant",
+            "ability": "magicGuard",
+            "moves": [
+                "swordsDance",
+                "voltTackle",
+                "facade",
+                "thunderPunch"
+            ]
+        },
+        {
+            "pokemon": "pikachuRockstar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "clearAmulet",
+            "nature": "jolly",
+            "ability": "hyperconductor",
+            "moves": [
+                "rototiller",
+                "waveCrash",
+                "overheat",
+                "supercellSlam"
+            ]
+        },
+        {
+            "pokemon": "pikachuPhd",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "laggingTail",
+            "nature": "jolly",
+            "ability": "reckless",
+            "moves": [
+                "agility",
+                "thunder",
+                "futureSight",
+                "wildCharge"
+            ]
+        },
+        {
+            "pokemon": "pikachuPopstar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "luckyPunch",
+            "nature": "adamant",
+            "ability": "ironFist",
+            "moves": [
+                "leer",
+                "thunderPunch",
+                "auroraPunch",
+                "voltTackle"
+            ]
+        },
+        {
+            "pokemon": "pikachuLibre",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceBand",
+            "nature": "adamant",
+            "ability": "sheerForce",
+            "moves": [
+                "forcePalm",
+                "thunderPunch",
+                "brickBreak",
+                "voltTackle"
+            ]
+        }
+    ]
+}

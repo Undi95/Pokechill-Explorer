@@ -1,0 +1,79 @@
+{
+  "name": "Team Speedy V2",
+  "author": "Undi",
+  "description": "Remplacemment de Kartana par M.Gallame en last slot qui détruit tout avec Technician + Supreme Overlord. Possibilité de changer son item.",
+  "team": [
+    {
+      "pokemon": "megaRaichuY",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "raichutiteY",
+      "moves": [
+        "voltSwitch",
+        "agility",
+        "voltTackle",
+        "flashCannon"
+      ]
+    },
+    {
+      "pokemon": "regieleki",
+      "shiny": true,
+      "ability": "libero",
+      "item": "quickClaw",
+      "moves": [
+        "swift",
+        "bulletPunch",
+        "thunderCage",
+        "extremeSpeed"
+      ]
+    },
+    {
+      "pokemon": "tapuKoko",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "steelGem",
+      "moves": [
+        "playRough",
+        "agility",
+        "voltSwitch",
+        "smartStrike"
+      ]
+    },
+    {
+      "pokemon": "megaManectric",
+      "shiny": true,
+      "ability": "hyperconductor",
+      "item": "manectite",
+      "moves": [
+        "charge",
+        "supercellSlam",
+        "flashCannon",
+        "thunderbolt"
+      ]
+    },
+    {
+      "pokemon": "megaMetagross",
+      "shiny": true,
+      "ability": "hyperconductor",
+      "item": "metagrossite",
+      "moves": [
+        "agility",
+        "zenHeadbut",
+        "wildCharge",
+        "metalClaw"
+      ]
+    },
+    {
+      "pokemon": "megaGallade",
+      "shiny": true,
+      "ability": "technician",
+      "item": "galladite",
+      "moves": [
+        "swordsDance",
+        "machPunk",
+        "zenHeadbut",
+        "stormThrow"
+      ]
+    }
+  ]
+}

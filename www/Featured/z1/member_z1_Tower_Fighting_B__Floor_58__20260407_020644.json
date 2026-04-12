@@ -1,0 +1,141 @@
+{
+    "name": "Tower Fighting B (Floor 58)",
+    "author": "z1",
+    "description": "Automatic. A few egg moves.",
+    "slots": [
+        {
+            "pokemon": "vivillonSandstorm",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "sheerForce",
+            "item": "fightingGem",
+            "moves": [
+                "nastyPlot",
+                "earthPower",
+                "chatter",
+                "hurricane"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "togetic",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "flashFae",
+            "item": "bugGem",
+            "moves": [
+                "moonblast",
+                "hurricane",
+                "dazzlingGleam",
+                "airShlash"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "gligar",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "skillLink",
+            "item": "darkGem",
+            "moves": [
+                "rototiller",
+                "highHorsepower",
+                "earthquake",
+                "cometPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "vivillonFancy",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "faeRush",
+            "item": "fireGem",
+            "moves": [
+                "nastyPlot",
+                "hurricane",
+                "dazzlingGleam",
+                "moonblast"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "vivillonRiver",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "ghostGem",
+            "moves": [
+                "nastyPlot",
+                "snipeShot",
+                "hurricane",
+                "airShlash"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "mawile",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "skillLink",
+            "item": "flyiniumZ",
+            "moves": [
+                "swordsDance",
+                "lovelyKiss",
+                "mirrorShrapnel",
+                "playRough"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-07T02:06:44+02:00"
+}

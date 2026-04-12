@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "teams": [
+    {
+      "id": "team_1773414795955",
+      "name": "Team SPEED Farm v3.2 - (Team LateGame)",
+      "author": "Kridx & Dinoz",
+      "description": "Team qui va très vite pour farm beaucoup de silver",
+      "created": "2026-03-13T15:13:15.955Z",
+      "slots": [
+        {
+          "pokemon": "gholdengo",
+          "moves": [
+            "payDay",
+            "memento",
+            "screech",
+            "shadowBall"
+          ],
+          "ability": "pickPocket",
+          "item": "shinyCharm",
+          "shiny": true,
+          "starSign": null,
+          "nature": null,
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "pheromosa",
+          "moves": [
+            "meFirst",
+            "iceShard",
+            "accelerock",
+            "bulletPunch"
+          ],
+          "ability": "pickPocket",
+          "item": "quickClaw",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "quaquaval",
+          "moves": [
+            "agility",
+            "aquaStep",
+            "accelerock",
+            "aquaJet"
+          ],
+          "ability": "pickPocket",
+          "item": "lightClay",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "ninjask",
+          "moves": [
+            "agility",
+            "aquaJet",
+            "iceShard",
+            "accelerock"
+          ],
+          "ability": "pickPocket",
+          "item": "powerHerb",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "jumpluff",
+          "moves": [
+            "hurricane",
+            "silverWind",
+            "gust",
+            "icyWind"
+          ],
+          "ability": "pickPocket",
+          "item": "luckIncense",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        },
+        {
+          "pokemon": "noivern",
+          "moves": [
+            "echoedVoice",
+            "alluringVoice",
+            "bugBuzz",
+            "disarmingVoice"
+          ],
+          "ability": "pickPocket",
+          "item": "pureIncense",
+          "shiny": true,
+          "starSign": null,
+          "nature": "jolly",
+          "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "satk": 6,
+            "sdef": 6,
+            "spe": 6
+          }
+        }
+      ]
+    }
+  ]
+}

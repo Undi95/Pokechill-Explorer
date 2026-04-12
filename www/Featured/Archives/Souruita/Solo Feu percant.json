@@ -1,0 +1,19 @@
+{
+  "name": "Solo Feu percant",
+  "author": "Souruita",
+  "description": "Solo feu percant, immunité feu sol dragon.",
+  "team": [
+    {
+      "pokemon": "togekiss",
+      "shiny": false,
+      "ability": "flashPyro",
+      "item": "fairyFeather",
+      "moves": [
+        "nastyPlot",
+        "fairyWind",
+        "moonblast",
+        "dazzlingGleam"
+      ]
+    }
+  ]
+}

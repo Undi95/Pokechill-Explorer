@@ -1,0 +1,79 @@
+{
+  "name": "Team facto A sol",
+  "author": "bluegriffin",
+  "description": "\"pas de description dessus\" hehe",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "ambidextrous",
+      "item": "fireGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "psyduck",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "grassySeed",
+      "moves": [
+        "soak",
+        "grassyTerrain",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "miniorGreen",
+      "shiny": false,
+      "ability": "magicGuard",
+      "item": "flameOrb",
+      "moves": [
+        "solarBeam",
+        "energyBall",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "arboliva",
+      "shiny": false,
+      "ability": "reckless",
+      "item": "groundGem",
+      "moves": [
+        "frenzyPlant",
+        "solarBeam",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "exeggutor",
+      "shiny": false,
+      "ability": "skillLink",
+      "item": "grassGem",
+      "moves": [
+        "barrage",
+        "solarBeam",
+        "screech",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "leafeon",
+      "shiny": false,
+      "ability": "reckless",
+      "item": "ghostGem",
+      "moves": [
+        "gigaImpact",
+        "solarBlade",
+        "strength",
+        "uTurn"
+      ]
+    }
+  ]
+}

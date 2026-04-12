@@ -1,0 +1,53 @@
+{
+    "name": "M Lucario raid",
+    "author": "z1",
+    "description": "Ceruledge alone does 900k-1m dmg",
+    "slots": [
+        {
+            "pokemon": "ceruledge",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": null,
+            "moves": [
+                "willOWisp",
+                "bitterBlade",
+                "firePunch",
+                "fireFang"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "skeledirge",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": null,
+            "moves": [
+                "willOWisp",
+                "heatWave",
+                "flamethrower",
+                "torchSong"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-04T06:12:42+02:00"
+}

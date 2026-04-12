@@ -1,0 +1,55 @@
+{
+  "name": "Team vs Chien Pao",
+  "author": "Kridx",
+  "description": "Mushama et Rapidash pour éviter burn et poison. Klefki pose la Trick Room (si possible avec un ClimatTact ou l'item) + ajoute le type fée. Et pour finir M-Mawile le tue.",
+  "team": [
+    {
+      "pokemon": "klefki",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "terrainExtender",
+      "moves": [
+        "fairyLock",
+        "trickRoom",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "megaMawile",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "fireGem",
+      "moves": [
+        "swordsDance",
+        "fireFang",
+        "sharkJaws",
+        "ironTail"
+      ]
+    },
+    {
+      "pokemon": "musharna",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "abilityCapsule",
+      "moves": [
+        "confusion",
+        "psybeam",
+        "futureSight",
+        "calmMind"
+      ]
+    },
+    {
+      "pokemon": "galarianRapidash",
+      "shiny": false,
+      "ability": "psychicAbsorb",
+      "item": "abilityCapsule",
+      "moves": [
+        "disarmingVoice",
+        "nuzzle",
+        "drainingKiss",
+        "fairyWind"
+      ]
+    }
+  ]
+}

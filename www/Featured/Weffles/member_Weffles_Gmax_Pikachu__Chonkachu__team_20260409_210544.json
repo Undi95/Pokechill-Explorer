@@ -1,0 +1,119 @@
+{
+    "name": "Gmax Pikachu \"Chonkachu\" team",
+    "author": "Weffles",
+    "description": "Team I used to beat Gmax Pikachu. Choice band instead of Garchompite would be better if maxed and Sandy Shocks also could be replaced with another ground mon",
+    "slots": [
+        {
+            "pokemon": "hippowdon",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "smoothRock",
+            "moves": [
+                "thunderWave",
+                "memento",
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGarchomp",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "sandRush",
+            "item": "garchompite",
+            "moves": [
+                "rototiller",
+                "earthquake",
+                "scorchingSands",
+                "bulldoze"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaCamerupt",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "levitate",
+            "item": "cameruptite",
+            "moves": [
+                "trickRoom",
+                "willOWisp",
+                "earthquake",
+                "scorchingSands"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "sandyShocks",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "choiceSpecs",
+            "moves": [
+                "toxic",
+                "earthPower",
+                "earthquake",
+                "scorchingSands"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "sunflora",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "shinyCharm",
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-09T21:05:44+02:00"
+}

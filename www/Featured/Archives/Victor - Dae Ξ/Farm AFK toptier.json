@@ -1,0 +1,79 @@
+{
+  "name": "Farm AFK toptier",
+  "author": "Victor - Dae Ξ",
+  "description": "Pokemons les plus efficaces pour farm AFK (V3.8)",
+  "team": [
+    {
+      "pokemon": "wailord",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "leftovers",
+      "moves": [
+        "liquidation",
+        "muddyWater",
+        "aquaTail",
+        "surf"
+      ]
+    },
+    {
+      "pokemon": "forretress",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "luckIncense",
+      "moves": [
+        "bugBite",
+        "metalClaw",
+        "twineedle",
+        "flashCannon"
+      ]
+    },
+    {
+      "pokemon": "miltank",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "darkGem",
+      "moves": [
+        "darkPulse",
+        "playRough",
+        "pursuit",
+        "bite"
+      ]
+    },
+    {
+      "pokemon": "duraludon",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "pureIncense",
+      "moves": [
+        "ironHead",
+        "mirrorShot",
+        "flashCannon",
+        "magnetBomb"
+      ]
+    },
+    {
+      "pokemon": "regidrago",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "shinyCharm",
+      "moves": [
+        "crunch",
+        "rockTomb",
+        "fly",
+        "heatWave"
+      ]
+    },
+    {
+      "pokemon": "cresselia",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "waterGem",
+      "moves": [
+        "iceBeam",
+        "waterPulse",
+        "magicalLeaf",
+        "chillingWater"
+      ]
+    }
+  ]
+}

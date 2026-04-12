@@ -1,0 +1,79 @@
+{
+  "name": "Pikachu Gmax (aka Groskachu)",
+  "author": "Kridx",
+  "description": "Fuck les team batonpass et fuck embargo, vrai bonhomme ici",
+  "team": [
+    {
+      "pokemon": "helioptile",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "abilityCapsule",
+      "moves": [
+        "sandstorm",
+        "screech",
+        "voltSwitch",
+        "growl"
+      ]
+    },
+    {
+      "pokemon": "megaGarchomp",
+      "shiny": true,
+      "ability": "sandRush",
+      "item": "abilityCapsule",
+      "moves": [
+        "rototiller",
+        "earthquake",
+        "bulldoze",
+        "dig"
+      ]
+    },
+    {
+      "pokemon": "rhyperior",
+      "shiny": true,
+      "ability": "sandForce",
+      "item": "abilityCapsule",
+      "moves": [
+        "rototiller",
+        "bulldoze",
+        "earthquake",
+        "dig"
+      ]
+    },
+    {
+      "pokemon": "tingLu",
+      "shiny": true,
+      "ability": "ambidextrous",
+      "item": "abilityCapsule",
+      "moves": [
+        "rototiller",
+        "earthquake",
+        "bulldoze",
+        "stoneEdge"
+      ]
+    },
+    {
+      "pokemon": "sunflora",
+      "shiny": true,
+      "ability": "hydratation",
+      "item": "abilityCapsule",
+      "moves": [
+        "poisonPowder",
+        "rototiller",
+        "energyBall",
+        "seedBomb"
+      ]
+    },
+    {
+      "pokemon": "gholdengo",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "abilityCapsule",
+      "moves": [
+        "payDay",
+        "memento",
+        "metalSound",
+        "uTurn"
+      ]
+    }
+  ]
+}

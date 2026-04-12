@@ -1,0 +1,79 @@
+{
+  "name": "Factory SS - Fire Weakness (30 000+ Score)",
+  "author": "Darkaufeu",
+  "description": "Peut changer Phantump par un autre DPS Fire (Gouging Fire ou Blacephalon) si faiblesse Grass. Si facto Grass pas max avec 5 dps alors utilise Gouging Fire ou Balcephalon pour poser la Sun avec le Clima Tact et Heat Rock.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "lightClay",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "phantump",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "heatRock",
+      "moves": [
+        "forestCurse",
+        "sunnyDay",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "megaCharizardY",
+      "shiny": true,
+      "ability": "sheerForce",
+      "item": "charizarditeY",
+      "moves": [
+        "hurricane",
+        "flameBurst",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "megaCharizardX",
+      "shiny": true,
+      "ability": "ambidextrous",
+      "item": "flyingGem",
+      "moves": [
+        "brutalClaw",
+        "razorTalons",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "chiYu",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "charcoal",
+      "moves": [
+        "flamethrower",
+        "heatWave",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "megaBlaziken",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "blazikenite",
+      "moves": [
+        "blazeKick",
+        "flareBlitz",
+        "screech",
+        "uTurn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+    "name": "B-Tier Sun - Midgame",
+    "author": "Zenith",
+    "description": "No natures or external egg moves needed. See late game team for improvements.",
+    "slots": [
+        {
+            "pokemon": "volbeat",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "climaTact",
+            "item": "heatRock",
+            "moves": [
+                "tailwind",
+                "lunarDance",
+                "sunnyDay",
+                "voltSwitch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "braixen",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "psychicGem",
+            "moves": [
+                "metalSound",
+                "overheat",
+                "mysticalFire",
+                "voltSwitch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "quilava",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "charcoal",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "inferno",
+                "voltSwitch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "magmar",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "electricGem",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "armorCannon",
+                "voltSwitch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "monferno",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "ejectButton",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "flamethrower",
+                "heatWave"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "torracat",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "darkGem",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "flamethrower",
+                "voltSwitch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T06:18:30+02:00"
+}

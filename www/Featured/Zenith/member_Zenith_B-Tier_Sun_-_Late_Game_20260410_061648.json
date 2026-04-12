@@ -1,0 +1,299 @@
+{
+    "name": "B-Tier Sun - Late Game",
+    "author": "Zenith",
+    "description": "Requires white apricots for Costar and Pyrolate, as well as the upgrade to unlock egg moves. ~30% stronger than the mid-game version.",
+    "slots": [
+        {
+            "pokemon": "emolga",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "heatRock",
+            "nature": "jolly",
+            "ability": "climaTact",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "tailwind",
+                "lunarDance",
+                "magmaStorm",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "braixen",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "fairyGem",
+            "nature": "jolly",
+            "ability": "solarPower",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "inferno",
+                "mysticalFire",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "scovillain",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricGem",
+            "nature": "modest",
+            "ability": "costar",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "inferno",
+                "mysticalFire",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "magmar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "flameOrb",
+            "nature": "modest",
+            "ability": "solarPower",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "weatherBall",
+                "mindBlown",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "monferno",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "modest",
+            "ability": "solarPower",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "flameBurst",
+                "fieryDance",
+                "flamethrower"
+            ]
+        },
+        {
+            "pokemon": "furret",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "fireGem",
+            "nature": "modest",
+            "ability": "pyrolate",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "eggBomb",
+                "hyperBeam",
+                "voltSwitch"
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T06:16:48+02:00",
+    "team": [
+        {
+            "pokemon": "emolga",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "heatRock",
+            "nature": "jolly",
+            "ability": "climaTact",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "tailwind",
+                "lunarDance",
+                "magmaStorm",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "braixen",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "fairyGem",
+            "nature": "jolly",
+            "ability": "solarPower",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "inferno",
+                "mysticalFire",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "scovillain",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricGem",
+            "nature": "modest",
+            "ability": "costar",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "inferno",
+                "mysticalFire",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "magmar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "flameOrb",
+            "nature": "modest",
+            "ability": "solarPower",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "weatherBall",
+                "mindBlown",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "monferno",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "modest",
+            "ability": "solarPower",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "flameBurst",
+                "fieryDance",
+                "flamethrower"
+            ]
+        },
+        {
+            "pokemon": "furret",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "fireGem",
+            "nature": "modest",
+            "ability": "pyrolate",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "metalSound",
+                "eggBomb",
+                "hyperBeam",
+                "voltSwitch"
+            ]
+        }
+    ]
+}

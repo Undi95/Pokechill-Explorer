@@ -1,0 +1,119 @@
+{
+    "name": "team tower dragon C",
+    "author": "personne",
+    "description": "Tinkatink\/Spritzee resiste au dragon, faire un switch sur Spritzee et revenir sur Tinkatink lors du Applin, Bronzor sol, 2 poke glace changeable pour finir les dernier poke apr\u00e8s que Tinkatink et Spritzee soient KO.",
+    "slots": [
+        {
+            "pokemon": "tinkatink",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "dragonGuard",
+            "item": "grassGem",
+            "moves": [
+                "swordsDance",
+                "spiritBreak",
+                "auroraPunch",
+                "playRough"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "spritzee",
+            "shiny": false,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "dragonGuard",
+            "item": "assaultVest",
+            "moves": [
+                "moonblast",
+                "alluringVoice",
+                "fairyWind",
+                "dazzlingGleam"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "bronzor",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "fairyGem",
+            "moves": [
+                "toxic",
+                "echoedVoice",
+                "drainingKiss",
+                "alluringVoice"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "snoruntEvent",
+            "shiny": false,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "adaptability",
+            "item": "flyingGem",
+            "moves": [
+                "blizzard",
+                "iceBeam",
+                "accelerock",
+                "accelerock"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "smoochum",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "iceGem",
+            "moves": [
+                "blizzard",
+                "iceBeam",
+                "accelerock",
+                "accelerock"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T23:00:39+01:00"
+}

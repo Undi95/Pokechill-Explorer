@@ -1,0 +1,43 @@
+{
+  "name": "Team vs Chi Yu",
+  "author": "Kridx",
+  "description": "Pour le TrickRoom si possible avoir ClimatTact + Terrain Extender, si vous pouvez pas avoir le TerrainExtender rajouté M.Garchomp.",
+  "team": [
+    {
+      "pokemon": "klefki",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "terrainExtender",
+      "moves": [
+        "trickRoom",
+        "screech",
+        "uTurn",
+        "fairyLock"
+      ]
+    },
+    {
+      "pokemon": "tingLu",
+      "shiny": true,
+      "ability": "ambidextrous",
+      "item": "rockGem",
+      "moves": [
+        "rototiller",
+        "earthquake",
+        "bulldoze",
+        "stoneEdge"
+      ]
+    },
+    {
+      "pokemon": "galarianRapidash",
+      "shiny": false,
+      "ability": "psychicAbsorb",
+      "item": "abilityCapsule",
+      "moves": [
+        "disarmingVoice",
+        "nuzzle",
+        "drainingKiss",
+        "fairyWind"
+      ]
+    }
+  ]
+}

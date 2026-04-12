@@ -1,0 +1,79 @@
+{
+  "name": "Factory A - Faiblesses Dragon+Fairy (27581 score)",
+  "author": "Kridx",
+  "description": "Team pour factory A;Pas de description donnée.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "mistySeed",
+      "moves": [
+        "rototiller",
+        "batonPass",
+        "mistyTerrain",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "haxorus",
+      "shiny": false,
+      "ability": "draconic",
+      "item": "dragonGem",
+      "moves": [
+        "screech",
+        "dragonClaw",
+        "dualChop",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "mawile",
+      "shiny": true,
+      "ability": "flareAbsorb",
+      "item": "bugGem",
+      "moves": [
+        "screech",
+        "playRough",
+        "spiritBreak",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "azumarill",
+      "shiny": true,
+      "ability": "strangeCharm",
+      "item": "darkGem",
+      "moves": [
+        "screech",
+        "playRough",
+        "spiritBreak",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "sylveon",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "electricGem",
+      "moves": [
+        "metalSound",
+        "moonblast",
+        "dazzlingGleam",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "tinkaton",
+      "shiny": true,
+      "ability": "immunity",
+      "item": "fairyGem",
+      "moves": [
+        "screech",
+        "playRough",
+        "spiritBreak",
+        "uTurn"
+      ]
+    }
+  ]
+}

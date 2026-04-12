@@ -1,0 +1,285 @@
+{
+    "name": "A-Tier Sand - Mid-Game",
+    "author": "Zenith",
+    "description": "DON'T use Sheer Force on Rampardos; you'll break uTurn.\nWorks for both rock and ground moves. Ideally everyone will have all 4 of RockTomb\/Bulldoze + StoneEdge\/Earthquake and swap as needed. \nTeam-members chosen for stats and useful signature\/egg moves. \nNo natures or outside egg moves needed.\nEject button on Stoned Golem allows for an extra full strength attack + pivot.",
+    "slots": [
+        {
+            "pokemon": "houndoom",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "smoothRock",
+            "ability": "climaTact",
+            "moves": [
+                "tailwind",
+                "howl",
+                "sandstorm",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "rhydon",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "bugGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "rockTomb",
+                "rockWrecker",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "rhyperior",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "bulldoze",
+                "rockWrecker",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "mamoswine",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "rockGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "rockTomb",
+                "highHorsepower",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "golem",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "rockTomb",
+                "earthquake",
+                "rockWrecker"
+            ]
+        },
+        {
+            "pokemon": "rampardos",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "groundGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "bulldoze",
+                "stoneEdge",
+                "uTurn"
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-09T23:38:41+02:00",
+    "team": [
+        {
+            "pokemon": "houndoom",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "smoothRock",
+            "ability": "climaTact",
+            "moves": [
+                "tailwind",
+                "howl",
+                "sandstorm",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "rhydon",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "bugGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "rockTomb",
+                "rockWrecker",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "rhyperior",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "bulldoze",
+                "rockWrecker",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "mamoswine",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "rockGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "rockTomb",
+                "highHorsepower",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "golem",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "rockTomb",
+                "earthquake",
+                "rockWrecker"
+            ]
+        },
+        {
+            "pokemon": "rampardos",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "groundGem",
+            "ability": "sandForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "screech",
+                "bulldoze",
+                "stoneEdge",
+                "uTurn"
+            ]
+        }
+    ]
+}

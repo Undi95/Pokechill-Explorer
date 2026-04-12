@@ -1,0 +1,141 @@
+{
+    "name": "Team Fog v2",
+    "author": "Undi",
+    "description": "Team fog V2, avec nature, ajout de Palkia pour de gros dommage et retrait de Dragapult.\nTeam plus rapide aussi. Switch possible sur le poseur meteo si vous ne lui mettez pas Memento.",
+    "slots": [
+        {
+            "pokemon": "gourgeist",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "somberField",
+            "item": "foggySeed",
+            "moves": [
+                "trickOrTreat",
+                "toxic",
+                "ominousWind",
+                "shadowSneak"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 5,
+                "def": 5,
+                "satk": 5,
+                "sdef": 1,
+                "spe": 5
+            }
+        },
+        {
+            "pokemon": "thundurusTherian",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "intangible",
+            "item": "darkGem",
+            "moves": [
+                "nightDaze",
+                "shadowBall",
+                "nightSlash",
+                "shadowPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGengar",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "intangible",
+            "item": "choiceSpecs",
+            "moves": [
+                "sludgeBomb",
+                "shadowBall",
+                "sludge",
+                "hex"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaRaichuX",
+            "shiny": true,
+            "starSign": "pluto",
+            "nature": "jolly",
+            "ability": "magicGuard",
+            "item": "toxicOrb",
+            "moves": [
+                "thunderPunch",
+                "shadowPunch",
+                "voltTackle",
+                "phantomForce"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "marshadow",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "ironFist",
+            "item": "choiceBand",
+            "moves": [
+                "powerupPunch",
+                "shadowPunch",
+                "forcePalm",
+                "spectralThief"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "palkia",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "magicGuard",
+            "item": "lifeOrb",
+            "moves": [
+                "dragonDance",
+                "shadowPunch",
+                "aquaTail",
+                "shadowClaw"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T16:19:27+01:00"
+}

@@ -1,0 +1,141 @@
+{
+    "name": "facto faiblesse sol ultime",
+    "author": "personne",
+    "description": "team facto late game qui win n'importe qu'elle poke faible au type sol de n'importe quel rang",
+    "slots": [
+        {
+            "pokemon": "larvitar",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "climaTact",
+            "item": "smoothRock",
+            "moves": [
+                "tailwind",
+                "howl",
+                "electrify",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "palpitoad",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "sandForce",
+            "item": "ghostGem",
+            "moves": [
+                "screech",
+                "gigaImpact",
+                "earthquake",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "sandshrew",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "sandForce",
+            "item": "darkGem",
+            "moves": [
+                "screech",
+                "earthquake",
+                "boneRush",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "cubone",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "sandForce",
+            "item": "bugGem",
+            "moves": [
+                "screech",
+                "highHorsepower",
+                "boneRush",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "drilbur",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "terralate",
+            "item": "ejectButton",
+            "moves": [
+                "screech",
+                "hyperDrill",
+                "beakBlast",
+                "gigaImpact"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "unownH",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "sandForce",
+            "item": "groundGem",
+            "moves": [
+                "screech",
+                "headlongRush",
+                "boneRush",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-29T20:11:21+02:00"
+}

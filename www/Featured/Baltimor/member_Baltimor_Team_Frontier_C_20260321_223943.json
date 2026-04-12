@@ -1,0 +1,141 @@
+{
+    "name": "Team Frontier C",
+    "author": "Baltimor",
+    "description": "Une team feu manuelle bas\u00e9 sur une team factory de Kridx qui fonctionne plut\u00f4t bien en frontier. Je pose le climat et le buff sur la team puis j'alterne les pok\u00e9mons tant qu'ils ont du buff.",
+    "slots": [
+        {
+            "pokemon": "houndour",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "magmaArmor",
+            "item": "heatRock",
+            "moves": [
+                "howl",
+                "sunnyDay",
+                "fireBlast",
+                "flamethrower"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "darumaka",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "moxie",
+            "item": "fireGem",
+            "moves": [
+                "screech",
+                "blazeKick",
+                "flareBlitz",
+                "firePunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "lampent",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "limber",
+            "item": "psychicGem",
+            "moves": [
+                "screech",
+                "flareBlitz",
+                "phantomForce",
+                "firePunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "larvesta",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "magmaArmor",
+            "item": "ghostGem",
+            "moves": [
+                "screech",
+                "firePunch",
+                "firstImpression",
+                "flareBlitz"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 2,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 2
+            }
+        },
+        {
+            "pokemon": "machop",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "naturalCure",
+            "item": "groundGem",
+            "moves": [
+                "playNice",
+                "powerupPunch",
+                "lowSweep",
+                "forcePalm"
+            ],
+            "ivs": {
+                "hp": 4,
+                "atk": 5,
+                "def": 4,
+                "satk": 5,
+                "sdef": 4,
+                "spe": 4
+            }
+        },
+        {
+            "pokemon": "magby",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "brittleArmor",
+            "item": "flameOrb",
+            "moves": [
+                "nastyPlot",
+                "flamethrower",
+                "fireBlast",
+                "incinerate"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T22:39:43+01:00"
+}

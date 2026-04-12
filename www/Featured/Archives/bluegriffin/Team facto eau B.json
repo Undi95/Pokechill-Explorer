@@ -1,0 +1,79 @@
+{
+  "name": "Team facto eau B",
+  "author": "bluegriffin",
+  "description": "Possiblité de changer meawile pour breloom.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "ambidextrous",
+      "item": "fireGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "wooper",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "grassySeed",
+      "moves": [
+        "mudSport",
+        "grassyTerrain",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "miniorGreen",
+      "shiny": false,
+      "ability": "magicGuard",
+      "item": "flameOrb",
+      "moves": [
+        "solarBeam",
+        "energyBall",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "dolliv",
+      "shiny": true,
+      "ability": "reckless",
+      "item": "electricGem",
+      "moves": [
+        "frenzyPlant",
+        "solarBeam",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "ivysaur",
+      "shiny": false,
+      "ability": "reckless",
+      "item": "flyingGem",
+      "moves": [
+        "frenzyPlant",
+        "solarBeam",
+        "screech",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "mawile",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "grassGem",
+      "moves": [
+        "solarBlade",
+        "seedBomb",
+        "leafBlade",
+        "voltSwitch"
+      ]
+    }
+  ]
+}

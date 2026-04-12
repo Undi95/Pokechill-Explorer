@@ -1,0 +1,904 @@
+/* ============================================
+   POKECHILL EXPLORER - MOBILE OPTIMIZATION
+   Version complète - Toutes sections
+   ============================================ */
+
+/* ===== VARIABLES MOBILE ===== */
+:root {
+    --mobile-padding: 12px;
+    --mobile-gap: 10px;
+    --mobile-radius: 12px;
+    --touch-min-height: 44px;
+}
+
+/* ===== BASE MOBILE ===== */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    .container {
+        padding: var(--mobile-padding);
+    }
+    
+    /* Amélioration du scroll */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ===== HEADER & NAVIGATION MOBILE ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 10px var(--mobile-padding);
+        flex-direction: column;
+        gap: 12px;
+        /* Pas de position sticky sur mobile pour gagner de la place */
+        position: relative;
+    }
+    
+    header h1 {
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    /* Navigation par onglets */
+    .tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 6px;
+        padding: 5px 20px 5px 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        justify-content: flex-start;
+        width: 100%;
+        position: relative;
+        /* Indicateur visuel de scroll - ombre à droite */
+        background: linear-gradient(to right, transparent 85%, rgba(0,212,255,0.3) 100%);
+        -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+        mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    }
+    
+    /* Indicateur de scroll pour les tabs - texte simple centré */
+    .tabs-container {
+        position: relative;
+        padding-bottom: 14px;
+    }
+    
+    /* Message "<- Glisser ->" sous les tabs - centré */
+    .tabs-container::after {
+        content: '← ' attr(data-swipe-text) ' →';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        font-size: 0.6rem;
+        color: var(--text-dim);
+        opacity: 0.6;
+        pointer-events: none;
+        white-space: nowrap;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Boutons du header encore plus petits sur mobile */
+    header .btn, header button, header .header-btn {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+    
+    /* Boutons "Jouer à PokeChill" et "Succès" encore plus compacts */
+    header a.btn, header .btn-large {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /* Rangée des boutons principaux (Jouer + Succès) */
+    header > div[style*="justify-content:center"] {
+        flex-wrap: wrap;
+        gap: 8px !important;
+    }
+    
+    header .header-btn {
+        font-size: 0.8rem !important;
+        padding: 10px 16px !important;
+        letter-spacing: 0.3px !important;
+    }
+    
+    /* Cacher les textes longs sur mobile, garder les icônes */
+    header .btn span.hide-mobile,
+    header button span.hide-mobile {
+        display: none;
+    }
+    
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tab {
+        flex: 0 0 auto;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-radius: 16px;
+        white-space: nowrap;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    /* Garder le texte visible avec l'icône */
+    .tab span {
+        display: inline !important;
+        font-size: 0.7rem;
+    }
+    
+    .tab.active {
+        background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+        box-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.1rem;
+    }
+    
+    /* Header encore plus compact sur très petits écrans */
+    header {
+        padding: 6px 10px;
+        gap: 6px;
+    }
+    
+    /* Rangée des boutons principaux (Jouer + Succès) sur petits écrans */
+    header > div[style*="justify-content:center"] {
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    /* Boutons du header minimisés */
+    header .btn, header button {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+    
+    /* Boutons principaux "Jouer" et "Succès" réduits */
+    header a.btn, header .btn-large, header .header-btn {
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+        min-height: 32px;
+    }
+    
+    /* Cacher le texte long des boutons principaux sur mobile */
+    header .header-btn span {
+        display: none;
+    }
+    
+    /* Grille des boutons header plus compacte */
+    header > div {
+        gap: 6px !important;
+    }
+    
+    /* Rangée de boutons du haut (langue, méga dim, etc.) */
+    header .flex-row, header [style*="flex-wrap:wrap"],
+    header > div:first-of-type {
+        flex-wrap: wrap !important;
+        justify-content: center;
+    }
+    
+    /* Réduire les emojis dans les boutons */
+    header .btn .emoji, header button .emoji {
+        font-size: 1rem;
+    }
+    
+    .tab {
+        padding: 5px 8px;
+        font-size: 0.7rem;
+        min-height: 32px;
+    }
+    
+    /* Garder le texte visible même sur petits écrans */
+    .tab span {
+        display: inline !important;
+        font-size: 0.65rem;
+    }
+    
+    .tab::before {
+        font-size: 1rem;
+    }
+}
+
+/* ===== SECTIONS & PANELS MOBILE ===== */
+@media (max-width: 768px) {
+    .panel {
+        padding: var(--mobile-padding);
+        border-radius: var(--mobile-radius);
+    }
+    
+    .search-section {
+        padding: 15px;
+        border-radius: var(--mobile-radius);
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== FORMULAIRES & INPUTS MOBILE ===== */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important; /* Prevent zoom iOS */
+        min-height: var(--touch-min-height);
+        padding: 10px 14px;
+    }
+    
+    .search-row {
+        flex-direction: column;
+        gap: var(--mobile-gap);
+    }
+    
+    .search-group {
+        min-width: 100% !important;
+    }
+    
+    .btn {
+        min-height: var(--touch-min-height);
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-small {
+        padding: 8px 14px;
+        min-height: 36px;
+    }
+}
+
+/* ===== GRILLES POKÉMON MOBILE ===== */
+@media (max-width: 768px) {
+    .pkmn-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+    }
+    
+    .pkmn-card {
+        border-radius: 12px;
+        padding: 10px;
+    }
+    
+    .pkmn-card img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .pkmn-card .name {
+        font-size: 0.75rem;
+    }
+    
+    .pkmn-card .types {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pkmn-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+    }
+    
+    .pkmn-card img {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* ===== TEAM BUILDER MOBILE ===== */
+@media (max-width: 768px) {
+    .team-builder {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+    }
+    
+    .team-slot {
+        min-height: 100px;
+        padding: 10px;
+    }
+    
+    .team-slot img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-builder {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .team-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .team-actions button {
+        width: 100%;
+    }
+}
+
+/* ===== RÉSULTATS & TABLEAUX MOBILE ===== */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    table {
+        font-size: 0.85rem;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+    
+    /* Tableaux scrollables horizontalement */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ===== MODALS MOBILE ===== */
+@media (max-width: 768px) {
+    .modal {
+        margin: 10px;
+        max-height: 95vh;
+        border-radius: 16px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 20px);
+        max-width: 500px;
+    }
+    
+    .modal > div {
+        max-height: 95vh;
+        border-radius: 16px;
+        overflow-y: auto;
+    }
+    
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+}
+
+/* ===== COMPARATEUR MOBILE ===== */
+@media (max-width: 768px) {
+    .compare-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .compare-column {
+        padding: 15px;
+    }
+}
+
+/* ===== CALCULATRICE DÉGÂTS MOBILE ===== */
+@media (max-width: 768px) {
+    #damage-panel .search-section > div {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .dmg-mode-selector {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .dmg-mode-btn {
+        flex: 1;
+        min-width: 100px;
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .dmg-result-panel {
+        font-size: 1.5rem;
+    }
+    
+    .dmg-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ===== EXCHANGE / CABLE LINK MOBILE ===== */
+@media (max-width: 768px) {
+    .exchange-pokemon-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .exchange-preview {
+        flex-direction: column;
+    }
+    
+    .exchange-preview-connector {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .exchange-code-input {
+        font-size: 1.5rem !important;
+        letter-spacing: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .exchange-pokemon-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ===== FRONTIER / ARENA MOBILE ===== */
+@media (max-width: 768px) {
+    .arena-card {
+        padding: 15px;
+    }
+    
+    .arena-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ===== ACCESSOIRE / DECOR MOBILE ===== */
+@media (max-width: 768px) {
+    .decor-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .decor-item img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .decor-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ===== GUIDE MOBILE ===== */
+@media (max-width: 768px) {
+    .guide-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .guide-card {
+        padding: 15px;
+    }
+    
+    .guide-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ===== BOUTIQUE / SHOP MOBILE ===== */
+@media (max-width: 768px) {
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .shop-item img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* ===== TYPES CHART MOBILE ===== */
+@media (max-width: 768px) {
+    .type-chart-container {
+        overflow-x: auto;
+    }
+    
+    .type-chart {
+        min-width: 600px;
+    }
+}
+
+/* ===== ANIMATIONS & TRANSITIONS MOBILE ===== */
+@media (max-width: 768px) {
+    /* Animations conservées à leur vitesse normale sur mobile */
+    /* Pas de modification de durée pour uniformiser avec desktop */
+    
+    /* Mais garder les animations importantes */
+    .float {
+        animation: float 3s ease-in-out infinite !important;
+    }
+    
+    .pulse {
+        animation: pulse 2s ease-in-out infinite !important;
+    }
+}
+
+/* ===== UTILITAIRES MOBILE ===== */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+    
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    .full-width-mobile {
+        width: 100% !important;
+    }
+    
+    .flex-column-mobile {
+        flex-direction: column !important;
+    }
+}
+
+/* ===== IPHONE NOTCH & SAFE AREA ===== */
+@supports (padding-top: env(safe-area-inset-top)) {
+    @media (max-width: 768px) {
+        /* Header non sticky, pas besoin de safe-area spéciale */
+        
+        .modal {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    }
+}
+
+/* ===== DARK MODE MOBILE OPTIMISATIONS ===== */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    /* Assurer que le fond est bien sombre sur mobile */
+    body {
+        background-color: var(--bg-dark);
+    }
+}
+
+/* ===== ORIENTATION LANDSCAPE MOBILE ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .pkmn-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    
+    .team-builder {
+        grid-template-columns: repeat(6, 1fr) !important;
+    }
+    
+    /* Réduire la hauteur des modals en landscape */
+    .modal {
+        max-height: 90vh;
+        margin: 5vh auto;
+        border-radius: 16px;
+    }
+}
+
+/* ===== TABLETS (ENTRE MOBILE ET DESKTOP) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .pkmn-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    
+    .team-builder {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+}
+
+/* ===== LOADING & SKELETON MOBILE ===== */
+@media (max-width: 768px) {
+    .skeleton {
+        border-radius: 8px;
+    }
+    
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ===== TOOLTIPS & POPOVERS MOBILE ===== */
+@media (max-width: 768px) {
+    /* Désactiver les tooltips hover sur mobile */
+    [data-tooltip]:hover::before,
+    [data-tooltip]:hover::after {
+        display: none;
+    }
+    
+    /* Activer au toucher */
+    [data-tooltip]:active::before,
+    [data-tooltip]:active::after {
+        display: block;
+        position: fixed;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+}
+
+
+/* ===== SAVEZONE MODAL POKÉMON MOBILE ===== */
+@media (max-width: 768px) {
+    /* Modal Pokémon - Stats rows en grille 3 colonnes */
+    #pokemon-detail-modal .stats-row,
+    #pokemon-detail-modal [style*="display:flex"][style*="justify-content:space-between"] {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+        overflow-x: visible !important;
+    }
+    
+    #pokemon-detail-modal .stats-row > div,
+    #pokemon-detail-modal [style*="flex:1"] {
+        min-width: auto !important;
+        padding: 8px 4px !important;
+    }
+    
+    #pokemon-detail-modal .stats-row > div > div:first-child {
+        font-size: 0.6rem !important;
+    }
+    
+    #pokemon-detail-modal .stats-row > div > div:nth-child(2) {
+        font-size: 0.9rem !important;
+    }
+    
+    /* IVs stars - scale down */
+    #pokemon-detail-modal [style*="color:var(--accent-red)"],
+    #pokemon-detail-modal [style*="letter-spacing:-1px"] {
+        font-size: 0.75rem !important;
+        letter-spacing: -2px !important;
+    }
+    
+    /* Modal content padding réduit */
+    #pokemon-detail-modal > div > div {
+        padding: 15px !important;
+    }
+    
+    /* Header du modal plus compact */
+    #pokemon-detail-modal h2 {
+        font-size: 1.3rem !important;
+        margin: 5px 0 !important;
+    }
+    
+    /* Badges (Shiny, Level) plus compacts */
+    #pokemon-detail-modal [style*="border-radius:20px"] {
+        padding: 3px 10px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* Grid des talents (Ability + HA) en colonne */
+    #pokemon-detail-modal [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Stats en 2 colonnes sur très petits écrans */
+    #pokemon-detail-modal .stats-row,
+    #pokemon-detail-modal [style*="display:flex"][style*="justify-content:space-between"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* IVs stars encore plus petits */
+    #pokemon-detail-modal [style*="color:var(--accent-red)"],
+    #pokemon-detail-modal [style*="letter-spacing:-1px"] {
+        font-size: 0.7rem !important;
+    }
+}
+
+
+/* ===== COMPREHENSIVE MOBILE FIXES - ADDED 2026-04-09 ===== */
+
+/* Large tablets and small laptops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 12px;
+        max-width: 100%;
+    }
+    
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dream-team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Modern large phones (iPhone Pro Max) */
+@media (max-width: 430px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .tab {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Extra small devices (iPhone SE, mini) */
+@media (max-width: 375px) {
+    .team-builder {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tab {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .header-btn {
+        padding: 5px 8px;
+        font-size: 0.7rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* Prevent overflow on small screens - Fluid sizing */
+@media (max-width: 768px) {
+    .exchange-code-display {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        letter-spacing: clamp(2px, 1vw, 8px);
+        word-break: break-all;
+        overflow-wrap: break-word;
+    }
+    
+    .exchange-code-input {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        max-width: 100%;
+    }
+    
+    /* Minimum 44px touch targets */
+    .team-slot-remove,
+    .modal-close,
+    .spawn-item,
+    .pkmn-mini,
+    .stat-mini {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .stat-mini {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .spawn-item {
+        padding: 8px 12px;
+    }
+    
+    .spawn-item img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .team-slot-remove {
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-close {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    /* Type badge touch area */
+    .type-badge {
+        padding: 4px 10px;
+        min-height: 28px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    /* Tab buttons */
+    .tab {
+        min-height: 44px;
+        padding: 10px 16px;
+    }
+    
+    /* Prevent text overflow */
+    .card-name,
+    .team-slot-name {
+        word-break: break-word;
+        hyphens: auto;
+    }
+    
+    /* Table scrolling */
+    .rotation-table,
+    .type-chart-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .rotation-table table {
+        min-width: 600px;
+    }
+    
+    /* Loading screen */
+    .loading-progress {
+        width: 85%;
+        max-width: 280px;
+    }
+    
+    /* Responsive containers */
+    .exchange-container,
+    .exchange-buttons,
+    .exchange-input-group {
+        max-width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .exchange-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Minimum font sizes */
+    .stat-mini-name {
+        font-size: 0.65rem;
+    }
+    
+    .stat-mini-stars {
+        font-size: 0.6rem;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    .card-info {
+        font-size: 0.9rem;
+    }
+    
+    .modal-body {
+        font-size: 0.95rem;
+    }
+}

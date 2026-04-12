@@ -1,0 +1,141 @@
+{
+    "name": "Speed Farming",
+    "author": "Zenith",
+    "description": "Designed for wild area item\/shiny farming, with as much speed and consistency as possible.",
+    "slots": [
+        {
+            "pokemon": "gholdengo",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "shinyCharm",
+            "moves": [
+                "payDay",
+                "memento",
+                "bulletPunch",
+                "disarmingVoice"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "ninjask",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "quickClaw",
+            "moves": [
+                "aquaJet",
+                "iceShard",
+                "accelerock",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "chatot",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "unburden",
+            "item": null,
+            "moves": [
+                "chatter",
+                "torchSong",
+                "sparklingAria",
+                "echoedVoice"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "illumise",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "lightClay",
+            "moves": [
+                "agility",
+                "aquaJet",
+                "drumBeating",
+                "fieryDance"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "espathra",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "noGuard",
+            "item": "pureIncense",
+            "moves": [
+                "electroBall",
+                "pyroBall",
+                "thunderCage",
+                "jetPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "bibarel",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "luckIncense",
+            "moves": [
+                "aquaStep",
+                "accelerock",
+                "aquaJet",
+                "trailblaze"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-09T21:03:56+02:00"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Facto SS rock",
+  "author": "bluegriffin",
+  "description": "Team rain opti pour faiblesse water.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "darkGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "wooper",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "dampRock",
+      "moves": [
+        "mudSport",
+        "rainDance",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "megaBlastoise",
+      "shiny": true,
+      "ability": "reckless",
+      "item": "blastoisinite",
+      "moves": [
+        "hydroCannon",
+        "hydroPump",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "clawitzer",
+      "shiny": true,
+      "ability": "reckless",
+      "item": "electricGem",
+      "moves": [
+        "hydroCannon",
+        "hydroPump",
+        "screech",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "megaGyarados",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "gyaradosite",
+      "moves": [
+        "liquidation",
+        "aquaTail",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "megaSwampert",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "swampertite",
+      "moves": [
+        "crabhammer",
+        "aquaTail",
+        "liquidation",
+        "uTurn"
+      ]
+    }
+  ]
+}

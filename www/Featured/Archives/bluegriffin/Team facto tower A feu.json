@@ -1,0 +1,79 @@
+{
+  "name": "Team facto tower A feu",
+  "author": "bluegriffin",
+  "description": "Possible de mettre sand force a la place de skill link sur marowak.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "ambidextrous",
+      "item": "dragonGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "helioptile",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "smoothRock",
+      "moves": [
+        "electrify",
+        "sandstorm",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "excadrill",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "bugGem",
+      "moves": [
+        "earthquake",
+        "dig",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "mudsdale",
+      "shiny": true,
+      "ability": "sandForce",
+      "item": "ghostGem",
+      "moves": [
+        "highHorsepower",
+        "earthquake",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "marowak",
+      "shiny": true,
+      "ability": "skillLink",
+      "item": "flyingGem",
+      "moves": [
+        "earthquake",
+        "boneRush",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "mamoswine",
+      "shiny": false,
+      "ability": "sandForce",
+      "item": "grassGem",
+      "moves": [
+        "highHorsepower",
+        "earthquake",
+        "bulldoze",
+        "uTurn"
+      ]
+    }
+  ]
+}

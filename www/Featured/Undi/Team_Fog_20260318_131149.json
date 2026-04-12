@@ -1,0 +1,141 @@
+{
+    "name": "Team Fog",
+    "author": "Undi",
+    "description": "",
+    "slots": [
+        {
+            "pokemon": "gourgeist",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "somberField",
+            "item": "foggySeed",
+            "moves": [
+                "trickOrTreat",
+                "poisonPowder",
+                "ominousWind",
+                "shadowSneak"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 5,
+                "def": 5,
+                "satk": 5,
+                "sdef": 1,
+                "spe": 5
+            }
+        },
+        {
+            "pokemon": "thundurusTherian",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "intangible",
+            "item": "ghostGem",
+            "moves": [
+                "nightDaze",
+                "shadowBall",
+                "nightSlash",
+                "shadowPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaRaichuX",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "darkGem",
+            "moves": [
+                "thunderPunch",
+                "nightSlash",
+                "voltTackle",
+                "phantomForce"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGengar",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "intangible",
+            "item": "gengarite",
+            "moves": [
+                "sludgeBomb",
+                "shadowBall",
+                "sludge",
+                "hex"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "dragapult",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "technician",
+            "item": "dragonGem",
+            "moves": [
+                "dragonDance",
+                "dragonDarts",
+                "shadowClaw",
+                "dragonTail"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "marshadow",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "ironFist",
+            "item": "choiceBand",
+            "moves": [
+                "powerupPunch",
+                "shadowPunch",
+                "forcePalm",
+                "spectralThief"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-18T13:11:49+01:00"
+}

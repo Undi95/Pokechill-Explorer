@@ -1,0 +1,141 @@
+{
+    "name": "Team Tower Psychic C",
+    "author": "Darkaufeu",
+    "description": "Slowpoke pour psy\/acier. Drifloon pour combat. Magnemite pour vol\/sol. Skiploom imu grass. Spheal imu water. Varoom pour fairy. Les plus important a mont\u00e9 sont Slowpoke et Drifloon. Slowpoke tank toutes les attaques psy. Peut utilis\u00e9 n'importe quel pok\u00e9mon qui \u00e0 les imu water et grass",
+    "slots": [
+        {
+            "pokemon": "slowpoke",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "flashPsycha",
+            "item": "ghostGem",
+            "moves": [
+                "toxic",
+                "nastyPlot",
+                "hex",
+                "ominousWind"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "drifloon",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "eviolite",
+            "moves": [
+                "willOWisp",
+                "shadowBall",
+                "hex",
+                "phantomForce"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "magnemite",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "assaultVest",
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "skiploom",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "growthAbsorb",
+            "item": null,
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "spheal",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "waterAbsorb",
+            "item": null,
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "varoom",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": null,
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-20T05:02:18+01:00"
+}

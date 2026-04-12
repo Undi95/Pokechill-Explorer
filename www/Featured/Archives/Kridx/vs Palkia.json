@@ -1,0 +1,79 @@
+{
+  "name": "vs Palkia",
+  "author": "Kridx",
+  "description": "Fuck les team batonpass et fuck embargo. Eject Button/Pack remplacable par mega-gem/gemmes de type. MGengar en secours au cas où si bcp de freez (Gholdengo peut aussi être swap vers un Poké + fort si manque d'item)",
+  "team": [
+    {
+      "pokemon": "klefki",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "thunderStone",
+      "moves": [
+        "trickRoom",
+        "screech",
+        "uTurn",
+        "fairyLock"
+      ]
+    },
+    {
+      "pokemon": "azumarill",
+      "shiny": true,
+      "ability": "strangeCharm",
+      "item": "choiceBand",
+      "moves": [
+        "toxic",
+        "swordsDance",
+        "playRough",
+        "spiritBreak"
+      ]
+    },
+    {
+      "pokemon": "tinkaton",
+      "shiny": true,
+      "ability": "reckless",
+      "item": "ejectButton",
+      "moves": [
+        "toxic",
+        "swordsDance",
+        "playRough",
+        "spiritBreak"
+      ]
+    },
+    {
+      "pokemon": "megaMawile",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "ejectPack",
+      "moves": [
+        "toxic",
+        "swordsDance",
+        "playRough",
+        "auroraPunch"
+      ]
+    },
+    {
+      "pokemon": "megaGengar",
+      "shiny": true,
+      "ability": "prankster",
+      "item": "choiceSpecs",
+      "moves": [
+        "nastyPlot",
+        "ominousWind",
+        "hex",
+        "shadowBall"
+      ]
+    },
+    {
+      "pokemon": "gholdengo",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "silkScarf",
+      "moves": [
+        "payDay",
+        "memento",
+        "metalSound",
+        "uTurn"
+      ]
+    }
+  ]
+}

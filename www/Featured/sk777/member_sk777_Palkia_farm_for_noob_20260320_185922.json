@@ -1,0 +1,97 @@
+{
+    "name": "Palkia farm for noob",
+    "author": "sk777",
+    "description": "This is an afk team to down Palkia without Marshadow or White Apricot Memories, only pokemons from normal raids! Typhlosion is the main carry and gets Palkia to mid-HP; Heatran and Mega Charizard then push it to 25%. When the SpDef buff triggers, Mega Blaziken finishes it off with physical moves. Only Typhlosion and Mega Blaziken are properly built, so you can replace the others with better Fire-types, or add any pokemon in free slot (you can even add goldhengo for shiny farm). Just keep Mega Blaziken to handle the buff strategy!",
+    "slots": [
+        {
+            "pokemon": "typhlosion",
+            "shiny": false,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "brittleArmor",
+            "item": "flameOrb",
+            "moves": [
+                "nastyPlot",
+                "inferno",
+                "heatWave",
+                "flamethrower"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "megaCharizardY",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "charizarditeY",
+            "moves": [
+                "fireBlast",
+                "heatWave",
+                "incinerate",
+                "flamethrower"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "heatran",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "charcoal",
+            "moves": [
+                "magmaStorm",
+                "flamethrower",
+                "incinerate",
+                "heatWave"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "megaBlaziken",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "sheerForce",
+            "item": "blazikenite",
+            "moves": [
+                "leer",
+                "toxic",
+                "blazeKick",
+                "fireFang"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-20T18:59:22+01:00"
+}

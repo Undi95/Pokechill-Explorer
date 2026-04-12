@@ -1,0 +1,141 @@
+{
+    "name": "Palkia vs le monde",
+    "author": "Aigris num\u00e9ro 2",
+    "description": "Laissez vos poke mourir pour le plaisir de palkia, selon le poke en face changez son moov set, \nChomp sert de poseur de climat donc \u00e0 adapter aussi et au besoin il donne le type sol pour plus de d\u00e9g\u00e2t. \nLes raid se font en 5-10 secondes normalement.\nPs : merci \u00e0 ceux qui ont particip\u00e9 \u00e0 la conception et aux autres.",
+    "slots": [
+        {
+            "pokemon": "megaFalinks",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "levitate",
+            "item": null,
+            "moves": [
+                "noRetreat",
+                "memento",
+                "forcePalm",
+                "stormThrow"
+            ],
+            "ivs": {
+                "hp": 2,
+                "atk": 3,
+                "def": 1,
+                "satk": 1,
+                "sdef": 1,
+                "spe": 2
+            }
+        },
+        {
+            "pokemon": "huntail",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "costar",
+            "item": "lightClay",
+            "moves": [
+                "batonPass",
+                "bubbleBeam",
+                "chillingWater",
+                "waterPulse"
+            ],
+            "ivs": {
+                "hp": 4,
+                "atk": 4,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 4
+            }
+        },
+        {
+            "pokemon": "gholdengo",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "wacanBerry",
+            "moves": [
+                "memento",
+                "payDay",
+                "shadowSneak",
+                "mirrorShot"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 5,
+                "def": 5,
+                "satk": 5,
+                "sdef": 3,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGarchomp",
+            "shiny": true,
+            "starSign": "sol",
+            "nature": "jolly",
+            "ability": "climaTact",
+            "item": "terrainExtender",
+            "moves": [
+                "crossRoom",
+                "memento",
+                "mudSport",
+                "rainDance"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "galarianMoltres",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "swiftSwim",
+            "item": "shinyCharm",
+            "moves": [
+                "fakeTears",
+                "fieryWrath",
+                "memento",
+                "gust"
+            ],
+            "ivs": {
+                "hp": 4,
+                "atk": 5,
+                "def": 4,
+                "satk": 5,
+                "sdef": 5,
+                "spe": 5
+            }
+        },
+        {
+            "pokemon": "palkia",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "stoned",
+            "item": "choiceSpecs",
+            "moves": [
+                "hydroPump",
+                "flamethrower",
+                "muddyWater",
+                "incinerate"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-22T20:32:31+01:00"
+}

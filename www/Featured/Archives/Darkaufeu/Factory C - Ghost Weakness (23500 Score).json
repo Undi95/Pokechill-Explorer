@@ -1,0 +1,79 @@
+{
+  "name": "Factory C - Ghost Weakness (23500 Score)",
+  "author": "Darkaufeu",
+  "description": "La bug gem sur Shuppet ou Honedge. Les autres pokémon peuvent avoir des gems aléatoire.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "lightClay",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "pumpkaboo",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "foggySeed",
+      "moves": [
+        "trickOrTreat",
+        "fog",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "shuppet",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "bugGem",
+      "moves": [
+        "phantomForce",
+        "shadowBall",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "ghost",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "poisonGem",
+      "moves": [
+        "shadowBall",
+        "ominousWind",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "honedge",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "iceGem",
+      "moves": [
+        "phantomForce",
+        "ominousWind",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "gastly",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "steelGem",
+      "moves": [
+        "shadowBall",
+        "ominousWind",
+        "screech",
+        "uTurn"
+      ]
+    }
+  ]
+}

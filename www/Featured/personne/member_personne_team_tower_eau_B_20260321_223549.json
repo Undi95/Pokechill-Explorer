@@ -1,0 +1,141 @@
+{
+    "name": "team tower eau B",
+    "author": "personne",
+    "description": "Maractus pour f\u00e9e\/eau, Magneton pour vol \/ Lairon pour normal \/ Slowpoke pour psy \/ les 2 autres possible a changer au besoin.",
+    "slots": [
+        {
+            "pokemon": "maractus",
+            "shiny": true,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "flashFae",
+            "item": "grassGem",
+            "moves": [
+                "toxic",
+                "leafStorm",
+                "solarBlade",
+                "seedBomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "magneton",
+            "shiny": true,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "flyingGuard",
+            "item": "eviolite",
+            "moves": [
+                "toxic",
+                "chargeBeam",
+                "thunder",
+                "thunderbolt"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "lairon",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "plainGuard",
+            "item": "assaultVest",
+            "moves": [
+                "crossChop",
+                "skyUppercut",
+                "ironHead",
+                "forcePalm"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "tangela",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "abilityCapsule",
+            "moves": [
+                "accelerock",
+                "accelerock",
+                "accelerock",
+                "accelerock"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "tangelaEvent",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "abilityCapsule",
+            "moves": [
+                "accelerock",
+                "accelerock",
+                "accelerock",
+                "accelerock"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "slowpoke",
+            "shiny": false,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "flashPsycha",
+            "item": "ghostGem",
+            "moves": [
+                "toxic",
+                "nastyPlot",
+                "hex",
+                "shadowBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T22:35:49+01:00"
+}

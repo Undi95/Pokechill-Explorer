@@ -1,0 +1,141 @@
+{
+    "name": "Farm No Goldhingo",
+    "author": "Undi",
+    "description": "Teatime + Payday sur la tasse et une team rapide (Phero peut etre modif)",
+    "slots": [
+        {
+            "pokemon": "sinistea",
+            "shiny": true,
+            "starSign": "sol",
+            "nature": "jolly",
+            "ability": "intangible",
+            "item": "pureIncense",
+            "moves": [
+                "payDay",
+                "teatime",
+                "memento",
+                "rockWrecker"
+            ],
+            "ivs": {
+                "hp": 4,
+                "atk": 4,
+                "def": 4,
+                "satk": 4,
+                "sdef": 4,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "pachirisu",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "costar",
+            "item": "quickClaw",
+            "moves": [
+                "noRetreat",
+                "thunderCage",
+                "pyroBall",
+                "electroBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "morpeko",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "stoned",
+            "item": "darkGem",
+            "moves": [
+                "auraWheel",
+                "falseSurrender",
+                "smartStrike",
+                "ruination"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "raboot",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pyrolate",
+            "item": "powerHerb",
+            "moves": [
+                "agility",
+                "extremeSpeed",
+                "jetPunch",
+                "pyroBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "regieleki",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "libero",
+            "item": "lightClay",
+            "moves": [
+                "agility",
+                "extremeSpeed",
+                "thunderCage",
+                "swift"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "pheromosa",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "reckless",
+            "item": "laggingTail",
+            "moves": [
+                "agility",
+                "firstImpression",
+                "wildCharge",
+                "focusBlast"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T23:09:51+02:00"
+}

@@ -1,0 +1,141 @@
+{
+    "name": "speed farm V5",
+    "author": "personne",
+    "description": "team optimal pour farm caps dans les zones bas level",
+    "slots": [
+        {
+            "pokemon": "alolanPersian",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "luckIncense",
+            "moves": [
+                "agility",
+                "payDay",
+                "teatime",
+                "memento"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "illumise",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "powerHerb",
+            "moves": [
+                "aquaStep",
+                "agility",
+                "sketch",
+                "meFirst"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "quaxly",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "lightClay",
+            "moves": [
+                "agility",
+                "aquaStep",
+                "revelationDance",
+                "fieryDance"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "espathra",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "quickClaw",
+            "moves": [
+                "jetPunch",
+                "electroBall",
+                "pyroBall",
+                "thunderCage"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "pheromosa",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "buginiumZ",
+            "moves": [
+                "meFirst",
+                "aquaJet",
+                "feintAttack",
+                "bulletPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "ninjask",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "pickPocket",
+            "item": "pureIncense",
+            "moves": [
+                "accelerock",
+                "aquaJet",
+                "feintAttack",
+                "bulletPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-07T18:54:04+02:00"
+}

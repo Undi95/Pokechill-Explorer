@@ -1,0 +1,79 @@
+{
+  "name": "Team Speedy",
+  "author": "Undi",
+  "description": "Pour le fun de Regieleki!",
+  "team": [
+    {
+      "pokemon": "megaRaichuY",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "raichutiteY",
+      "moves": [
+        "voltSwitch",
+        "agility",
+        "voltTackle",
+        "flashCannon"
+      ]
+    },
+    {
+      "pokemon": "regieleki",
+      "shiny": true,
+      "ability": "libero",
+      "item": "lightClay",
+      "moves": [
+        "agility",
+        "aquaJet",
+        "smartStrike",
+        "thunderCage"
+      ]
+    },
+    {
+      "pokemon": "kartana",
+      "shiny": true,
+      "ability": "guts",
+      "item": "flameOrb",
+      "moves": [
+        "agility",
+        "smartStrike",
+        "seedBomb",
+        "ironHead"
+      ]
+    },
+    {
+      "pokemon": "tapuKoko",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "steelGem",
+      "moves": [
+        "voltSwitch",
+        "agility",
+        "playRough",
+        "wildCharge"
+      ]
+    },
+    {
+      "pokemon": "megaMetagross",
+      "shiny": true,
+      "ability": "hyperconductor",
+      "item": "metagrossite",
+      "moves": [
+        "agility",
+        "zenHeadbut",
+        "wildCharge",
+        "metalClaw"
+      ]
+    },
+    {
+      "pokemon": "megaManectric",
+      "shiny": true,
+      "ability": "hyperconductor",
+      "item": "manectite",
+      "moves": [
+        "charge",
+        "supercellSlam",
+        "flashCannon",
+        "thunderbolt"
+      ]
+    }
+  ]
+}

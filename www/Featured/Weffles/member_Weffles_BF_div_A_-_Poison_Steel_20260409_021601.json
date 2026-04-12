@@ -1,0 +1,141 @@
+{
+    "name": "BF div A - Poison\/Steel",
+    "author": "Weffles",
+    "description": "BF div A team to go against Fairy type",
+    "slots": [
+        {
+            "pokemon": "muk",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "toxicOrb",
+            "moves": [
+                "swordsDance",
+                "poisonFang",
+                "poisonJab",
+                "crossPoison"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "tinkaton",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "reckless",
+            "item": "choiceBand",
+            "moves": [
+                "metalClaw",
+                "gigatonHammer",
+                "ironHead",
+                "magnetBomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "nidoqueen",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "noxious",
+            "item": "poisonBarb",
+            "moves": [
+                "rototiller",
+                "sludgeWave",
+                "poisonJab",
+                "crossPoison"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "copperajah",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "metalCoat",
+            "moves": [
+                "swordsDance",
+                "ironTail",
+                "metalClaw",
+                "bulletPunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "duraludon",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "choiceSpecs",
+            "moves": [
+                "metalSound",
+                "mirrorShot",
+                "flashCannon",
+                "ironTail"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "scizor",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "sheerForce",
+            "item": null,
+            "moves": [
+                "screech",
+                "magnetBomb",
+                "bulletPunch",
+                "ironHead"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-09T02:16:01+02:00"
+}

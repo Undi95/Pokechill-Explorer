@@ -1,0 +1,141 @@
+{
+    "name": "Early stamina farming",
+    "author": "Adaves",
+    "description": "Early stamina team to farm when going to sleep, gems not mandatory just avoid types imunities. Pokemons should be easy to get then slowly get pick pocket by genetic and finish with the items",
+    "slots": [
+        {
+            "pokemon": "alolanPersian",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "pickPocket",
+            "item": "shinyCharm",
+            "moves": [
+                "payDay",
+                "snarl",
+                "darkPulse",
+                "nightDaze"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "mudsdale",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "pickPocket",
+            "item": "rockGem",
+            "moves": [
+                "rockThrow",
+                "rockSlide",
+                "rollout",
+                "rockTomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 0,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "miltank",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "pickPocket",
+            "item": "darkGem",
+            "moves": [
+                "knockOff",
+                "pursuit",
+                "nightSlash",
+                "crunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "duraludon",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "pickPocket",
+            "item": "luckIncense",
+            "moves": [
+                "flashCannon",
+                "mirrorShot",
+                "ironHead",
+                "magnetBomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "wailord",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "pickPocket",
+            "item": "leftovers",
+            "moves": [
+                "scald",
+                "surf",
+                "waterPulse",
+                "chillingWater"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "forretress",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "pickPocket",
+            "item": "pureIncense",
+            "moves": [
+                "xScissor",
+                "ironHead",
+                "magnetBomb",
+                "bugBite"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-27T22:01:50+01:00"
+}

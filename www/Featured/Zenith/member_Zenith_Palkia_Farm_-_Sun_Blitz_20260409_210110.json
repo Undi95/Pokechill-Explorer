@@ -1,0 +1,241 @@
+{
+    "name": "Palkia Farm - Sun Blitz",
+    "author": "Zenith",
+    "description": "Both v1\/v2 shown, with 2.5\/5 second kills.\nv1 uses only egg moves, useful before getting the upgrade.",
+    "slots": [
+        {
+            "pokemon": "pachirisu",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "noRetreat",
+                "batonPass",
+                "forestCurse",
+                "embargo"
+            ]
+        },
+        {
+            "pokemon": "kommoo",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            },
+            "ivTotal": 18,
+            "item": "powerHerb",
+            "nature": "jolly",
+            "ability": "climaTact",
+            "moves": [
+                "screech",
+                "clangingScales",
+                "sunnyDay",
+                "memento"
+            ]
+        },
+        {
+            "pokemon": "darmanitan",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            },
+            "ivTotal": 18,
+            "item": "lifeOrb",
+            "nature": "jolly",
+            "ability": "pyrolate",
+            "moves": [
+                "hyperDrill",
+                "pyroBall",
+                "extremeSpeed",
+                "heatCrash"
+            ]
+        },
+        {
+            "pokemon": "huntail",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "tailwind",
+                "bulkUp",
+                "sunnyDay",
+                "batonPass"
+            ]
+        },
+        {
+            "pokemon": "darmanitan",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "jolly",
+            "ability": "stoned",
+            "moves": [
+                "screech",
+                "firePunch",
+                "blazeKick",
+                "flareBlitz"
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-09T21:01:10+02:00",
+    "team": [
+        {
+            "pokemon": "pachirisu",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "noRetreat",
+                "batonPass",
+                "forestCurse",
+                "embargo"
+            ]
+        },
+        {
+            "pokemon": "kommoo",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            },
+            "ivTotal": 18,
+            "item": "powerHerb",
+            "nature": "jolly",
+            "ability": "climaTact",
+            "moves": [
+                "screech",
+                "clangingScales",
+                "sunnyDay",
+                "memento"
+            ]
+        },
+        {
+            "pokemon": "darmanitan",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            },
+            "ivTotal": 18,
+            "item": "lifeOrb",
+            "nature": "jolly",
+            "ability": "pyrolate",
+            "moves": [
+                "hyperDrill",
+                "pyroBall",
+                "extremeSpeed",
+                "heatCrash"
+            ]
+        },
+        {
+            "pokemon": "huntail",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "tailwind",
+                "bulkUp",
+                "sunnyDay",
+                "batonPass"
+            ]
+        },
+        {
+            "pokemon": "darmanitan",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "jolly",
+            "ability": "stoned",
+            "moves": [
+                "screech",
+                "firePunch",
+                "blazeKick",
+                "flareBlitz"
+            ]
+        }
+    ]
+}

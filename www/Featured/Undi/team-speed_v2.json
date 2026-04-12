@@ -1,0 +1,438 @@
+{
+    "version": 1,
+    "teams": [
+        {
+            "id": "team_1773361117516",
+            "name": "Speed v2",
+            "author": "Undi",
+            "description": "GOTTA GO FAST",
+            "created": "2026-03-13T00:18:37.516Z",
+            "slots": [
+                {
+                    "pokemon": "pikachuGmax",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "laggingTail",
+                    "nature": "adamant",
+                    "ability": "climaTact",
+                    "moves": [
+                        "agility",
+                        "voltSwitch",
+                        "ironTail",
+                        "wildCharge"
+                    ]
+                },
+                {
+                    "pokemon": "ironMoth",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "choiceSpecs",
+                    "nature": "jolly",
+                    "starSign": "terra",
+                    "ability": "sheerForce",
+                    "hiddenAbilityUnlocked": true,
+                    "moves": [
+                        "agility",
+                        "flamethrower",
+                        "sludgeWave",
+                        "fieryDance"
+                    ]
+                },
+                {
+                    "pokemon": "regieleki",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "quickClaw",
+                    "ability": "libero",
+                    "moves": [
+                        "bulletPunch",
+                        "extremeSpeed",
+                        "thunderCage",
+                        "swift"
+                    ]
+                },
+                {
+                    "pokemon": "pheromosa",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "lightClay",
+                    "nature": "jolly",
+                    "ability": "reckless",
+                    "moves": [
+                        "agility",
+                        "firstImpression",
+                        "wildCharge",
+                        "focusBlast"
+                    ]
+                },
+                {
+                    "pokemon": "megaRaichuY",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "raichutiteY",
+                    "starSign": "eris",
+                    "ability": "climaTact",
+                    "hiddenAbilityUnlocked": true,
+                    "moves": [
+                        "voltSwitch",
+                        "agility",
+                        "voltTackle",
+                        "smartStrike"
+                    ]
+                },
+                {
+                    "pokemon": "megaMetagross",
+                    "shiny": true,
+                    "level": 100,
+                    "ivs": {
+                        "hp": 6,
+                        "atk": 6,
+                        "def": 6,
+                        "satk": 6,
+                        "sdef": 6,
+                        "spe": 6
+                    },
+                    "ivTotal": 36,
+                    "item": "choiceBand",
+                    "nature": "jolly",
+                    "ability": "hyperconductor",
+                    "moves": [
+                        "agility",
+                        "metalClaw",
+                        "wildCharge",
+                        "ironHead"
+                    ]
+                }
+            ]
+        }
+    ],
+    "team": [
+        {
+            "pokemon": "pikachuGmax",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "laggingTail",
+            "nature": "adamant",
+            "ability": "climaTact",
+            "moves": [
+                "agility",
+                "voltSwitch",
+                "ironTail",
+                "wildCharge"
+            ]
+        },
+        {
+            "pokemon": "ironMoth",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceSpecs",
+            "nature": "jolly",
+            "starSign": "terra",
+            "ability": "sheerForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "agility",
+                "flamethrower",
+                "sludgeWave",
+                "fieryDance"
+            ]
+        },
+        {
+            "pokemon": "regieleki",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "quickClaw",
+            "ability": "libero",
+            "moves": [
+                "bulletPunch",
+                "extremeSpeed",
+                "thunderCage",
+                "swift"
+            ]
+        },
+        {
+            "pokemon": "pheromosa",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "reckless",
+            "moves": [
+                "agility",
+                "firstImpression",
+                "wildCharge",
+                "focusBlast"
+            ]
+        },
+        {
+            "pokemon": "megaRaichuY",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "raichutiteY",
+            "starSign": "eris",
+            "ability": "climaTact",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "voltSwitch",
+                "agility",
+                "voltTackle",
+                "smartStrike"
+            ]
+        },
+        {
+            "pokemon": "megaMetagross",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceBand",
+            "nature": "jolly",
+            "ability": "hyperconductor",
+            "moves": [
+                "agility",
+                "metalClaw",
+                "wildCharge",
+                "ironHead"
+            ]
+        }
+    ],
+    "slots": [
+        {
+            "pokemon": "pikachuGmax",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "laggingTail",
+            "nature": "adamant",
+            "ability": "climaTact",
+            "moves": [
+                "agility",
+                "voltSwitch",
+                "ironTail",
+                "wildCharge"
+            ]
+        },
+        {
+            "pokemon": "ironMoth",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceSpecs",
+            "nature": "jolly",
+            "starSign": "terra",
+            "ability": "sheerForce",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "agility",
+                "flamethrower",
+                "sludgeWave",
+                "fieryDance"
+            ]
+        },
+        {
+            "pokemon": "regieleki",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "quickClaw",
+            "ability": "libero",
+            "moves": [
+                "bulletPunch",
+                "extremeSpeed",
+                "thunderCage",
+                "swift"
+            ]
+        },
+        {
+            "pokemon": "pheromosa",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "reckless",
+            "moves": [
+                "agility",
+                "firstImpression",
+                "wildCharge",
+                "focusBlast"
+            ]
+        },
+        {
+            "pokemon": "megaRaichuY",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "raichutiteY",
+            "starSign": "eris",
+            "ability": "climaTact",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "voltSwitch",
+                "agility",
+                "voltTackle",
+                "smartStrike"
+            ]
+        },
+        {
+            "pokemon": "megaMetagross",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceBand",
+            "nature": "jolly",
+            "ability": "hyperconductor",
+            "moves": [
+                "agility",
+                "metalClaw",
+                "wildCharge",
+                "ironHead"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,275 @@
+{
+    "name": "B-Tier Sun - Mid-Game",
+    "author": "Zenith",
+    "description": "Does not require natures or external signature moves.\nEject Button enables Sheer Force Monferno. \nFeel free to ask questions on Discord @Zenith\n_        Future upgrades: 1. Make everyone Modest if possible 2. Replace Quilava with Costar Scovillain [Inferno+Overheat\/MysticalFire], and give Flame Orb to Magmar 3. Distribute signature moves, including Flame Burst to Monferno, Weather ball to Magmar, and Inferno to Braixen, among others.",
+    "slots": [
+        {
+            "pokemon": "volbeat",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "heatRock",
+            "ability": "climaTact",
+            "moves": [
+                "tailwind",
+                "lunarDance",
+                "sunnyDay",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "braixen",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "psychicGem",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "overheat",
+                "mysticalFire",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "quilava",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "charcoal",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "inferno",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "magmar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricGem",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "armorCannon",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "monferno",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "flamethrower",
+                "heatWave"
+            ]
+        },
+        {
+            "pokemon": "torracat",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "darkGem",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "flamethrower",
+                "voltSwitch"
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T00:31:42+02:00",
+    "team": [
+        {
+            "pokemon": "volbeat",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "heatRock",
+            "ability": "climaTact",
+            "moves": [
+                "tailwind",
+                "lunarDance",
+                "sunnyDay",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "braixen",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "psychicGem",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "overheat",
+                "mysticalFire",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "quilava",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "charcoal",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "inferno",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "magmar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "electricGem",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "armorCannon",
+                "voltSwitch"
+            ]
+        },
+        {
+            "pokemon": "monferno",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "flamethrower",
+                "heatWave"
+            ]
+        },
+        {
+            "pokemon": "torracat",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "darkGem",
+            "ability": "solarPower",
+            "moves": [
+                "metalSound",
+                "fireBlast",
+                "flamethrower",
+                "voltSwitch"
+            ]
+        }
+    ]
+}

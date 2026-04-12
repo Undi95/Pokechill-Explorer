@@ -1,0 +1,53 @@
+{
+    "name": "team tower eau C",
+    "author": "personne",
+    "description": "cacnea casi solo la tower, mettre magnemite sur les attaque poison\/vol",
+    "slots": [
+        {
+            "pokemon": "cacnea",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "flashHerba",
+            "item": "eviolite",
+            "moves": [
+                "toxic",
+                "rototiller",
+                "needleArm",
+                "energyBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "magnemite",
+            "shiny": true,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "flyingGuard",
+            "item": "heavyDutyBoots",
+            "moves": [
+                "toxic",
+                "thunder",
+                "flashCannon",
+                "thunderbolt"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 3,
+                "sdef": 6,
+                "spe": 1
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T22:56:22+01:00"
+}

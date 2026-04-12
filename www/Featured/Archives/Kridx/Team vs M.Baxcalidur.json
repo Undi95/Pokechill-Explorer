@@ -1,0 +1,43 @@
+{
+  "name": "Team vs M.Baxcalidur",
+  "author": "Kridx",
+  "description": "Ajout type Fairy pour augmenter le multiplicateur Steel. Pour le TrickRoom si possible avoir ClimatTact + Terrain Extender.",
+  "team": [
+    {
+      "pokemon": "klefki",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "terrainExtender",
+      "moves": [
+        "fairyLock",
+        "trickRoom",
+        "screech",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "tinkaton",
+      "shiny": true,
+      "ability": "reckless",
+      "item": "choiceBand",
+      "moves": [
+        "swordsDance",
+        "spiritBreak",
+        "gigatonHammer",
+        "ironTail"
+      ]
+    },
+    {
+      "pokemon": "megaMawile",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "mawilite",
+      "moves": [
+        "swordsDance",
+        "spiritBreak",
+        "sharkJaws",
+        "ironTail"
+      ]
+    }
+  ]
+}

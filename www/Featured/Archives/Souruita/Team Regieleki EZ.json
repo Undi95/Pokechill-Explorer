@@ -1,0 +1,43 @@
+{
+  "name": "Team Regieleki EZ",
+  "author": "Souruita",
+  "description": "Leopardus est là pour poser le trick room + un petit débuff de def spe, le terrain extender et climat tact augmentent le temps de trickroom, Heatran est juste là pour défoncer le boss,, flash électro immunise à l'attaque électrique, le reste prend x0.25 et tournegrain est là juste pour son HA qui immunise à la paralysie\"",
+  "team": [
+    {
+      "pokemon": "liepard",
+      "shiny": false,
+      "ability": "climaTact",
+      "item": "terrainExtender",
+      "moves": [
+        "trickRoom",
+        "fakeTears",
+        "uTurn",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "heatran",
+      "shiny": false,
+      "ability": "flashElectro",
+      "item": "groundGem",
+      "moves": [
+        "rototiller",
+        "mudShot",
+        "scorchingSands",
+        "earthPower"
+      ]
+    },
+    {
+      "pokemon": "sunkern",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "abilityCapsule",
+      "moves": [
+        "accelerock",
+        "accelerock",
+        "accelerock",
+        "accelerock"
+      ]
+    }
+  ]
+}

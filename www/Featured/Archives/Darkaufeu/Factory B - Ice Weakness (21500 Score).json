@@ -1,0 +1,79 @@
+{
+  "name": "Factory B - Ice Weakness (21500 Score)",
+  "author": "Darkaufeu",
+  "description": "IV up seulement via génétique, si cela ne passe pas pour vous, monter les IV.",
+  "team": [
+    {
+      "pokemon": "eevee",
+      "shiny": false,
+      "ability": "ambidextrous",
+      "item": "flyingGem",
+      "moves": [
+        "tailwind",
+        "rototiller",
+        "batonPass",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "phantump",
+      "shiny": true,
+      "ability": "climaTact",
+      "item": "icyRock",
+      "moves": [
+        "forestCurse",
+        "hail",
+        "fakeTears",
+        "voltSwitch"
+      ]
+    },
+    {
+      "pokemon": "vivillonIcySnow",
+      "shiny": true,
+      "ability": "adaptability",
+      "item": "ghostGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "vivillonTundra",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "darkGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "jynx",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "bugGem",
+      "moves": [
+        "blizzard",
+        "iceBeam",
+        "fakeTears",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "frosmoth",
+      "shiny": false,
+      "ability": "adaptability",
+      "item": "electricGem",
+      "moves": [
+        "hyperBeam",
+        "hyperVoice",
+        "blizzard",
+        "uTurn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+    "name": "Trick Room\/Ground Blitz - G.Pika Farm",
+    "author": "Zenith",
+    "description": "Special attacking baton pass core, with other weathers and temp types possible. Sandstorm also works, but is slightly slower.\n5 second kill on Gmax Pikachu, with Seismitoad as backup.",
+    "slots": [
+        {
+            "pokemon": "pachirisu",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "costar",
+            "item": "lightClay",
+            "moves": [
+                "noRetreat",
+                "batonPass",
+                "forestCurse",
+                "embargo"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "murkrow",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "colorSpore",
+            "item": "powerHerb",
+            "moves": [
+                "fakeTears",
+                "fieryWrath",
+                "trickRoom",
+                "memento"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "palossand",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "terralate",
+            "item": "ejectButton",
+            "moves": [
+                "swift",
+                "earthPower",
+                "scorchingSands",
+                "hyperVoice"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaCamerupt",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "terralate",
+            "item": "lifeOrb",
+            "moves": [
+                "hyperVoice",
+                "earthPower",
+                "hyperBeam",
+                "scorchingSands"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "seismitoad",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "stoned",
+            "item": "choiceSpecs",
+            "moves": [
+                "hyperVoice",
+                "earthPower",
+                "hyperBeam",
+                "scorchingSands"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "gossifleur",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "shinyCharm",
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T07:43:56+02:00"
+}

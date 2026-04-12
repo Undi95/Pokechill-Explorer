@@ -1,0 +1,141 @@
+{
+    "name": "GROKATCHU",
+    "author": "rtwarthur",
+    "description": "Sunflora pour \u00e9viter la paralysie",
+    "slots": [
+        {
+            "pokemon": "sunflora",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "effectSpore",
+            "item": "shinyCharm",
+            "moves": [
+                "poisonPowder",
+                "leer",
+                "growl",
+                "quickAttack"
+            ],
+            "ivs": {
+                "hp": 0,
+                "atk": 1,
+                "def": 2,
+                "satk": 2,
+                "sdef": 1,
+                "spe": 4
+            }
+        },
+        {
+            "pokemon": "megaGengar",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "intangible",
+            "item": "gengarite",
+            "moves": [
+                "nastyPlot",
+                "sludgeBomb",
+                "shadowBall",
+                "sludgeWave"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGarchomp",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "sandStream",
+            "item": "garchompite",
+            "moves": [
+                "rototiller",
+                "bulldoze",
+                "dragonRush",
+                "earthquake"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGallade",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "ironFist",
+            "item": "galladite",
+            "moves": [
+                "swordsDance",
+                "lowSweep",
+                "crossChop",
+                "forcePalm"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaLucario",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "sheerForce",
+            "item": "lucarionite",
+            "moves": [
+                "nastyPlot",
+                "auraSphere",
+                "flashCannon",
+                "focusBlast"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "palkia",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "multiscale",
+            "item": "iceGem",
+            "moves": [
+                "nastyPlot",
+                "iceBeam",
+                "surf",
+                "spacialRend"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T22:41:38+01:00"
+}

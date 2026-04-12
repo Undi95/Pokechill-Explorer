@@ -1,0 +1,141 @@
+{
+    "name": "Kyurem White",
+    "author": "rtwarthur",
+    "description": "Full Bourin",
+    "slots": [
+        {
+            "pokemon": "megaCharizardX",
+            "shiny": true,
+            "starSign": null,
+            "nature": "adamant",
+            "ability": "adaptability",
+            "item": "charizarditeX",
+            "moves": [
+                "swordsDance",
+                "dragonClaw",
+                "dragonRush",
+                "dragonTail"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaLucario",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "sheerForce",
+            "item": "lucarionite",
+            "moves": [
+                "nastyPlot",
+                "auraSphere",
+                "flashCannon",
+                "focusBlast"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaMetagross",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "bastion",
+            "item": "metagrossite",
+            "moves": [
+                "swordsDance",
+                "ironHead",
+                "crossChop",
+                "metalClaw"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGarchomp",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "sandStream",
+            "item": "garchompite",
+            "moves": [
+                "rototiller",
+                "dragonRush",
+                "dualChop",
+                "dragonTail"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "palkia",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "multiscale",
+            "item": "dragonFang",
+            "moves": [
+                "nastyPlot",
+                "dragonBreath",
+                "spacialRend",
+                "twister"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGallade",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "ironFist",
+            "item": "galladite",
+            "moves": [
+                "swordsDance",
+                "lowSweep",
+                "crossChop",
+                "forcePalm"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-22T00:19:27+01:00"
+}

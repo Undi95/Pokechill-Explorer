@@ -1,0 +1,31 @@
+{
+    "name": "Cassage de Baxca",
+    "author": "Apielickmyballs",
+    "description": "Il se fait pas toucher",
+    "slots": [
+        {
+            "pokemon": "vivillonFancy",
+            "shiny": true,
+            "starSign": "luna",
+            "nature": null,
+            "ability": "frostAbsorb",
+            "item": null,
+            "moves": [
+                "rototiller",
+                "moonblast",
+                "alluringVoice",
+                "embargo"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-08T09:40:37+02:00"
+}

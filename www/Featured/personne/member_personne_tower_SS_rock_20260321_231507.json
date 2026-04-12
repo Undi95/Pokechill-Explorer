@@ -1,0 +1,141 @@
+{
+    "name": "tower SS rock",
+    "author": "personne",
+    "description": "Remettre helioptile quand la sand part pas besoin de switch autrement. build le helioptile et garchomp qui casi solo et mettre des gros poke qui tape super efficace pour finir la tower",
+    "slots": [
+        {
+            "pokemon": "helioptile",
+            "shiny": true,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "climaTact",
+            "item": "smoothRock",
+            "moves": [
+                "electrify",
+                "sandsearStorm",
+                "scorchingSands",
+                "twinBeam"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaGarchomp",
+            "shiny": false,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "sandRush",
+            "item": "garchompite",
+            "moves": [
+                "rollout",
+                "earthquake",
+                "dig",
+                "bulldoze"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "ironTreads",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "noGuard",
+            "item": "choiceBand",
+            "moves": [
+                "rollout",
+                "earthquake",
+                "bulldoze",
+                "dig"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaBlastoise",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "reckless",
+            "item": "blackPeltMemory",
+            "moves": [
+                "fakeTears",
+                "hydroCannon",
+                "hydroPump",
+                "voltSwitch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "ironValiant",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "magicGuard",
+            "item": "angerPointMemory",
+            "moves": [
+                "rototiller",
+                "crossChop",
+                "focusBlast",
+                "auraSphere"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaSwampert",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "redStar",
+            "moves": [
+                "aquaTail",
+                "liquidation",
+                "waterGun",
+                "earthquake"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T23:15:07+01:00"
+}

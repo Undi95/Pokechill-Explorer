@@ -1,0 +1,287 @@
+{
+    "name": "C-Tier Trick Room - Late Game",
+    "author": "Zenith",
+    "description": "Heavily reliant on egg moves. Swap Bone Rush on Froakie for Rock Blast\/Icicle Spear against flying types.",
+    "slots": [
+        {
+            "pokemon": "beautifly",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "ability": "colorSpore",
+            "moves": [
+                "tailwind",
+                "howl",
+                "stunSpore",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "chingling",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "terrainExtender",
+            "nature": "relaxed",
+            "ability": "climaTact",
+            "moves": [
+                "trickRoom",
+                "clangingScales",
+                "screech",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "tinkatink",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "relaxed",
+            "ability": "pixilate",
+            "moves": [
+                "beakBlast",
+                "gigatonHammer",
+                "hyperDrill",
+                "lovelyKiss"
+            ]
+        },
+        {
+            "pokemon": "froakie",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "loadedDice",
+            "nature": "adamant",
+            "ability": "technician",
+            "moves": [
+                "boneRush",
+                "cometPunch",
+                "clamp",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "krabby",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "laggingTail",
+            "nature": "relaxed",
+            "ability": "reckless",
+            "moves": [
+                "screech",
+                "appleAcid",
+                "crabhammer",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "magby",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "flameOrb",
+            "nature": "relaxed",
+            "ability": "guts",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "blazeKick",
+                "bitterBlade",
+                "flareBlitz",
+                "uTurn"
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T07:56:20+02:00",
+    "team": [
+        {
+            "pokemon": "beautifly",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "ability": "colorSpore",
+            "moves": [
+                "tailwind",
+                "howl",
+                "stunSpore",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "chingling",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "terrainExtender",
+            "nature": "relaxed",
+            "ability": "climaTact",
+            "moves": [
+                "trickRoom",
+                "clangingScales",
+                "screech",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "tinkatink",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "relaxed",
+            "ability": "pixilate",
+            "moves": [
+                "beakBlast",
+                "gigatonHammer",
+                "hyperDrill",
+                "lovelyKiss"
+            ]
+        },
+        {
+            "pokemon": "froakie",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "loadedDice",
+            "nature": "adamant",
+            "ability": "technician",
+            "moves": [
+                "boneRush",
+                "cometPunch",
+                "clamp",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "krabby",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "laggingTail",
+            "nature": "relaxed",
+            "ability": "reckless",
+            "moves": [
+                "screech",
+                "appleAcid",
+                "crabhammer",
+                "uTurn"
+            ]
+        },
+        {
+            "pokemon": "magby",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "flameOrb",
+            "nature": "relaxed",
+            "ability": "guts",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                "blazeKick",
+                "bitterBlade",
+                "flareBlitz",
+                "uTurn"
+            ]
+        }
+    ]
+}

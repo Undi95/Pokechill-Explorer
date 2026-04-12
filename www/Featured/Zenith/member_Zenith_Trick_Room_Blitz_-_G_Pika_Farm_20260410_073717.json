@@ -1,0 +1,283 @@
+{
+    "name": "Trick Room Blitz - G.Pika Farm",
+    "author": "Zenith",
+    "description": "Special attacking baton pass core, with other weathers on Murkrow. \n5 second kill on Gmax Pikachu, with Seismitoad here as backup.",
+    "slots": [
+        {
+            "pokemon": "pachirisu",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "noRetreat",
+                "batonPass",
+                "forestCurse",
+                "embargo"
+            ]
+        },
+        {
+            "pokemon": "murkrow",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "powerHerb",
+            "nature": "jolly",
+            "ability": "colorSpore",
+            "moves": [
+                "fakeTears",
+                "fieryWrath",
+                "trickRoom",
+                "memento"
+            ]
+        },
+        {
+            "pokemon": "palossand",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "modest",
+            "ability": "terralate",
+            "moves": [
+                "swift",
+                "earthPower",
+                "scorchingSands",
+                "hyperVoice"
+            ]
+        },
+        {
+            "pokemon": "megaCamerupt",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lifeOrb",
+            "nature": "modest",
+            "ability": "terralate",
+            "moves": [
+                "hyperVoice",
+                "earthPower",
+                "hyperBeam",
+                "scorchingSands"
+            ]
+        },
+        {
+            "pokemon": "seismitoad",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceSpecs",
+            "nature": "modest",
+            "ability": "stoned",
+            "moves": [
+                "hyperVoice",
+                "earthPower",
+                "hyperBeam",
+                "scorchingSands"
+            ]
+        },
+        {
+            "pokemon": "gossifleur",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "shinyCharm",
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-10T07:11:43+02:00",
+    "team": [
+        {
+            "pokemon": "pachirisu",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lightClay",
+            "nature": "jolly",
+            "ability": "costar",
+            "moves": [
+                "noRetreat",
+                "batonPass",
+                "forestCurse",
+                "embargo"
+            ]
+        },
+        {
+            "pokemon": "murkrow",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "powerHerb",
+            "nature": "jolly",
+            "ability": "colorSpore",
+            "moves": [
+                "fakeTears",
+                "fieryWrath",
+                "trickRoom",
+                "memento"
+            ]
+        },
+        {
+            "pokemon": "palossand",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "ejectButton",
+            "nature": "modest",
+            "ability": "terralate",
+            "moves": [
+                "swift",
+                "earthPower",
+                "scorchingSands",
+                "hyperVoice"
+            ]
+        },
+        {
+            "pokemon": "megaCamerupt",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "lifeOrb",
+            "nature": "modest",
+            "ability": "terralate",
+            "moves": [
+                "hyperVoice",
+                "earthPower",
+                "hyperBeam",
+                "scorchingSands"
+            ]
+        },
+        {
+            "pokemon": "seismitoad",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "choiceSpecs",
+            "nature": "modest",
+            "ability": "stoned",
+            "moves": [
+                "hyperVoice",
+                "earthPower",
+                "hyperBeam",
+                "scorchingSands"
+            ]
+        },
+        {
+            "pokemon": "gossifleur",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "shinyCharm",
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ]
+        }
+    ]
+}

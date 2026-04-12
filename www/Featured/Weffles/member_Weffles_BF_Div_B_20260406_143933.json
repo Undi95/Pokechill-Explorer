@@ -1,0 +1,141 @@
+{
+    "name": "BF Div B",
+    "author": "Weffles",
+    "description": "Team made to do well against Bug\/Poison",
+    "slots": [
+        {
+            "pokemon": "magmar",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "flameOrb",
+            "moves": [
+                "sunnyDay",
+                "nastyPlot",
+                "fireBlast",
+                "flareBlitz"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "darmanitan",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "stoned",
+            "item": "choiceBand",
+            "moves": [
+                "screech",
+                "flareBlitz",
+                "firePunch",
+                "fireFang"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "monferno",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "solarPower",
+            "item": "charcoal",
+            "moves": [
+                "sunnyDay",
+                "fireBlast",
+                "heatWave",
+                "firePunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "doduo",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "sharpBeak",
+            "moves": [
+                "skyDrop",
+                "triAttack",
+                "drillPeck",
+                "acrobatics"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "kadabra",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "choiceSpecs",
+            "moves": [
+                "kinesis",
+                "futureSight",
+                "psybeam",
+                "psychic"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "boldore",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "hardStone",
+            "moves": [
+                "sandstorm",
+                "stoneEdge",
+                "rockSlide",
+                "wrathOfTheLand"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-06T14:39:33+02:00"
+}

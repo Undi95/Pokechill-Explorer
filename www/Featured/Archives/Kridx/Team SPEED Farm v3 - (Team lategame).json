@@ -1,0 +1,79 @@
+{
+  "name": "Team SPEED Farm v3 - (Team lategame)",
+  "author": "Kridx",
+  "description": "Génére environ 1.2silver/minutes. Attention demande beaucoup de génétic pour la faire. Requis au moins 100gold pour la QuickClaw max pour faire le build Pheromosa. Si possible 100 autres gold pour la PowerHerb max sur Noivern.",
+  "team": [
+    {
+      "pokemon": "gholdengo",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "shinyCharm",
+      "moves": [
+        "payDay",
+        "memento",
+        "metalSound",
+        "uTurn"
+      ]
+    },
+    {
+      "pokemon": "pheromosa",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "quickClaw",
+      "moves": [
+        "meFirst",
+        "bulletPunch",
+        "iceShard",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "noivern",
+      "shiny": false,
+      "ability": "pickPocket",
+      "item": "powerHerb",
+      "moves": [
+        "agility",
+        "alluringVoice",
+        "disarmingVoice",
+        "echoedVoice"
+      ]
+    },
+    {
+      "pokemon": "azelf",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "lightClay",
+      "moves": [
+        "agility",
+        "nightDaze",
+        "snarl",
+        "darkPulse"
+      ]
+    },
+    {
+      "pokemon": "ninjask",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "luckIncense",
+      "moves": [
+        "agility",
+        "aquaJet",
+        "iceShard",
+        "accelerock"
+      ]
+    },
+    {
+      "pokemon": "regieleki",
+      "shiny": true,
+      "ability": "pickPocket",
+      "item": "pureIncense",
+      "moves": [
+        "agility",
+        "accelerock",
+        "thunderCage",
+        "iceShard"
+      ]
+    }
+  ]
+}

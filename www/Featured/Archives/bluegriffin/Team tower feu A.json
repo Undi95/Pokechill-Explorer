@@ -1,0 +1,79 @@
+{
+  "name": "Team tower feu A",
+  "author": "bluegriffin",
+  "description": "Lugulabre vs bug, slowking vs fire, drifloon vs combat, lanturn vs elec/psy, tangela ghost (poison optionnel)/tinkatink dragon. Possiblité de prendre musharna imu ghost avec talent a la place de tangela ghost pour imu burn.",
+  "team": [
+    {
+      "pokemon": "chandelure",
+      "shiny": false,
+      "ability": "bugGuard",
+      "item": "assaultVest",
+      "moves": [
+        "meteorBeam",
+        "hex",
+        "ominousWind",
+        "shadowBall"
+      ]
+    },
+    {
+      "pokemon": "slowking",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "groundGem",
+      "moves": [
+        "nastyPlot",
+        "hydroPump",
+        "muddyWater",
+        "surf"
+      ]
+    },
+    {
+      "pokemon": "drifloon",
+      "shiny": false,
+      "ability": "grabGuard",
+      "item": "eviolite",
+      "moves": [
+        "willOWisp",
+        "steelWing",
+        "ominousWind",
+        "shadowBall"
+      ]
+    },
+    {
+      "pokemon": "lanturn",
+      "shiny": true,
+      "ability": "flashPsycha",
+      "item": "iceGem",
+      "moves": [
+        "toxic",
+        "iceBeam",
+        "chargeBeam",
+        "surf"
+      ]
+    },
+    {
+      "pokemon": "tangelaEvent",
+      "shiny": false,
+      "ability": "flashVenum",
+      "item": "grassGem",
+      "moves": [
+        "willOWisp",
+        "hex",
+        "shadowBall",
+        "extrasensory"
+      ]
+    },
+    {
+      "pokemon": "tinkatink",
+      "shiny": false,
+      "ability": "dragonGuard",
+      "item": "electricGem",
+      "moves": [
+        "swordsDance",
+        "spiritBreak",
+        "auroraPunch",
+        "playRough"
+      ]
+    }
+  ]
+}

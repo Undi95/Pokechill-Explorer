@@ -1,0 +1,141 @@
+{
+    "name": "SS-Tier Bugs - Mid-Game",
+    "author": "Zenith",
+    "description": "Low optimization sample team for a Grassy Terrain Bug team. No external egg moves or late game abilities required.",
+    "slots": [
+        {
+            "pokemon": "mightyena",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "lightClay",
+            "moves": [
+                "tailwind",
+                "howl",
+                null,
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "tapuBulu",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "climaTact",
+            "item": "grassySeed",
+            "moves": [
+                "screech",
+                "playRough",
+                "forestCurse",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "megaHeracross",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "adaptability",
+            "item": "heracronite",
+            "moves": [
+                "screech",
+                "megahorn",
+                "firstImpression",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "megaBeedrill",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "hyperCutter",
+            "item": "beedrillite",
+            "moves": [
+                "screech",
+                "savageStinger",
+                "firstImpression",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        },
+        {
+            "pokemon": "megaScizor",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "strongJaw",
+            "item": "scizorite",
+            "moves": [
+                "screech",
+                "bugBite",
+                "firstImpression",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "megaPinsir",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "sharpness",
+            "item": "pinsirite",
+            "moves": [
+                "screech",
+                "xScissor",
+                "firstImpression",
+                "uTurn"
+            ],
+            "ivs": {
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "satk": 3,
+                "sdef": 3,
+                "spe": 3
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-11T06:32:25+02:00"
+}

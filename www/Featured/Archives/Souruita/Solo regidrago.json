@@ -1,0 +1,19 @@
+{
+  "name": "Solo regidrago",
+  "author": "Souruita",
+  "description": "SD pour boost, ice fang + ice gem pour le stab, flash pyro pour l'immunité attaque feu , play rough et shark jaw pour des dégat stab par mawile naturellement en +.",
+  "team": [
+    {
+      "pokemon": "megaMawile",
+      "shiny": true,
+      "ability": "flashPyro",
+      "item": "iceGem",
+      "moves": [
+        "swordsDance",
+        "sharkJaws",
+        "playRough",
+        "iceFang"
+      ]
+    }
+  ]
+}

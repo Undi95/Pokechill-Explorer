@@ -1,0 +1,141 @@
+{
+    "name": "tower A spectre",
+    "author": "personne",
+    "description": "tower avec \u00e9norm\u00e9ment de move pas du type spectre. team : tangela pour spectre\/poison , cacnea pour plante\/eau , magneton pour vol\/acier , klang pour glace , bronzong pour sol\/f\u00e9e , chandelure pour fire (possibilit\u00e9 de prendre l'\u00e9volution de cacnea et changer klang pour laturn flash cryo et avoir l'imunit\u00e9 \u00e9lectrique en plus et bug guard de chandelure inutile possibilit\u00e9 de mettre flash psychia) vers la fin de la tower spectreval avec des move psy et combat essayer de r\u00e9partir les d\u00e9g\u00e2ts pour pas perdre de pokemon",
+    "slots": [
+        {
+            "pokemon": "tangelaEvent",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "flashVenum",
+            "item": "bugGem",
+            "moves": [
+                "willOWisp",
+                "ominousWind",
+                "hex",
+                "shadowBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "cacnea",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "flashHerba",
+            "item": "fairyGem",
+            "moves": [
+                "toxic",
+                "rototiller",
+                "needleArm",
+                "energyBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "magneton",
+            "shiny": true,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "flyingGuard",
+            "item": "eviolite",
+            "moves": [
+                "toxic",
+                "chargeBeam",
+                "thunder",
+                "thunderbolt"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "klang",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "flashCryo",
+            "item": "electricGem",
+            "moves": [
+                "shiftGear",
+                "ironTail",
+                "ironHead",
+                "magnetBomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "bronzong",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "flashFae",
+            "item": "rockGem",
+            "moves": [
+                "toxic",
+                "meteorBeam",
+                "flashCannon",
+                "psychic"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "chandelure",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "bugGuard",
+            "item": "assaultVest",
+            "moves": [
+                "flamethrower",
+                "hex",
+                "ominousWind",
+                "shadowBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T23:09:12+01:00"
+}

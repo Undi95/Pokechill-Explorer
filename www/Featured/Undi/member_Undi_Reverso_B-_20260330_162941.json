@@ -1,0 +1,141 @@
+{
+    "name": "Reverso B-",
+    "author": "Undi",
+    "description": "Team played in reverse, making small division usefull with genetic. Surskit is a must to boost the team, and Breloom is obligatory for his moves (-3 Def.)",
+    "slots": [
+        {
+            "pokemon": "surskit",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "stoned",
+            "item": "powerHerb",
+            "moves": [
+                "noRetreat",
+                "stringShot",
+                "stickyWeb",
+                "batonPass"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "breloom",
+            "shiny": true,
+            "starSign": null,
+            "nature": "bold",
+            "ability": "costar",
+            "item": "ejectPack",
+            "moves": [
+                "stunSpore",
+                "nobleRoar",
+                "screech",
+                "thunderousKick"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "prinplup",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "costar",
+            "item": "choiceSpecs",
+            "moves": [
+                "hydroCannon",
+                "freezeDry",
+                "snipeShot",
+                "blizzard"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "morpeko",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "stoned",
+            "item": "darkGem",
+            "moves": [
+                "auraWheel",
+                "ruination",
+                "thunderCage",
+                "falseSurrender"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "lairon",
+            "shiny": true,
+            "starSign": null,
+            "nature": "jolly",
+            "ability": "costar",
+            "item": "choiceBand",
+            "moves": [
+                "noRetreat",
+                "rockWrecker",
+                "ironHead",
+                "stoneEdge"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "honedge",
+            "shiny": true,
+            "starSign": null,
+            "nature": null,
+            "ability": "costar",
+            "item": "fireGem",
+            "moves": [
+                "bitterBlade",
+                "slash",
+                "smartStrike",
+                "razorShell"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-30T16:29:41+02:00"
+}

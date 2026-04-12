@@ -1,0 +1,101 @@
+{
+    "name": "Marshadow 1 Cycle",
+    "author": "Weffles",
+    "description": "Team to beat Marshadow in 1 cycle - Gholdengo with charm purely for shiny odds, only M Gengar does dmg",
+    "slots": [
+        {
+            "pokemon": "megaGengar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "gengarite",
+            "nature": "jolly",
+            "ability": "flashUmbra",
+            "moves": [
+                "toxic",
+                "nastyPlot",
+                "hex",
+                "shadowBall"
+            ]
+        },
+        {
+            "pokemon": "gholdengo",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "shinyCharm",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ]
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-06T14:42:01+02:00",
+    "team": [
+        {
+            "pokemon": "megaGengar",
+            "shiny": true,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "gengarite",
+            "nature": "jolly",
+            "ability": "flashUmbra",
+            "moves": [
+                "toxic",
+                "nastyPlot",
+                "hex",
+                "shadowBall"
+            ]
+        },
+        {
+            "pokemon": "gholdengo",
+            "shiny": false,
+            "level": 100,
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            },
+            "ivTotal": 36,
+            "item": "shinyCharm",
+            "hiddenAbilityUnlocked": true,
+            "moves": [
+                null,
+                null,
+                null,
+                null
+            ]
+        }
+    ]
+}

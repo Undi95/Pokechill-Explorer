@@ -1,0 +1,19 @@
+{
+  "name": "Solo Chi Yu",
+  "author": "Celtaz",
+  "description": "Embargo slot 1 obligatoire le reste des attaques aux choix.",
+  "team": [
+    {
+      "pokemon": "gliscor",
+      "shiny": false,
+      "ability": "flashPyro",
+      "item": "toxicOrb",
+      "moves": [
+        "embargo",
+        "rototiller",
+        "scorchingSands",
+        "bulldoze"
+      ]
+    }
+  ]
+}

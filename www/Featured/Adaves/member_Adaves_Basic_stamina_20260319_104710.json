@@ -1,0 +1,141 @@
+{
+    "name": "Basic stamina",
+    "author": "Adaves",
+    "description": "Basic stamina team",
+    "slots": [
+        {
+            "pokemon": "gholdengo",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "shinyCharm",
+            "moves": [
+                "payDay",
+                "flashCannon",
+                "mirrorShot",
+                "ironHead"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "mudsdale",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "rockGem",
+            "moves": [
+                "rockThrow",
+                "rockSlide",
+                "rollout",
+                "rockTomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 0,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "miltank",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "darkGem",
+            "moves": [
+                "knockOff",
+                "pursuit",
+                "nightSlash",
+                "crunch"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "duraludon",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "luckIncense",
+            "moves": [
+                "flashCannon",
+                "mirrorShot",
+                "ironHead",
+                "magnetBomb"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "wailord",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "leftovers",
+            "moves": [
+                "scald",
+                "surf",
+                "waterPulse",
+                "chillingWater"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "forretress",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": null,
+            "item": "pureIncense",
+            "moves": [
+                "xScissor",
+                "ironHead",
+                "magnetBomb",
+                "bugBite"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-19T10:47:10+01:00"
+}

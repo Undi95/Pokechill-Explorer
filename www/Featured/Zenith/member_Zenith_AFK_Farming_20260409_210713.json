@@ -1,0 +1,141 @@
+{
+    "name": "AFK Farming",
+    "author": "Zenith",
+    "description": "For use with overnight\/AFK farming, without using tickets.",
+    "slots": [
+        {
+            "pokemon": "gholdengo",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "powerHerb",
+            "moves": [
+                "payDay",
+                "bulletPunch",
+                "disarmingVoice",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "mudsdale",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "quickClaw",
+            "moves": [
+                "aquaJet",
+                "iceShard",
+                "accelerock",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "miltank",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "shinyCharm",
+            "moves": [
+                "aquaJet",
+                "iceShard",
+                "accelerock",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "duraludon",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "pureIncense",
+            "moves": [
+                "aquaJet",
+                "iceShard",
+                "accelerock",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "forretress",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "luckIncense",
+            "moves": [
+                "aquaJet",
+                "iceShard",
+                "accelerock",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "wailord",
+            "shiny": true,
+            "starSign": null,
+            "nature": "quiet",
+            "ability": "pickPocket",
+            "item": "leftovers",
+            "moves": [
+                "aquaJet",
+                "iceShard",
+                "accelerock",
+                "feintAttack"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-04-09T21:07:13+02:00"
+}

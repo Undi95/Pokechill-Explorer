@@ -1,0 +1,141 @@
+{
+    "name": "team tower feu A",
+    "author": "personne",
+    "description": "Lugulabre vs bug, slowking vs fire, drifloon vs combat, lanturn vs elec\/psy, tangela ghost (poison optionnel)\/tinkatink dragon. Possiblit\u00e9 de prendre musharna imu ghost avec talent a la place de tangela ghost pour imu burn.",
+    "slots": [
+        {
+            "pokemon": "chandelure",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "bugGuard",
+            "item": "assaultVest",
+            "moves": [
+                "meteorBeam",
+                "hex",
+                "ominousWind",
+                "shadowBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "slowking",
+            "shiny": true,
+            "starSign": null,
+            "nature": "modest",
+            "ability": "flashPyro",
+            "item": "groundGem",
+            "moves": [
+                "nastyPlot",
+                "hydroPump",
+                "muddyWater",
+                "surf"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "drifloon",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "grabGuard",
+            "item": "eviolite",
+            "moves": [
+                "willOWisp",
+                "steelWing",
+                "ominousWind",
+                "shadowBall"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "lanturn",
+            "shiny": true,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "flashPsycha",
+            "item": "iceGem",
+            "moves": [
+                "toxic",
+                "iceBeam",
+                "chargeBeam",
+                "surf"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "tangelaEvent",
+            "shiny": false,
+            "starSign": null,
+            "nature": null,
+            "ability": "flashVenum",
+            "item": "grassGem",
+            "moves": [
+                "willOWisp",
+                "hex",
+                "shadowBall",
+                "extrasensory"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        },
+        {
+            "pokemon": "tinkatink",
+            "shiny": false,
+            "starSign": null,
+            "nature": "relaxed",
+            "ability": "dragonGuard",
+            "item": "electricGem",
+            "moves": [
+                "swordsDance",
+                "spiritBreak",
+                "auroraPunch",
+                "playRough"
+            ],
+            "ivs": {
+                "hp": 6,
+                "atk": 6,
+                "def": 6,
+                "satk": 6,
+                "sdef": 6,
+                "spe": 6
+            }
+        }
+    ],
+    "_isMemberSubmitted": true,
+    "_submittedAt": "2026-03-21T23:03:10+01:00"
+}
