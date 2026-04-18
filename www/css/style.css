@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg-dark: #0a0a12; --bg-card: #12121f; --bg-input: #1a1a2e;
     --accent-blue: #00d4ff; --accent-pink: #ff00aa; --accent-gold: #ffd700; --accent-purple: #9400d3;
     --accent-green: #00ff88; --accent-orange: #ff8800; --accent-red: #ff4444;
@@ -573,6 +573,62 @@ body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: v
     50% { box-shadow: 0 0 18px rgba(255,68,68,0.8), inset 0 0 10px rgba(255,255,255,0.4); transform: scale(1.01); }
 }
 
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(255,107,53,0.5); transform: scale(1); }
+    50% { box-shadow: 0 0 20px rgba(255,107,53,0.9); transform: scale(1.05); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes rainbow-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 10px rgba(255,0,0,0.5), inset 0 0 6px rgba(255,255,255,0.2);
+        border-color: #ff0000;
+        filter: hue-rotate(0deg);
+    }
+    16.66% { 
+        box-shadow: 0 0 15px rgba(255,165,0,0.6), inset 0 0 8px rgba(255,255,255,0.3);
+        border-color: #ffa500;
+    }
+    33.33% { 
+        box-shadow: 0 0 20px rgba(255,255,0,0.7), inset 0 0 10px rgba(255,255,255,0.4);
+        border-color: #ffff00;
+    }
+    50% { 
+        box-shadow: 0 0 25px rgba(0,255,0,0.8), inset 0 0 12px rgba(255,255,255,0.5);
+        border-color: #00ff00;
+    }
+    66.66% { 
+        box-shadow: 0 0 20px rgba(0,0,255,0.7), inset 0 0 10px rgba(255,255,255,0.4);
+        border-color: #0000ff;
+    }
+    83.33% { 
+        box-shadow: 0 0 15px rgba(238,130,238,0.6), inset 0 0 8px rgba(255,255,255,0.3);
+        border-color: #ee82ee;
+    }
+}
+
+.tab-rainbow {
+    background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(255,165,0,0.15), rgba(255,255,0,0.15), rgba(0,255,0,0.15), rgba(0,0,255,0.15), rgba(238,130,238,0.15)) !important;
+    animation: rainbow-pulse 3s linear infinite;
+    font-weight: 700;
+}
+.tab-rainbow:hover {
+    filter: brightness(1.2);
+}
+.tab-rainbow.active {
+    background: linear-gradient(135deg, rgba(255,0,0,0.3), rgba(255,165,0,0.3), rgba(255,255,0,0.3), rgba(0,255,0,0.3), rgba(0,0,255,0.3), rgba(238,130,238,0.3)) !important;
+    animation: rainbow-pulse 2s linear infinite;
+    font-weight: 800;
+}
+
 #loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; }
 .loading-title { font-family: 'Orbitron', sans-serif; font-size: 2rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; }
 .loading-spinner { width: 60px; height: 60px; border: 4px solid var(--border); border-top-color: var(--accent-blue); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px; }
@@ -766,8 +822,8 @@ select:focus, input:focus { outline: none; border-color: var(--accent-blue); }
 .trainer-pkmn-name { font-size: 0.65rem; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* Update Banner */
-.update-banner { position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(90deg, #00c853, #00e676); color: #000; padding: 10px 20px; text-align: center; font-weight: 700; z-index: 9998; display: none; cursor: pointer; animation: bannerPulse 2s infinite; }
-.update-banner.show { display: block; }
+.update-banner { background: linear-gradient(90deg, #00c853, #00e676); color: #000; padding: 12px 20px; font-weight: 700; display: none; cursor: pointer; animation: bannerPulse 2s infinite; justify-content: center; align-items: center; gap: 10px; }
+.update-banner.show { display: flex; }
 .update-banner:hover { background: linear-gradient(90deg, #00e676, #69f0ae); }
 @keyframes bannerPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
 
@@ -837,23 +893,6 @@ footer a { color: var(--accent-blue); }
     .team-builder { grid-template-columns: repeat(3, 1fr); }
     .compare-grid { grid-template-columns: 1fr 1fr; }
     .results-grid { grid-template-columns: 1fr; }
-    
-    /* Base mobile improvements */
-    html {
-        -webkit-text-size-adjust: 100%;
-        touch-action: manipulation;
-    }
-    
-    /* Improve touch targets */
-    button, .btn, input, select, a {
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-    }
-    
-    /* Smoother scrolling */
-    .panel, .modal, .search-section {
-        -webkit-overflow-scrolling: touch;
-    }
     
     /* Damage Calculator Mobile */
     #damage-panel .search-section > div[style*="grid-template-columns:1fr 1fr"] {
@@ -1857,154 +1896,3 @@ footer a { color: var(--accent-blue); }
 /* ===== FOOTER GLOW STYLES ===== */
 .footer-glow { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
 .footer-glow img, .footer-glow .emoji { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.4)); }
-
-/* ===== SAVEZONE MOBILE STYLES ===== */
-@media (max-width: 768px) {
-    /* Savezone slots en colonne sur mobile */
-    #savezone-panel .search-section > div[style*="grid-template-columns:1fr 1fr"] {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
-    
-    /* Banderole de stats plus compacte */
-    #savezone-stats-ticker {
-        font-size: 0.75rem;
-    }
-    #savezone-stats-ticker span {
-        padding: 0 12px !important;
-    }
-    #savezone-stats-ticker img {
-        width: 16px !important;
-        height: 16px !important;
-    }
-    
-    /* Stats personnelles en grille 2 colonnes */
-    #savezone-personal-stats {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-    }
-    #savezone-personal-stats span {
-        font-size: 0.75rem;
-        padding: 5px 8px;
-        text-align: center;
-    }
-    #savezone-personal-stats img {
-        width: 14px !important;
-        height: 14px !important;
-    }
-    
-    /* Pokédex grid plus compact */
-    #savezone-pokedex-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-    
-    /* Modal Pokémon en plein écran sur mobile */
-    #pokemon-detail-modal > div {
-        padding: 10px !important;
-    }
-    #pokemon-detail-modal > div > div {
-        max-height: 95vh !important;
-        border-radius: 12px !important;
-    }
-    
-    /* Stats rows dans le modal en scroll horizontal si besoin */
-    #pokemon-detail-modal .stats-row {
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Savezone header plus compact */
-    #savezone-panel h3 {
-        font-size: 1rem;
-        flex-wrap: wrap;
-    }
-    
-    /* Banderole stats vitesse réduite et plus petite */
-    #savezone-stats-ticker {
-        animation-duration: 20s !important;
-    }
-    #savezone-stats-ticker span {
-        font-size: 0.7rem;
-        padding: 0 8px !important;
-    }
-    
-    /* Pokédex grid 2 colonnes sur très petits écrans */
-    #savezone-pokedex-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    
-    /* Boutons des slots plus grands pour le touch */
-    #savezone-slot1-actions button,
-    #savezone-slot2-actions button {
-        padding: 12px;
-        font-size: 0.9rem;
-        min-height: 44px;
-    }
-    
-    /* Search bar du Pokédex plus compacte */
-    #pokedex-search {
-        font-size: 16px; /* Prevent zoom iOS */
-        padding: 8px 12px;
-    }
-    
-    /* Stats persos en 2 colonnes plus compact */
-    #savezone-personal-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-    #savezone-personal-stats span {
-        font-size: 0.7rem;
-    }
-    
-    /* Warning message plus petit */
-    #savezone-panel > div > div[data-i18n="savezoneMaintenance"] {
-        font-size: 0.75rem;
-        padding: 8px 10px;
-    }
-}
-
-/* Bouton flottant Savezone amélioré sur mobile */
-@media (max-width: 768px) {
-    #savezone-float-btn {
-        bottom: max(20px, env(safe-area-inset-bottom)) !important;
-        right: 20px !important;
-        padding: 14px 20px !important;
-        font-size: 0.85rem;
-        border-radius: 50px !important;
-        min-height: 50px;
-        -webkit-tap-highlight-color: transparent;
-    }
-}
-
-@media (max-width: 480px) {
-    #savezone-float-btn {
-        bottom: max(15px, env(safe-area-inset-bottom)) !important;
-        right: 15px !important;
-        padding: 12px 16px !important;
-        font-size: 0.8rem;
-    }
-}
-
-/* Animation du bouton flottant */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-/* Scrollbar styling pour le Pokédex */
-#savezone-pokedex-content::-webkit-scrollbar {
-    width: 8px;
-}
-#savezone-pokedex-content::-webkit-scrollbar-track {
-    background: var(--bg-input);
-    border-radius: 4px;
-}
-#savezone-pokedex-content::-webkit-scrollbar-thumb {
-    background: var(--accent-purple);
-    border-radius: 4px;
-}
-#savezone-pokedex-content::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-pink);
-}

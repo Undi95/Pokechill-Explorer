@@ -224,6 +224,7 @@ const I18N = {
           weatherFoggy: "Brouillard", weatherElectric: "Terrain Électrik", weatherMisty: "Terrain Brumeux", weatherGrassy: "Terrain Herbu",
           weatherTrick: "Trick Room", weatherWeird: "Weird Room", weatherCross: "Cross Room",
           geneticOn: "🧬 Génétique ON", wildBattleInfo: "Combat Sauvage: Attaquant a stats/objets/talent complets, Défenseur est sauvage (pas d'IVs/talent)", raidBattle: "Combat Raid", raidBattleInfo: "Combat Raid: Attaquant a stats/objets/talent complets, Défenseur est un boss de raid (pas d'IVs/talent/objets)", hpDisclaimer: "⚠️ La barre de PV peut ne pas refléter exactement le jeu selon les modificateurs de difficulté", raidDifficultyLabel: "Difficulté Raid", boss: "Boss", raidDifficulty: "Difficulté",
+          zoneBattle: "Combat Zone", zoneBattleInfo: "Combat Zone: Sélectionnez une zone pour calculer les PV du défenseur selon sa difficulté réelle (donjons à clés, événements...)", selectZone: "-- Sélectionnez une zone --", zoneDifficultyLabel: "Difficulté de la zone", zoneDiffValue: "Difficulté", zoneType_event: "Event", zoneType_dungeon: "Donjon", zoneType_wild: "Sauvage", dmgDamageLabel: "Dégâts", dmgHitsToKO: "coup(s) pour KO", dmgOneShot: "ONE SHOT!",
           buff0: "0", buffPlus1: "+1 (×1.5)", buffPlus2: "+2 (×2)", buffMinus1: "-1 (×0.67)", buffMinus2: "-2 (×0.5)",
           // Division labels
           ssMeta: "SS (Méta)", sssLegendary: "SSS (Légendaire)",
@@ -863,6 +864,7 @@ const I18N = {
           weatherFoggy: "Foggy", weatherElectric: "Electric Terrain", weatherMisty: "Misty Terrain", weatherGrassy: "Grassy Terrain",
           weatherTrick: "Trick Room", weatherWeird: "Weird Room", weatherCross: "Cross Room",
           geneticOn: "🧬 Genetic ON", wildBattleInfo: "Wild Battle: Attacker has full stats/items/ability, Defender is wild (no IVs/ability)", raidBattle: "Raid Battle", hpDisclaimer: "⚠️ HP bar may not reflect exact in-game values due to difficulty modifiers", raidBattleInfo: "Raid Battle: Attacker has full stats/items/ability, Defender is a raid boss (no IVs/ability/items)", raidDifficultyLabel: "Raid Difficulty", boss: "Boss", raidDifficulty: "Difficulty",
+          zoneBattle: "Zone Battle", zoneBattleInfo: "Zone Battle: Select a zone to calculate the defender's HP based on its actual difficulty (key dungeons, events...)", selectZone: "-- Select a zone --", zoneDifficultyLabel: "Zone Difficulty", zoneDiffValue: "Difficulty", zoneType_event: "Event", zoneType_dungeon: "Dungeon", zoneType_wild: "Wild", dmgDamageLabel: "Damage", dmgHitsToKO: "hit(s) to KO", dmgOneShot: "ONE SHOT!",
           buff0: "0", buffPlus1: "+1 (×1.5)", buffPlus2: "+2 (×2)", buffMinus1: "-1 (×0.67)", buffMinus2: "-2 (×0.5)",
           // Division labels
           ssMeta: "SS (Meta)", sssLegendary: "SSS (Legendary)",

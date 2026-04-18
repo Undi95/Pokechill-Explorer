@@ -1,9 +1,13 @@
 ﻿// ============ DAMAGE CALCULATOR ============
 let dmgCalcInitialized = false;
 
-// Damage Calculator Mode: 'wild' or 'raid'
+// Damage Calculator Mode: 'wild', 'zone', or 'raid'
 let dmgCalcMode = 'wild';
 let geneticMode = false;
+
+// Zone mode state
+let dmgCalcZoneDifficulty = 0;
+let dmgCalcZoneKey = '';
 
 // Cache for pokemon difficulty multipliers (must be defined before use)
 let pokemonDifficultyCache = null;
@@ -101,6 +105,150 @@ function getPokemonDifficultyTier(pokemonName) {
     return { tier: 0, label: '-', stars: '', color: 'var(--text-dim)' };
 }
 
+// ============ ZONE MODE (new) ============
+
+// Returns zones that have a difficulty value (used for Zone mode selector)
+// Baltimor's filter: areas with difficulty + drops, excluding raw dungeons
+function getZonesWithDifficulty() {
+    if (typeof areas === 'undefined') return [];
+    return Object.values(areas)
+        .filter(a => a && a.difficulty && a.drops && a.type !== 'dungeon')
+        .sort((a, b) => a.difficulty - b.difficulty);
+}
+
+// Get human-readable tier info from a raw difficulty value
+function getDifficultyTierInfo(difficulty) {
+    if (difficulty === 600) return { label: 'Tier IV', stars: '⭐⭐⭐⭐', color: '#ff4444' };
+    if (difficulty === 200) return { label: 'Tier III', stars: '⭐⭐⭐', color: '#ff8800' };
+    if (difficulty === 70)  return { label: 'Tier II', stars: '⭐⭐', color: '#ffd700' };
+    if (difficulty === 25)  return { label: 'Tier I', stars: '⭐', color: '#00ff88' };
+    return { label: `×${difficulty}`, stars: '🏰', color: 'var(--accent-orange)' };
+}
+
+// Populate the zone dropdown in zone mode
+function initZoneDropdown() {
+    const select = document.getElementById('dmg-zone-select');
+    if (!select || select.dataset.initialized) return;
+
+    const zones = getZonesWithDifficulty();
+
+    // Group by type for display
+    const byType = {};
+    zones.forEach(a => {
+        const type = a.type || 'other';
+        if (!byType[type]) byType[type] = [];
+        byType[type].push(a);
+    });
+
+    select.innerHTML = `<option value="">${t('selectZone')}</option>`;
+
+    // Render each group
+    Object.entries(byType).forEach(([type, list]) => {
+        const groupLabel = t('zoneType_' + type) || type;
+        const group = document.createElement('optgroup');
+        group.label = groupLabel;
+        list.forEach(a => {
+            const tierInfo = getDifficultyTierInfo(a.difficulty);
+            const opt = document.createElement('option');
+            opt.value = a.name;
+            const displayName = a.displayName || a.name;
+            opt.textContent = `${displayName} — ${tierInfo.label} (×${a.difficulty})`;
+            opt.dataset.difficulty = a.difficulty;
+            group.appendChild(opt);
+        });
+        select.appendChild(group);
+    });
+
+    select.dataset.initialized = '1';
+}
+
+// Collect every pokemon name that can appear in a given zone
+// Sources: spawns (common/uncommon/rare), bossPkmn, team.slot1/slot2...
+function getZonePokemonList(zoneKey) {
+    const list = new Set();
+    if (typeof areas === 'undefined' || !areas[zoneKey]) return list;
+    const zone = areas[zoneKey];
+
+    if (zone.spawns) {
+        ['common', 'uncommon', 'rare'].forEach(rarity => {
+            if (Array.isArray(zone.spawns[rarity])) {
+                zone.spawns[rarity].forEach(p => p && list.add(p));
+            }
+        });
+    }
+    if (zone.bossPkmn) list.add(zone.bossPkmn);
+    if (zone.team) {
+        Object.values(zone.team).forEach(v => {
+            if (typeof v === 'string') list.add(v);
+        });
+    }
+    return list;
+}
+
+// Restrict the defender dropdown to the pokemon present in the selected zone
+function filterDefenderByZone(zoneKey) {
+    const defPokemon = document.getElementById('dmg-def-pokemon');
+    if (!defPokemon) return;
+
+    if (!zoneKey) {
+        // No zone selected: show all
+        Array.from(defPokemon.options).forEach(opt => { opt.style.display = ''; });
+        return;
+    }
+
+    const zonePokemon = getZonePokemonList(zoneKey);
+    Array.from(defPokemon.options).forEach(opt => {
+        if (!opt.value) return; // keep "select" placeholder visible
+        opt.style.display = zonePokemon.has(opt.value) ? '' : 'none';
+    });
+
+    // Auto-pick if only one pokemon in the zone (typical for trainer events)
+    if (zonePokemon.size === 1) {
+        defPokemon.value = [...zonePokemon][0];
+    } else if (defPokemon.value && !zonePokemon.has(defPokemon.value)) {
+        // Current selection not in this zone: clear it
+        defPokemon.value = '';
+    }
+}
+
+// Called when user picks a zone in zone mode
+function onZoneSelect() {
+    const select = document.getElementById('dmg-zone-select');
+    const zoneKey = select?.value || '';
+    dmgCalcZoneKey = zoneKey;
+
+    if (zoneKey && typeof areas !== 'undefined' && areas[zoneKey]) {
+        dmgCalcZoneDifficulty = areas[zoneKey].difficulty || 0;
+    } else {
+        dmgCalcZoneDifficulty = 0;
+    }
+
+    filterDefenderByZone(zoneKey);
+    updateZoneInfoDisplay();
+    updateDamageCalc();
+}
+
+// Update the zone info box below the zone selector
+function updateZoneInfoDisplay() {
+    const infoDiv = document.getElementById('dmg-zone-info');
+    if (!infoDiv) return;
+
+    if (!dmgCalcZoneDifficulty) {
+        infoDiv.style.display = 'none';
+        return;
+    }
+
+    const tierInfo = getDifficultyTierInfo(dmgCalcZoneDifficulty);
+    infoDiv.style.display = 'flex';
+    infoDiv.innerHTML = `
+        <span style="color:${tierInfo.color};font-weight:700;font-size:1rem">${tierInfo.label}</span>
+        <span style="color:var(--text-dim);font-size:0.85rem">${tierInfo.stars}</span>
+        <span style="color:var(--text-dim);font-size:0.8rem">(${t('zoneDiffValue')}: ×${dmgCalcZoneDifficulty})</span>
+    `;
+}
+
+// ============ END ZONE MODE ============
+
 // Ate abilities configuration (from explore.js lines 2468-2481)
 const ABILITY_ATE_MODIFIERS = {
     ferrilate: { type: 'steel', multiplier: 1.3 },
@@ -162,46 +310,72 @@ function toggleGeneticMode() {
 
 function setDmgMode(mode) {
     dmgCalcMode = mode;
-    
+
     // Update button styles
     const wildBtn = document.getElementById('dmg-mode-wild');
+    const zoneBtn = document.getElementById('dmg-mode-zone');
     const raidBtn = document.getElementById('dmg-mode-raid');
     const info = document.getElementById('dmg-mode-info');
-    
+
+    // Reset all buttons
+    [wildBtn, zoneBtn, raidBtn].forEach(btn => {
+        if (!btn) return;
+        btn.style.background = 'transparent';
+        btn.style.border = 'none';
+        btn.style.color = 'var(--text-dim)';
+    });
+
     if (mode === 'wild') {
-        wildBtn.style.background = 'linear-gradient(135deg,rgba(0,255,136,0.2),rgba(0,255,136,0.1))';
-        wildBtn.style.border = '1px solid var(--accent-green)';
-        wildBtn.style.color = 'var(--accent-green)';
-        raidBtn.style.background = 'transparent';
-        raidBtn.style.border = 'none';
-        raidBtn.style.color = 'var(--text-dim)';
-        info.textContent = t('wildBattleInfo');
+        if (wildBtn) {
+            wildBtn.style.background = 'linear-gradient(135deg,rgba(0,255,136,0.2),rgba(0,255,136,0.1))';
+            wildBtn.style.border = '1px solid var(--accent-green)';
+            wildBtn.style.color = 'var(--accent-green)';
+        }
+        if (info) info.textContent = t('wildBattleInfo');
+    } else if (mode === 'zone') {
+        if (zoneBtn) {
+            zoneBtn.style.background = 'linear-gradient(135deg,rgba(255,136,0,0.2),rgba(255,136,0,0.1))';
+            zoneBtn.style.border = '1px solid var(--accent-orange)';
+            zoneBtn.style.color = 'var(--accent-orange)';
+        }
+        if (info) info.textContent = t('zoneBattleInfo');
     } else {
-        raidBtn.style.background = 'linear-gradient(135deg,rgba(0,212,255,0.2),rgba(0,212,255,0.1))';
-        raidBtn.style.border = '1px solid var(--accent-blue)';
-        raidBtn.style.color = 'var(--accent-blue)';
-        wildBtn.style.background = 'transparent';
-        wildBtn.style.border = 'none';
-        wildBtn.style.color = 'var(--text-dim)';
-        info.textContent = t('raidBattleInfo');
+        if (raidBtn) {
+            raidBtn.style.background = 'linear-gradient(135deg,rgba(0,212,255,0.2),rgba(0,212,255,0.1))';
+            raidBtn.style.border = '1px solid var(--accent-blue)';
+            raidBtn.style.color = 'var(--accent-blue)';
+        }
+        if (info) info.textContent = t('raidBattleInfo');
     }
-    
-    // Defender never has IVs/ability/item (neither wild nor raid)
+
+    // Defender never has IVs/ability/item (neither wild, zone nor raid)
     document.querySelectorAll('.dmg-trainer-only').forEach(el => {
         el.style.display = 'none';
     });
-    
+
+    // Show/hide zone selector (only for zone mode)
+    const zoneContainer = document.getElementById('dmg-zone-container');
+    if (zoneContainer) {
+        if (mode === 'zone') {
+            zoneContainer.style.display = 'block';
+            initZoneDropdown();
+            updateZoneInfoDisplay();
+        } else {
+            zoneContainer.style.display = 'none';
+        }
+    }
+
     // Show/hide raid difficulty display
     const raidDifficultyDiv = document.getElementById('dmg-raid-difficulty');
     if (raidDifficultyDiv) {
         raidDifficultyDiv.style.display = mode === 'raid' ? 'block' : 'none';
-        
+
         // Show/hide cooking buff container (only for raid)
         const cookingContainer = document.getElementById('dmg-cooking-container');
         if (cookingContainer) {
             cookingContainer.style.display = mode === 'raid' ? 'block' : 'none';
         }
-        
+
         // Update difficulty content if in raid mode and a pokemon is selected
         if (mode === 'raid') {
             const defName = document.getElementById('dmg-def-pokemon')?.value;
@@ -218,25 +392,32 @@ function setDmgMode(mode) {
             }
         }
     }
-    
+
     // Filter defender pokemon list based on mode
     const defPokemon = document.getElementById('dmg-def-pokemon');
     if (defPokemon) {
         const pokemonWithDifficulty = getPokemonWithDifficulty();
+        const zonePokemon = (mode === 'zone' && dmgCalcZoneKey) ? getZonePokemonList(dmgCalcZoneKey) : null;
+
         Array.from(defPokemon.options).forEach(opt => {
             if (!opt.value) return; // Skip empty option
             if (mode === 'raid') {
                 // In raid mode: only show pokemon with difficulty
                 opt.style.display = pokemonWithDifficulty.has(opt.value) ? '' : 'none';
+            } else if (mode === 'zone' && zonePokemon) {
+                // In zone mode with a zone selected: only show pokemon from this zone
+                opt.style.display = zonePokemon.has(opt.value) ? '' : 'none';
             } else {
-                // In wild mode: show all pokemon
+                // Wild mode, or zone mode without a zone yet: show all
                 opt.style.display = '';
             }
         });
-        
+
         // Clear selection if currently selected pokemon is not valid in this mode
         const currentDef = defPokemon.value;
         if (currentDef && mode === 'raid' && !pokemonWithDifficulty.has(currentDef)) {
+            defPokemon.value = '';
+        } else if (currentDef && zonePokemon && !zonePokemon.has(currentDef)) {
             defPokemon.value = '';
         }
     }
@@ -334,7 +515,7 @@ function initDamageCalc() {
     
     // Clear existing options except first
     atkPokemon.innerHTML = `<option value="">${t('selectOption')}</option>`;
-    defPokemon.innerHTML = `<option value="">${t('selectOption')}</option`;
+    defPokemon.innerHTML = `<option value="">${t('selectOption')}</option>`;
     
     const pkmnList = Object.values(pokemons).sort((a, b) => a.displayName.localeCompare(b.displayName));
     
@@ -509,6 +690,11 @@ function updateDamageCalc() {
                 diffDisplay.textContent = '-';
             }
         }
+    }
+
+    // Update zone difficulty info display
+    if (dmgCalcMode === 'zone') {
+        updateZoneInfoDisplay();
     }
     
     // Only update move select when attacker changes
@@ -2586,34 +2772,44 @@ function calculateDamage() {
     breakdownEl.innerHTML = html;
 
     // === Barre de HP du défenseur ===
-    // Formule du jeu (explore.js): 
-    // - Wild: HP = (100 + hpStars * 30 * (1 + level * 0.2)) * 2
-    // - Raids: Valeurs hardcodées (T1:45250, T2:139300, T3:398000, T4:1302000)
+    // Formule du jeu (explore.js):
+    // - Wild:  HP = (100 + hpStars * 30 * (1 + level * 0.2)) * 2
+    // - Raids: valeurs hardcodées (T1:45250, T2:139300, T3:398000, T4:1302000)
+    // - Zone:  même logique que Raid mais avec la difficulté de la zone sélectionnée
     let defenderMaxHP;
     let difficultyDisplay = '';
+
+    function calcHPFromDifficulty(difficulty) {
+        if (difficulty === 600) return 1302000;      // T4
+        if (difficulty === 200) return 398000;       // T3
+        if (difficulty === 70)  return 139300;       // T2
+        if (difficulty === 25)  return 45250;        // T1
+        if (difficulty > 0) {
+            const hpStars = statToRating(defender.bst.hp);
+            const hpStatPart = hpStars * 30 * (1 + defLevel * 0.2);
+            return Math.floor((100 + hpStatPart) * difficulty);
+        }
+        // Fallback: wild formula
+        const hpStars = statToRating(defender.bst.hp);
+        const hpStatPart = hpStars * 30 * (1 + defLevel * 0.2);
+        return Math.floor((100 + hpStatPart) * 2);
+    }
+
     if (dmgCalcMode === 'raid') {
-        // Raids: exact tier matching like the game (== not >=)
         const difficulty = getPokemonDifficultyMultiplier(defName);
-        if (difficulty === 600) defenderMaxHP = 1302000;       // T4
-        else if (difficulty === 200) defenderMaxHP = 398000;   // T3
-        else if (difficulty === 70) defenderMaxHP = 139300;    // T2
-        else if (difficulty === 25) defenderMaxHP = 45250;     // T1
-        else if (difficulty > 0) {
-            // Non-tier difficulty: use difficulty as hpMultiplier in formula
-            const hpStars = statToRating(defender.bst.hp);
-            const hpStatPart = hpStars * 30 * (1 + defLevel * 0.2);
-            defenderMaxHP = Math.floor((100 + hpStatPart) * difficulty);
-            difficultyDisplay = `Difficulté: ${difficulty}`;
-        } else {
-            // Fallback: use wild formula
-            const hpStars = statToRating(defender.bst.hp);
-            const hpStatPart = hpStars * 30 * (1 + defLevel * 0.2);
-            defenderMaxHP = Math.floor((100 + hpStatPart) * 2);
+        defenderMaxHP = calcHPFromDifficulty(difficulty);
+        if (difficulty > 0 && difficulty !== 25 && difficulty !== 70 && difficulty !== 200 && difficulty !== 600) {
+            difficultyDisplay = `${t('zoneDiffValue')}: ${difficulty}`;
+        }
+    } else if (dmgCalcMode === 'zone') {
+        const difficulty = dmgCalcZoneDifficulty;
+        defenderMaxHP = calcHPFromDifficulty(difficulty);
+        if (difficulty > 0) {
+            const tierInfo = getDifficultyTierInfo(difficulty);
+            difficultyDisplay = `${tierInfo.label} (×${difficulty})`;
         }
     } else {
-        // Wild: formule normale
-        // Formule du jeu: HP = (100 + hpStars * 30 * (1 + level * 0.2)) * hpMultiplier
-        // où hpStars = bst.hp [1-6 étoiles], hpMultiplier = 2
+        // Wild: formule standard × 2
         const hpStars = statToRating(defender.bst.hp);
         const hpStatPart = hpStars * 30 * (1 + defLevel * 0.2);
         defenderMaxHP = Math.floor((100 + hpStatPart) * 2);
@@ -2643,12 +2839,12 @@ function calculateDamage() {
         hpText.innerHTML = `<span style="color:var(--accent-green);font-weight:600">${Math.floor(hpAfterDamage)}</span> <span style="color:var(--text-dim)">/ ${defenderMaxHP}</span>${diffSuffix}`;
 
         if (damage >= defenderMaxHP) {
-            const hitsText = hitCount > 1 ? ` (${hitCount} coups)` : '';
-            damageText.innerHTML = `💥 <span style="color:var(--accent-red);font-size:1.1rem;font-weight:700">ONE SHOT!</span> <span style="color:var(--text-dim)">(${Math.floor(damagePercent)}%)${hitsText}</span>`;
+            const hitsText = hitCount > 1 ? ` (${hitCount} ${t('dmgHitsToKO')})` : '';
+            damageText.innerHTML = `💥 <span style="color:var(--accent-red);font-size:1.1rem;font-weight:700">${t('dmgOneShot')}</span> <span style="color:var(--text-dim)">(${Math.floor(damagePercent)}%)${hitsText}</span>`;
         } else {
             const hitsToKO = Math.ceil(defenderMaxHP / damage);
             const dmgDisplay = Math.floor(damage);
-            damageText.innerHTML = `Dégâts: <span style="color:var(--accent-orange);font-weight:600">${dmgDisplay}</span> <span style="color:var(--text-dim)">(${damagePercent.toFixed(1)}%)</span> <span style="color:var(--text-dim);font-size:0.8rem">| ${hitsToKO} coup${hitsToKO > 1 ? 's' : ''} pour KO</span>`;
+            damageText.innerHTML = `${t('dmgDamageLabel')}: <span style="color:var(--accent-orange);font-weight:600">${dmgDisplay}</span> <span style="color:var(--text-dim)">(${damagePercent.toFixed(1)}%)</span> <span style="color:var(--text-dim);font-size:0.8rem">| ${hitsToKO} ${t('dmgHitsToKO')}</span>`;
         }
     }
     } catch (e) {
