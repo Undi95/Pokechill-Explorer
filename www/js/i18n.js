@@ -235,7 +235,7 @@ const I18N = {
           // Item drops
           rareDrop: "Drop Rare", uncommonDrop: "Drop Peu commun", commonDrop: "Drop Commun",
           // Misc UI
-          localOnly: "100% Local", madeWith: "Fait avec ❤️ par", forCommunity: "pour la communauté PokeChill", share: "Partager", copied: "Copié !", officialGame: "Jouer à PokeChill",
+          localOnly: "100% Local", madeWith: "Fait avec ❤️ par", forCommunity: "pour la communauté PokeChill", share: "Partager", copied: "Copié !", officialGame: "Jouer à PokeChill", frenchVersion: "Version FR",
           addToComparePrompt: "Ajoutez des Pokémon pour comparer", selectBothHostSample: "Sélectionnez Hôte et Échantillon",
           totalStars: "TOTAL ★", haPrefix: "TC:", shopFor: "Boutique", allItemsDefault: "Tous les objets",
           // Move properties
@@ -877,7 +877,7 @@ const I18N = {
           // Item drops
           rareDrop: "Rare Drop", uncommonDrop: "Uncommon Drop", commonDrop: "Common Drop",
           // Misc UI
-          localOnly: "100% Local", madeWith: "Made with ❤️ by", forCommunity: "for the PokeChill community", share: "Share", copied: "Copied!", officialGame: "Play PokeChill",
+          localOnly: "100% Local", madeWith: "Made with ❤️ by", forCommunity: "for the PokeChill community", share: "Share", copied: "Copied!", officialGame: "Play PokeChill", frenchVersion: "FR Version",
           addToComparePrompt: "Add Pokémon to compare", selectBothHostSample: "Select both Host and Sample",
           totalStars: "TOTAL ★", haPrefix: "HA:", shopFor: "Shop", allItemsDefault: "All Items",
           // Move properties

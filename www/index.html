@@ -26,7 +26,7 @@
     <script>
         // === VERSION & CACHE MANAGEMENT ===
         (function() {
-            const APP_VERSION = '3.7.0'; // Bump this with each release
+            const APP_VERSION = '3.7.1'; // Bump this with each release
             const storedVersion = localStorage.getItem('pokechill_app_version');
             const justCleared = sessionStorage.getItem('cache_cleared');
             
@@ -176,8 +176,9 @@
                         </div>
                     </div>
                 </div>
-                <div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:10px;gap:10px">
+                <div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:10px;gap:10px;flex-wrap:wrap">
                     <button class="header-btn" onclick="window.open('https://play-pokechill.github.io/','_blank')" style="background:linear-gradient(135deg,rgba(255,215,0,0.85),rgba(255,170,0,0.85));border:2px solid #ffd700;box-shadow:0 0 15px rgba(255,215,0,0.7), inset 0 0 8px rgba(255,255,255,0.3);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;padding:8px 14px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.5);animation:pulse-gold 2s infinite">🎮 <span data-i18n="officialGame">Jouer à PokeChill</span></button>
+                    <button class="header-btn fr-version-btn" onclick="window.open('https://undi95.github.io/play-pokechill.github.io-FR/','_blank')" title="Traduction FR fanmade par Undi">🇫🇷 <span data-i18n="frenchVersion">Version FR</span></button>
                     <button class="header-btn" onclick="openChallengesModal()" style="background:linear-gradient(135deg,rgba(255,100,0,0.9),rgba(255,50,0,0.9));border:2px solid #ff6600;box-shadow:0 0 20px rgba(255,100,0,0.8), inset 0 0 10px rgba(255,255,255,0.4);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;padding:8px 14px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.6);position:relative;animation:pulse-orange 2s infinite">🏆 <span data-i18n="challengesBtn">SUCCES</span><span id="challenges-nav-badge" style="display:none;position:absolute;top:-10px;right:-12px;background:linear-gradient(135deg,#ffd700,#ffaa00);color:#8b4513;font-size:0.65rem;padding:3px 8px;border-radius:12px;font-weight:bold;border:2px solid #ff6600;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.4);">0/0</span></button>
                 </div>
                 <div class="data-info" id="data-info"></div>

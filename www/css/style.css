@@ -573,6 +573,32 @@ body { font-family: 'Rajdhani', sans-serif; background: var(--bg-dark); color: v
     50% { box-shadow: 0 0 18px rgba(255,68,68,0.8), inset 0 0 10px rgba(255,255,255,0.4); transform: scale(1.01); }
 }
 
+/* FR version button — sober across all themes (dark bg + thin tricolor accent strip on the left) */
+.fr-version-btn {
+    position: relative;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-main) !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 8px 14px 8px 18px !important;
+    border-radius: 6px;
+    transition: all 0.18s ease;
+    overflow: hidden;
+}
+.fr-version-btn::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #0055A4 0%, #0055A4 33%, #fff 33%, #fff 66%, #EF4135 66%, #EF4135 100%);
+}
+.fr-version-btn:hover {
+    border-color: var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+    transform: translateY(-1px);
+}
+
 @keyframes pulse {
     0%, 100% { box-shadow: 0 0 10px rgba(255,107,53,0.5); transform: scale(1); }
     50% { box-shadow: 0 0 20px rgba(255,107,53,0.9); transform: scale(1.05); }
