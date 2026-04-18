@@ -26,7 +26,7 @@
     <script>
         // === VERSION & CACHE MANAGEMENT ===
         (function() {
-            const APP_VERSION = '3.6.0'; // Bump this with each release
+            const APP_VERSION = '3.7.0'; // Bump this with each release
             const storedVersion = localStorage.getItem('pokechill_app_version');
             const justCleared = sessionStorage.getItem('cache_cleared');
             
@@ -1033,6 +1033,7 @@
                                 </button>
                             </div>
                         </div>
+                        <div id="team-editing-banner" style="display:none;align-items:center;gap:10px;flex-basis:100%;margin-bottom:10px;padding:10px 12px;background:rgba(255,215,0,0.08);border:1px solid var(--accent-gold);border-radius:8px"></div>
                         <button class="btn" onclick="saveCurrentTeam()" style="background:linear-gradient(135deg,rgba(0,255,136,0.2),rgba(0,200,83,0.2));border-color:var(--success)">💾 <span data-i18n="saveTeam">Sauvegarder</span></button>
                         <button class="btn" onclick="openTeamImportAndSelectFile()" style="background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.2));border-color:var(--accent-gold)">📥 <span data-i18n="importTeam">Importer</span></button><input type="file" id="team-import-file" accept=".json" style="display:none" onchange="onSaveFileSelected(this)">
                         <button class="btn btn-danger" onclick="clearDreamTeam()">🗑️ <span data-i18n="clearTeam">Clear</span></button>
@@ -1068,6 +1069,7 @@
                         </div>
                     </div>
                     <input type="file" id="teams-import-file" accept=".json" style="display:none" onchange="onTeamsFileImport(this)">
+                    <div id="saved-teams-sortbar" style="display:none;align-items:center;gap:10px;margin-bottom:12px;padding:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px"></div>
                     <div id="saved-teams-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:15px">
                         <div style="padding:30px;text-align:center;color:var(--text-dim);background:var(--bg-card);border-radius:12px;border:2px dashed var(--border)">
                             <div style="font-size:2rem;margin-bottom:10px">📭</div>
@@ -3756,7 +3758,19 @@ function loadDamageCalcFromURL() {
     
     // Set mode and genetic first (affects UI)
     const mode = data.mo || data.mode;
+    // Pre-set zone state BEFORE setDmgMode so the defender filter knows about the zone
+    const zoneKey = data.z || '';
+    if (mode === 'zone' && zoneKey && typeof areas !== 'undefined' && areas[zoneKey]) {
+        dmgCalcZoneKey = zoneKey;
+        dmgCalcZoneDifficulty = areas[zoneKey].difficulty || 0;
+    }
     if (mode) setDmgMode(mode);
+    // After setDmgMode (which builds the dropdown), restore the zone selection
+    if (mode === 'zone' && zoneKey) {
+        const zoneSelect = document.getElementById('dmg-zone-select');
+        if (zoneSelect) zoneSelect.value = zoneKey;
+        updateZoneInfoDisplay();
+    }
     if (data.g || data.genetic) {
         if (!geneticMode) toggleGeneticMode();
     }
@@ -3769,6 +3783,8 @@ function loadDamageCalcFromURL() {
         updateMoveSelect(pokemons[atkName]);
         updateAbilitySelect('atk', pokemons[atkName]);
         updateHADisplay('atk', pokemons[atkName]);
+        // Build nature options for this pokemon so the URL nature can be restored
+        if (typeof updateNatureSelect === 'function') updateNatureSelect('atk', pokemons[atkName]);
     }
     if (data.al || data.atklvl) document.getElementById('dmg-atk-level').value = data.al || data.atklvl;
     
@@ -3830,7 +3846,15 @@ function loadDamageCalcFromURL() {
         if (data.sh || data.shiny) {
             document.getElementById('dmg-atk-shiny').checked = true;
         }
-        
+
+        // Attacker nature (v4.8) — set BEFORE updateStatsDisplay so star coloring is right
+        if (data.n) {
+            const natSel = document.getElementById('dmg-atk-nature');
+            if (natSel && natSel.querySelector(`option[value="${data.n}"]`)) {
+                natSel.value = data.n;
+            }
+        }
+
         // Update UI
         if (atkName && pokemons[atkName]) {
             updateStatsDisplay('atk', pokemons[atkName]);
@@ -3881,6 +3905,7 @@ function loadDamageCalcFromURL() {
             if (cb) cb.checked = true;
         }
         if (data.w || data.weather) document.getElementById('dmg-weather').value = data.w || data.weather;
+        if (data.fe) document.getElementById('dmg-field-effect').value = data.fe;
         if (data.hl || data.hplow) document.getElementById('dmg-hp-threshold').value = 'low';
         if (data.st || data.status) document.getElementById('dmg-atk-status').value = data.st || data.status;
         if (data.dst || data.defstatus) document.getElementById('dmg-def-status').value = data.dst || data.defstatus;
@@ -4099,6 +4124,16 @@ function getTabFilterValues(tabName) {
             if (dmgSupreme && dmgSupreme !== '0') dmgData.so = dmgSupreme;
             if (dmgCalcMode !== 'wild') dmgData.mo = dmgCalcMode;
             if (geneticMode) dmgData.g = '1';
+            // Zone selector (zone mode only)
+            if (dmgCalcMode === 'zone' && dmgCalcZoneKey) {
+                dmgData.z = dmgCalcZoneKey;
+            }
+            // Attacker nature (v4.8)
+            const dmgNature = document.getElementById('dmg-atk-nature')?.value;
+            if (dmgNature) dmgData.n = dmgNature;
+            // Field effect
+            const dmgField = document.getElementById('dmg-field-effect')?.value;
+            if (dmgField) dmgData.fe = dmgField;
             // Cooking buffs (for raid mode)
             if (dmgCalcMode === 'raid') {
                 const c1 = document.getElementById('dmg-cooking-buff-1')?.value;

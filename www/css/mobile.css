@@ -902,3 +902,198 @@
         font-size: 0.95rem;
     }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE POLISH — Applied on top of the base mobile rules.
+   Focus: larger touch targets, safer layouts, fewer jumps, full-height
+   modals, better tabs scroll, and iOS safe-area support.
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    /* --- iOS safe-area support (notch) --- */
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* --- No hover on touch devices (was causing flicker) --- */
+    .card:hover,
+    .tab:hover,
+    .btn:hover,
+    .item-tag:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        filter: none !important;
+    }
+
+    /* --- Larger, more forgiving touch targets --- */
+    .btn,
+    .tab,
+    select,
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    .pkmn-mini,
+    .type-badge {
+        min-height: 44px;
+        padding: 10px 14px;
+        font-size: 15px; /* prevents iOS zoom on focus */
+    }
+    .btn-small {
+        min-height: 36px;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    /* Icon-only buttons stay square */
+    button[title*="Delete"],
+    button[title*="Supprimer"],
+    button[title*="Move"],
+    button[title*="Déplacer"],
+    button[title*="Edit"],
+    button[title*="Modifier"] {
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+    /* --- Bigger, stickier tabs scroll with clearer active indicator --- */
+    .tabs {
+        padding: 6px 0 8px 0 !important;
+        scroll-snap-type: x proximity;
+    }
+    .tab {
+        scroll-snap-align: start;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+    .tab.active {
+        box-shadow: inset 0 -3px 0 var(--accent-blue);
+    }
+
+    /* --- Cards: tighter padding, bigger tap area on the whole card --- */
+    .card,
+    .area-card {
+        padding: 12px !important;
+        border-radius: 14px;
+    }
+    .card-header {
+        gap: 10px;
+    }
+    .card-name {
+        font-size: 1rem;
+    }
+
+    /* --- Results grid: single column, generous gap --- */
+    .results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    /* --- Modals: near fullscreen, safe-area aware, bottom-sheet feel --- */
+    .modal-overlay {
+        padding: 0 !important;
+        align-items: flex-end !important;
+    }
+    .modal {
+        max-width: 100% !important;
+        width: 100% !important;
+        max-height: 92vh !important;
+        border-radius: 18px 18px 0 0 !important;
+        border-bottom: none !important;
+        animation: slideUpMobile 0.22s ease-out;
+    }
+    @keyframes slideUpMobile {
+        from { transform: translateY(100%); }
+        to   { transform: translateY(0); }
+    }
+    .modal-header {
+        position: sticky;
+        top: 0;
+        background: var(--bg-card);
+        z-index: 2;
+    }
+    .modal-body {
+        padding: 14px !important;
+        padding-bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    }
+
+    /* --- Header: hide the big decorative title on very small screens --- */
+    header h1 {
+        font-size: 1.15rem;
+    }
+    .subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* --- Forms: stacked labels on top, breathe room between groups --- */
+    .search-row {
+        gap: 10px;
+    }
+    .search-group {
+        min-width: 0 !important;
+        width: 100%;
+    }
+    .search-group label {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+
+    /* --- Damage calculator: mode buttons on 2 rows cleaner --- */
+    #damage-panel .dmg-mode-btn {
+        flex: 1 1 28%;
+        min-height: 44px;
+        padding: 8px 10px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* --- Team slots: 2 columns instead of 3 on phones (readable) --- */
+    .team-builder {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+    .team-slot {
+        padding: 10px !important;
+    }
+
+    /* --- Saved teams sortbar: wrap, keep search full-width --- */
+    #saved-teams-sortbar {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    #saved-teams-sortbar input[type="text"] {
+        flex: 1 1 100% !important;
+        order: 10; /* push search below the sort select */
+    }
+
+    /* --- Editing banner: stack on mobile --- */
+    #team-editing-banner {
+        flex-wrap: wrap;
+    }
+    #team-editing-banner .btn-small {
+        flex: 1;
+    }
+
+    /* --- Notifications: bottom-right toast, respect safe area --- */
+    .notification,
+    .toast {
+        bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+    }
+
+    /* --- Scrollbars: hide for cleaner UI on mobile --- */
+    *::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+
+/* Extra tight layout for small phones (<= 380px) */
+@media (max-width: 380px) {
+    .container { padding: 8px !important; }
+    h1 { font-size: 1rem !important; }
+    .tab { padding: 8px 10px !important; font-size: 0.78rem !important; }
+    .btn { padding: 10px 12px !important; font-size: 0.85rem; }
+    .team-builder { grid-template-columns: 1fr !important; }
+}

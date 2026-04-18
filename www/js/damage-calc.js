@@ -101,35 +101,71 @@ function getPokemonDifficultyTier(pokemonName) {
     if (diff === 200) return { tier: 3, label: 'Tier III', stars: '⭐⭐⭐', color: '#ff8800' };
     if (diff === 70)  return { tier: 2, label: 'Tier II', stars: '⭐⭐', color: '#ffd700' };
     if (diff === 25)  return { tier: 1, label: 'Tier I', stars: '⭐', color: '#00ff88' };
-    if (diff > 0)    return { tier: 0, label: `Difficulté ${diff}`, stars: '🏰', color: 'var(--accent-orange)' };
+    if (diff > 0)    return { tier: 0, label: `${t('zoneDiffValue') || 'Difficulty'} ${diff}`, stars: '🏰', color: 'var(--accent-orange)' };
     return { tier: 0, label: '-', stars: '', color: 'var(--text-dim)' };
 }
 
 // ============ ZONE MODE (new) ============
 
-// Returns zones that have a difficulty value (used for Zone mode selector)
-// Baltimor's filter: areas with difficulty + drops, excluding raw dungeons
+// Returns zones eligible for the Zone mode selector.
+// We keep ONLY event + dungeon zones that are NOT raids and NOT random.
+// Excluded:
+//   - type === 'wild'        → already covered by Wild mode (defaults to ×2)
+//   - type === 'dimension'   → random pokemon, can't pick a specific defender
+//   - type === 'frontier'    → battle factory (PvP-like, not a farm zone)
+//   - a.encounter === true   → raid encounters (Mega-Showdown, Tier I-IV revivals)
+//   - a.bossPkmn truthy      → single-boss zones (parser saw slot1: pkmn.X)
+// Zones WITHOUT explicit difficulty use the game default (×2), same as wild.
 function getZonesWithDifficulty() {
     if (typeof areas === 'undefined') return [];
     return Object.values(areas)
-        .filter(a => a && a.difficulty && a.drops && a.type !== 'dungeon')
-        .sort((a, b) => a.difficulty - b.difficulty);
+        .filter(a =>
+            a &&
+            a.drops &&
+            (a.type === 'event' || a.type === 'dungeon') &&
+            !a.encounter &&
+            !a.bossPkmn &&
+            a.spawns && (
+                (a.spawns.common && a.spawns.common.length) ||
+                (a.spawns.uncommon && a.spawns.uncommon.length) ||
+                (a.spawns.rare && a.spawns.rare.length)
+            )
+        )
+        .sort((a, b) => {
+            const da = a.difficulty || 2;
+            const db = b.difficulty || 2;
+            return da - db || (a.displayName || a.name).localeCompare(b.displayName || b.name);
+        });
 }
 
 // Get human-readable tier info from a raw difficulty value
+// Special: 0 / undefined → wild default (×2)
 function getDifficultyTierInfo(difficulty) {
-    if (difficulty === 600) return { label: 'Tier IV', stars: '⭐⭐⭐⭐', color: '#ff4444' };
-    if (difficulty === 200) return { label: 'Tier III', stars: '⭐⭐⭐', color: '#ff8800' };
-    if (difficulty === 70)  return { label: 'Tier II', stars: '⭐⭐', color: '#ffd700' };
-    if (difficulty === 25)  return { label: 'Tier I', stars: '⭐', color: '#00ff88' };
-    return { label: `×${difficulty}`, stars: '🏰', color: 'var(--accent-orange)' };
+    if (!difficulty) return { label: 'Default', stars: '×2', color: 'var(--text-dim)', effective: 2 };
+    if (difficulty === 600) return { label: 'Tier IV', stars: '⭐⭐⭐⭐', color: '#ff4444', effective: 600 };
+    if (difficulty === 200) return { label: 'Tier III', stars: '⭐⭐⭐', color: '#ff8800', effective: 200 };
+    if (difficulty === 70)  return { label: 'Tier II', stars: '⭐⭐', color: '#ffd700', effective: 70 };
+    if (difficulty === 25)  return { label: 'Tier I', stars: '⭐', color: '#00ff88', effective: 25 };
+    return { label: `×${difficulty}`, stars: '🏰', color: 'var(--accent-orange)', effective: difficulty };
 }
 
-// Populate the zone dropdown in zone mode
+// Format the right-side label for the dropdown / HP bar.
+// Returns '' for default zones (×2) since ×2 is the game-wide default and
+// showing "Default ×2" everywhere is just noise.
+function formatZoneTierLabel(tierInfo, difficulty) {
+    if (!difficulty) return '';
+    // If label already starts with "×" (custom multiplier), don't append it again
+    if (tierInfo.label.startsWith('×')) return tierInfo.label;
+    return `${tierInfo.label} ×${difficulty}`;
+}
+
+// Populate the zone dropdown in zone mode (rebuilds every time to stay fresh)
 function initZoneDropdown() {
     const select = document.getElementById('dmg-zone-select');
-    if (!select || select.dataset.initialized) return;
+    if (!select) return;
 
+    // Preserve current selection
+    const previousValue = select.value;
     const zones = getZonesWithDifficulty();
 
     // Group by type for display
@@ -142,24 +178,30 @@ function initZoneDropdown() {
 
     select.innerHTML = `<option value="">${t('selectZone')}</option>`;
 
-    // Render each group
-    Object.entries(byType).forEach(([type, list]) => {
-        const groupLabel = t('zoneType_' + type) || type;
+    // Stable display order for groups: dungeon then event
+    const typeOrder = ['dungeon', 'event'];
+    typeOrder.forEach(type => {
+        const list = byType[type];
+        if (!list || list.length === 0) return;
         const group = document.createElement('optgroup');
-        group.label = groupLabel;
+        group.label = t('zoneType_' + type) || type;
         list.forEach(a => {
             const tierInfo = getDifficultyTierInfo(a.difficulty);
             const opt = document.createElement('option');
             opt.value = a.name;
             const displayName = a.displayName || a.name;
-            opt.textContent = `${displayName} — ${tierInfo.label} (×${a.difficulty})`;
-            opt.dataset.difficulty = a.difficulty;
+            const tierLabel = formatZoneTierLabel(tierInfo, a.difficulty);
+            opt.textContent = tierLabel ? `${displayName} — ${tierLabel}` : displayName;
+            opt.dataset.difficulty = a.difficulty || 0;
             group.appendChild(opt);
         });
         select.appendChild(group);
     });
 
-    select.dataset.initialized = '1';
+    // Restore previous selection if still in the list
+    if (previousValue && select.querySelector(`option[value="${previousValue}"]`)) {
+        select.value = previousValue;
+    }
 }
 
 // Collect every pokemon name that can appear in a given zone
@@ -211,7 +253,9 @@ function filterDefenderByZone(zoneKey) {
     }
 }
 
-// Called when user picks a zone in zone mode
+// Called when user picks a zone in zone mode.
+// dmgCalcZoneDifficulty stores the RAW area.difficulty (0 if none).
+// HP calculation uses calcHPFromDifficulty() which falls back to ×2 when 0.
 function onZoneSelect() {
     const select = document.getElementById('dmg-zone-select');
     const zoneKey = select?.value || '';
@@ -228,22 +272,28 @@ function onZoneSelect() {
     updateDamageCalc();
 }
 
-// Update the zone info box below the zone selector
+// Update the zone info box below the zone selector.
+// Hidden when no zone is picked OR when the zone uses the default ×2 (no info to show).
 function updateZoneInfoDisplay() {
     const infoDiv = document.getElementById('dmg-zone-info');
     if (!infoDiv) return;
 
-    if (!dmgCalcZoneDifficulty) {
+    if (!dmgCalcZoneKey || !dmgCalcZoneDifficulty) {
         infoDiv.style.display = 'none';
         return;
     }
 
     const tierInfo = getDifficultyTierInfo(dmgCalcZoneDifficulty);
     infoDiv.style.display = 'flex';
+    // Only append the "(Difficulty: ×N)" annotation when the label doesn't already contain ×N
+    const showExplicitDiff = !tierInfo.label.startsWith('×');
+    const explicit = showExplicitDiff
+        ? `<span style="color:var(--text-dim);font-size:0.8rem">(${t('zoneDiffValue')}: ×${tierInfo.effective})</span>`
+        : '';
     infoDiv.innerHTML = `
         <span style="color:${tierInfo.color};font-weight:700;font-size:1rem">${tierInfo.label}</span>
         <span style="color:var(--text-dim);font-size:0.85rem">${tierInfo.stars}</span>
-        <span style="color:var(--text-dim);font-size:0.8rem">(${t('zoneDiffValue')}: ×${dmgCalcZoneDifficulty})</span>
+        ${explicit}
     `;
 }
 
@@ -2010,7 +2060,7 @@ function calculateDamage() {
     
     if (!move || !move.power || move.power <= 0) {
         if (resultEl) resultEl.textContent = '0';
-        if (breakdownEl) breakdownEl.textContent = t('statusMoveNoDamage') || 'Attaque de statut - Pas de dégâts';
+        if (breakdownEl) breakdownEl.textContent = t('statusMoveNoDamage') || 'Status move - No damage';
         if (hpContainer) hpContainer.style.display = 'none';
         return;
     }
@@ -2804,10 +2854,8 @@ function calculateDamage() {
     } else if (dmgCalcMode === 'zone') {
         const difficulty = dmgCalcZoneDifficulty;
         defenderMaxHP = calcHPFromDifficulty(difficulty);
-        if (difficulty > 0) {
-            const tierInfo = getDifficultyTierInfo(difficulty);
-            difficultyDisplay = `${tierInfo.label} (×${difficulty})`;
-        }
+        const tierInfo = getDifficultyTierInfo(difficulty);
+        difficultyDisplay = formatZoneTierLabel(tierInfo, difficulty);
     } else {
         // Wild: formule standard × 2
         const hpStars = statToRating(defender.bst.hp);

@@ -274,6 +274,215 @@ Dossiers dans `www/teams/` :
 - ✅ **Vérification stats** : la difficulté n'affecte **PAS** les stats Atk/Def/SpA/SpD/Spe du défenseur dans le jeu (cf. ligne 2515 d'`explore.js` : la formule de dégâts n'utilise que `defender.bst.def`/`sdef` brut). Notre calculateur fait pareil.
 - ✅ **Bump APP_VERSION** : `3.5.3 → 3.6.0` pour forcer le refresh du cache navigateur (sinon les utilisateurs gardent l'ancien `i18n.js` et `damage-calc.js` qui ne connaissent pas le mode Zone).
 
+#### 🩹 Patch 2 — Filtre du dropdown : exclure les raids et les wild
+
+- ✅ Le filtre du dropdown Zone exclut maintenant les zones gérées par les autres modes :
+  - `type !== 'wild'` (déjà couvert par le mode Wild)
+  - `!a.trainer && !a.team` (raids / events trainer déjà couverts par le mode Raid)
+- Restent : **donjons à clé** (`type=dungeon`, `difficulty=5`, ex: Glistering Cave, Sunken Temple) + **events de farm endgame** (Cerulean Cave, Primal Fissure, etc.)
+- Tri : par difficulté puis par nom
+- Le dropdown se reconstruit à chaque entrée en mode Zone (préserve la sélection si encore valide)
+
+#### 🩹 Patch 3 — Vrai filtre anti-raid (les champs `trainer`/`team` ne sont pas dans `areas`)
+
+**Découverte importante** : le `parsers.js` (ligne 763-793) stocke les champs `trainer` et `team` dans un objet **séparé** (`trainers`), pas dans `areas`. Donc filtrer `!a.trainer && !a.team` sur `areas` ne sert à RIEN — c'était toujours vrai.
+
+**Vrai marqueur de raid dans `areas`** :
+- `a.encounter === true` → tous les Mega-Showdown, Tier I/II/III/IV revivals (Great Tusk, Slither Wing, Brute Bonnet…)
+- `a.bossPkmn` (truthy) → le parser a trouvé `slot1: pkmn.X` dans la zone → c'est un boss unique
+
+**Filtre final** :
+```js
+a.difficulty && a.drops && a.type !== 'wild'
+&& !a.encounter && !a.bossPkmn
+&& a.spawns && (a.spawns.common.length || a.spawns.uncommon.length || a.spawns.rare.length)
+```
+
+Le check sur `spawns` garantit qu'il y a au moins un pokémon farmable (= zone de collecte légitime).
+
+#### 🩹 Patch 4 — Inclusion des zones standard + exclusion explicite des dimensions
+
+**Problèmes restants** :
+1. Les zones de Mega Dimension (Palkia, Pikachu Gmax, Kyurem White, Mega Rayquaza) leakaient potentiellement (random pokemon, pas de spawns fixes).
+2. Beaucoup de zones dungeon/event manquaient (sinnohUnderground, beginnerDojo, advancedDojo, expertDojo, victoryRoad, cosplayConvention, suspiciousManor, etc.) parce que mon filtre exigeait `a.difficulty` (truthy).
+
+**Découverte** :
+- 21 dungeons non-raid au total : 6 avec difficulté (Glistering/Sunken I/II/III ×5) + 15 sans (utilisent ×2 par défaut)
+- 28 events non-raid au total : 6 avec difficulté (×5) + 22 sans (utilisent ×2 par défaut)
+
+**Logique du jeu confirmée** (`explore.js` ligne 204 + 531) : `let hpMultiplier = 2; if (area.difficulty != undefined) hpMultiplier = area.difficulty;` → les zones sans difficulté utilisent ×2.
+
+**Filtre final** :
+```js
+a.drops
+&& (a.type === 'event' || a.type === 'dungeon')   // exclut wild, dimension, frontier
+&& !a.encounter && !a.bossPkmn                     // exclut les raids
+&& a.spawns avec ≥1 pokémon                       // garantit zone farmable
+```
+
+**Affichage dropdown** :
+- Tier I/II/III/IV pour les difficultés tier
+- "×N" pour les autres difficultés
+- "Default ×2" pour les zones sans difficulté explicite
+- Groupé par type : Dungeon puis Event
+- Triés par difficulté effective (×2 d'abord)
+
+**Helper unifié `getDifficultyTierInfo()`** retourne maintenant aussi `effective` (la valeur de multiplicateur réelle, soit difficulty soit 2). Utilisé partout pour cohérence.
+
+#### 🩹 Patch 5 — Hash de partage complet pour le calculateur
+
+**Problème** : 3 champs n'étaient pas inclus dans le hash de partage du calc :
+- `dmg-zone-select` — la zone sélectionnée en mode Zone (mon nouveau feature)
+- `dmg-atk-nature` — la nature de l'attaquant (v4.8)
+- `dmg-field-effect` — l'effet de terrain (electric/misty/grassy terrain…)
+
+Résultat : un partage de calc en mode Zone perdait la zone, ou un calc avec une nature Adamant la perdait.
+
+**Encode** (dans `getTabFilterValues('damage')`) :
+- `z` = zone key (uniquement si mode === 'zone')
+- `n` = nature de l'attaquant
+- `fe` = field effect
+
+**Decode** (dans `loadDamageCalcFromURL()`) :
+- **Zone** : pré-set `dmgCalcZoneKey` + `dmgCalcZoneDifficulty` AVANT `setDmgMode('zone')` pour que le filtre des défenseurs marche dès le départ. Puis restore la valeur du dropdown.
+- **Nature** : appel ajouté à `updateNatureSelect('atk', pokemon)` lors du chargement de l'attaquant (sinon les options ne sont pas peuplées). Set la valeur AVANT `updateStatsDisplay` pour que la coloration des stats soit correcte dès le 1er rendu.
+- **Field effect** : simple set de la valeur, pas de dépendance.
+
+**Helper `formatZoneTierLabel()`** ajouté pour éviter la redondance "×5 ×5" dans le dropdown / HP bar / info-box. Détecte si le label commence déjà par "×" (= label custom) et n'ajoute pas de suffixe redondant. Utilisé partout pour cohérence.
+
+#### 🩹 Patch 6 — Tri & édition des équipes sauvegardées en local
+
+**Problème** : aucune façon de trier les équipes sauvegardées (toujours par date desc), pas d'édition possible (il fallait supprimer + refaire pour le moindre changement).
+
+**Ajouts** :
+1. **Tri** : nouvelle barre au-dessus de la liste avec un dropdown sortant (date asc/desc, nom A→Z / Z→A, auteur, nombre de pokémons). Le mode sélectionné est persisté en `localStorage` (`savedTeamsSortMode`).
+2. **Édition métadonnées** : nouveau bouton `✏️` sur chaque card → 3 prompts pour modifier nom/auteur/description (sans toucher aux slots).
+3. **Édition complète "in-place"** : quand on charge une équipe dans le builder, un nouveau **banner doré** apparaît avec son nom et 2 boutons :
+   - `💾 Enregistrer les modifications` → écrase l'ancienne (préserve id/created/name/author/description, ajoute `updated`)
+   - `✖ Annuler` → quitte l'édition sans sauvegarder
+4. Le bouton `💾 Sauvegarder` original reste : il crée une **NOUVELLE** équipe (et clear l'édition en cours pour éviter la confusion).
+5. Card highlightée en doré + badge `✏️ édition` si elle est en cours d'édition.
+6. Date "mise à jour" affichée si `team.updated` existe.
+
+**Code** :
+- Nouveaux globals : `currentEditingTeamId`, `savedTeamsSortMode`
+- Nouvelles fonctions : `setSavedTeamsSort`, `renderEditingBanner`, `cancelEditing`, `updateEditedTeam`, `editTeamMetadata`
+- Map `SAVED_TEAMS_SORTS` avec 6 fonctions de comparaison
+- Hook dans `loadTeamIntoBuilder` pour activer l'édition
+- Hook dans `saveCurrentTeam` pour clear l'édition (puisque ça crée une nouvelle équipe)
+
+**i18n** : 16 nouvelles clés FR + EN (`editingTeam`, `saveChanges`, `cancelEdit`, `editMetadata`, `editing`, `updated`, `teams`, `sortDateNewest/Oldest`, `sortNameAZ/ZA`, `sortAuthor`, `sortMostPkmn`, `noTeamBeingEdited`, `teamNotFound`, `teamUpdatedSuccess`).
+
+**Compatibilité** : 100% backward-compatible. Les anciennes équipes (sans `updated`) s'affichent normalement, le sort par défaut reste `date_desc`.
+
+#### 🩹 Patch 7 — Recherche + réordonnancement manuel des équipes locales
+
+**Ajouts** :
+1. **Textbox de recherche** dans la sortbar : filtre les équipes par nom / auteur / description (case-insensitive). Persiste le focus + caret pendant la frappe (re-render n'interrompt pas la saisie).
+2. **Boutons ▲▼** sur chaque card pour réordonner manuellement.
+3. **Mode de tri "Manuel"** : ajouté en première option du dropdown. Auto-activé dès le premier clic sur ▲ ou ▼ (snapshot l'ordre courant comme nouveau baseline manuel pour que le changement soit intuitif).
+4. Filtre respecté pour les ▲▼ : permet de chercher "fire" puis réordonner uniquement les équipes Fire entre elles.
+5. Boutons ▲ et ▼ grayed out aux extrémités de la liste visible.
+6. Message "🔍 Aucune équipe ne correspond" si filtre actif sans résultat.
+
+**Code** :
+- Nouveaux globals : `savedTeamsFilter`
+- Nouvelles fonctions : `setSavedTeamsFilter`, `passesSavedTeamsFilter`, `moveSavedTeam(teamId, direction)`
+- Nouvelle entrée dans `SAVED_TEAMS_SORTS` : `manual: () => 0` (préserve l'ordre du storage)
+- `loadSavedTeams` : restauration du focus/caret après re-render pour ne pas perdre la frappe utilisateur
+
+**Bug fix initial** : conflit de nom entre `currentEditingTeamId` (existant pour les featured teams) et ma nouvelle variable. Renommée en `currentEditingLocalTeamId` pour éviter la collision (qui empêchait tout le fichier de se charger → erreur "switchTeamSubtab is not defined").
+
+**i18n** : 5 nouvelles clés FR + EN (`sortManual`, `searchTeam`, `noMatchingTeams`, `moveUp`, `moveDown`).
+
+#### 🩹 Patch 8 — Retrait du "(Défaut ×2)" verbeux
+
+Baltimor a confirmé : ×2 est le multiplicateur **par défaut partout** dans le jeu. Afficher "Default ×2" à côté de 37 zones sur 49 est donc juste du bruit visuel.
+
+**Changements** :
+- `formatZoneTierLabel()` retourne maintenant `''` pour les zones sans difficulté explicite (au lieu de "Default ×2")
+- Dropdown : option = juste le nom de la zone (pas de "—" trainant)
+- Info-box : masquée complètement pour les zones sans difficulté explicite (rien à informer, c'est le défaut du jeu)
+- HP bar : `difficultyDisplay` vide → pas de suffixe
+
+Résultat : dropdown lisible, seules les zones spéciales (×5, Tier I-IV) affichent leur multiplicateur distinctif.
+
+---
+
+### 🗓️ 2026-04-18 — Grand chantier : nettoyage / thèmes / mobile / push
+
+**Demandes** : nettoyer, réduire la complexité, mutualiser les duplications, vérifier le parsing, améliorer thèmes (sauf mega-dim), refonte mobile.
+
+#### 🧹 Nettoyage & consolidation
+- ✅ **Helpers `teamsDB`** : 18 call-sites (`JSON.parse(localStorage.getItem('teamsDB') || '[]')` / `localStorage.setItem('teamsDB', JSON.stringify(...))`) réduits à des appels `getSavedTeams()` / `setSavedTeams(...)` / `findSavedTeam(id)`.
+- ✅ Suppression de **`savezone.js.debug`** (115 KB de logs inutiles)
+- ✅ Suppression de **`exchange/api.php.backup.20250409`**
+- ✅ Strings FR hardcodées restantes : corrigées avec i18n (prompts `saveCurrentTeam`, alert `deleteOwnTeam`, label `Difficulté` dans `getPokemonDifficultyTier`)
+- ✅ Nouvelles clés i18n FR+EN : `defaultTeamName`, `defaultTeamAuthor`, `deleteOwnTeamOnly`, `yourNickname`, `teamAuthorLabel`
+
+#### 📦 Parsing du jeu — audit complet
+Les 6 fichiers essentiels du jeu sont **tous parsés** :
+| Fichier | Usage | Statut |
+|---------|-------|--------|
+| `moveDictionary.js` | Attaques | ✅ |
+| `pkmnDictionary.js` | Pokémon | ✅ |
+| `itemDictionary.js` | Items + décors (parseDecor) | ✅ |
+| `areasDictionary.js` | Zones | ✅ |
+| `shop.js` | Boutique | ✅ |
+| `explore.js` | Constantes, events, egg moves | ✅ |
+
+Fichiers **non-parsés mais non-critiques** :
+- `teams.js` (1323 lignes) : teams hardcodées de démonstration du jeu — candidate pour futur feature "templates"
+- `teamPreviews.js` (139 lignes) : config d'affichage des previews
+- `dictionarySearch.js` (438 lignes) : alias de recherche
+- `decor.js` (192 lignes) : UI du décor (pas de données)
+- `script.js`, `save.js`, `tooltip.js`, `fuse.js`, `HackTimer.js` : code UI/libs (rien à parser)
+
+#### 🎨 Polish des thèmes (sauf mega-dimension, qui gère déjà)
+
+Bloc ajouté à la fin de `style.css` :
+
+**Défaut** :
+- Fond radial gradient (plus de profondeur)
+- Shadows + gradients subtils sur cards/boutons
+- Scrollbar custom avec gradient sur hover
+- Hover tabs / boutons avec légère translation + glow
+
+**Halloween** :
+- Radial gradient orange brûlé en fond
+- Text-shadow orange sur les titres
+- Scrollbar orange flamme
+- Shadows orangées sur cards/boutons
+- Glow plus intense au hover
+
+**PokeChill (game)** :
+- Shadows flat pixel-art (style authentique du jeu)
+- Boutons qui "s'enfoncent" au clic (translate +1px + shadow réduite)
+- Scrollbar façon pixel-art (tan/cream)
+- Outline `accent` sur hover des cards
+
+#### 📱 Refonte mobile
+
+Bloc ajouté à la fin de `mobile.css` (+195 lignes) :
+
+- **Safe-area iOS** (notch) : padding `env(safe-area-inset-*)` partout où ça compte
+- **Plus de hover** : annule les `transform/box-shadow/filter` au hover (évitait les flickers)
+- **Touch targets 44px min** sur tous les éléments cliquables (boutons, tabs, selects, inputs)
+- **Tabs** : `scroll-snap-type`, indicateur actif en bottom inset shadow
+- **Cards** : padding plus serré, border-radius plus doux, whole-card tap area
+- **Grid résultats** : 1 colonne sur mobile, gap généreux
+- **Modals = bottom-sheet** : plein écran avec border-radius haut, animation slide-up
+- **Damage calc** : boutons de mode en 2 lignes propres
+- **Team slots** : 2 colonnes au lieu de 3 sur téléphone (plus lisible)
+- **Sortbar équipes** : wrap avec search input pleine largeur en dessous
+- **Notifications** : toast bas-droite respectant safe-area
+- **Scrollbars masquées** sur mobile
+- **Très petits écrans (≤380px)** : layout encore plus compact
+
+#### 🚀 Bump version
+
+`APP_VERSION: 3.6.0 → 3.7.0` pour forcer le refresh sur tous les clients (nouveau CSS + JS mutualisé).
+
 ---
 
 ### 🗓️ 2026-04-18 — Analyse initiale du projet

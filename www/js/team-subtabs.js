@@ -1,6 +1,178 @@
 ﻿// ============ TEAM SUBTABS & SAVED TEAMS ============
 let currentTeamSubtab = 'builder';
 
+// ----- Storage helpers (teamsDB in localStorage) -----
+// Avoids repeating JSON.parse/stringify boilerplate in 12+ call sites.
+const TEAMS_DB_KEY = 'teamsDB';
+function getSavedTeams() {
+    try { return JSON.parse(localStorage.getItem(TEAMS_DB_KEY) || '[]'); }
+    catch (e) { return []; }
+}
+function setSavedTeams(teams) {
+    localStorage.setItem(TEAMS_DB_KEY, JSON.stringify(teams));
+}
+function findSavedTeam(id, teams) {
+    return (teams || getSavedTeams()).find(team => team.id === id);
+}
+
+// ----- Edit / sort / filter state -----
+// Active editing session: when set, "Save changes" updates this team in place.
+let currentEditingLocalTeamId = null;
+// Persisted sort mode for the saved teams list.
+let savedTeamsSortMode = localStorage.getItem('savedTeamsSortMode') || 'date_desc';
+// In-memory text filter (not persisted)
+let savedTeamsFilter = '';
+
+const SAVED_TEAMS_SORTS = {
+    manual:      () => 0,  // keep storage order (user-defined via ▲▼ buttons)
+    date_desc:   (a, b) => new Date(b.created || 0) - new Date(a.created || 0),
+    date_asc:    (a, b) => new Date(a.created || 0) - new Date(b.created || 0),
+    name_asc:    (a, b) => (a.name || '').localeCompare(b.name || ''),
+    name_desc:   (a, b) => (b.name || '').localeCompare(a.name || ''),
+    author_asc:  (a, b) => (a.author || '').localeCompare(b.author || '') || (a.name || '').localeCompare(b.name || ''),
+    pkmn_desc:   (a, b) => (b.slots || []).filter(s => s && s.pokemon).length - (a.slots || []).filter(s => s && s.pokemon).length,
+};
+
+function setSavedTeamsSort(mode) {
+    if (!SAVED_TEAMS_SORTS[mode]) return;
+    savedTeamsSortMode = mode;
+    localStorage.setItem('savedTeamsSortMode', mode);
+    loadSavedTeams();
+}
+
+function setSavedTeamsFilter(value) {
+    savedTeamsFilter = (value || '').toLowerCase().trim();
+    loadSavedTeams();
+}
+
+// Helper: does a team pass the current text filter?
+function passesSavedTeamsFilter(team) {
+    if (!savedTeamsFilter) return true;
+    const f = savedTeamsFilter;
+    return (team.name || '').toLowerCase().includes(f)
+        || (team.author || '').toLowerCase().includes(f)
+        || (team.description || '').toLowerCase().includes(f);
+}
+
+// Move a saved team up or down. Auto-switches to "manual" sort the first time
+// (snapshots the current display as the new manual baseline so the change is intuitive).
+// Filter is respected: ▲▼ moves the team relative to the *visible* list.
+function moveSavedTeam(teamId, direction) {
+    let savedTeams = getSavedTeams();
+    if (savedTeams.length < 2) return;
+
+    // First reorder: snapshot current sorted order as the new storage baseline
+    if (savedTeamsSortMode !== 'manual') {
+        const sortFn = SAVED_TEAMS_SORTS[savedTeamsSortMode] || SAVED_TEAMS_SORTS.date_desc;
+        savedTeams.sort(sortFn);
+        savedTeamsSortMode = 'manual';
+        localStorage.setItem('savedTeamsSortMode', 'manual');
+    }
+
+    // Compute visible IDs (filter respects the current text filter)
+    const visibleIds = savedTeams.filter(passesSavedTeamsFilter).map(t => t.id);
+    const visIdx = visibleIds.indexOf(teamId);
+    if (visIdx === -1) return;
+    const targetVisIdx = direction === 'up' ? visIdx - 1 : visIdx + 1;
+    if (targetVisIdx < 0 || targetVisIdx >= visibleIds.length) return;
+
+    // Swap the two corresponding storage entries
+    const storeIdxA = savedTeams.findIndex(t => t.id === teamId);
+    const storeIdxB = savedTeams.findIndex(t => t.id === visibleIds[targetVisIdx]);
+    [savedTeams[storeIdxA], savedTeams[storeIdxB]] = [savedTeams[storeIdxB], savedTeams[storeIdxA]];
+
+    setSavedTeams(savedTeams);
+    loadSavedTeams();
+}
+
+// Render the editing banner at the top of the Builder when a team is being edited
+function renderEditingBanner() {
+    const banner = document.getElementById('team-editing-banner');
+    if (!banner) return;
+    if (!currentEditingLocalTeamId) {
+        banner.style.display = 'none';
+        banner.innerHTML = '';
+        return;
+    }
+    const savedTeams = getSavedTeams();
+    const team = savedTeams.find(t => t.id === currentEditingLocalTeamId);
+    if (!team) {
+        currentEditingLocalTeamId = null;
+        banner.style.display = 'none';
+        return;
+    }
+    banner.style.display = 'flex';
+    banner.innerHTML = `
+        <span style="color:var(--accent-gold);font-weight:600">✏️ ${t('editingTeam') || 'Editing'}: <span style="color:var(--text-main)">${escapeHtml(team.name)}</span></span>
+        <div style="display:flex;gap:6px;margin-left:auto;flex-wrap:wrap">
+            <button class="btn btn-small" onclick="updateEditedTeam()" style="background:linear-gradient(135deg,rgba(0,255,136,0.25),rgba(0,200,83,0.25));border-color:var(--accent-green)">💾 ${t('saveChanges') || 'Save changes'}</button>
+            <button class="btn btn-small" onclick="cancelEditing()" style="background:var(--bg-input)">✖ ${t('cancelEdit') || 'Cancel'}</button>
+        </div>
+    `;
+}
+
+// Cancel the active editing session (the builder content is left as-is)
+function cancelEditing() {
+    currentEditingLocalTeamId = null;
+    renderEditingBanner();
+}
+
+// Save changes back to the team currently being edited (in-place update)
+function updateEditedTeam() {
+    if (!currentEditingLocalTeamId) {
+        alert(t('noTeamBeingEdited') || 'No team being edited');
+        return;
+    }
+    const hasPokemon = dreamTeam.some(slot => slot.pokemon);
+    if (!hasPokemon) {
+        alert(t('emptyTeamError') || 'Empty team! Add Pokémon before saving.');
+        return;
+    }
+    const savedTeams = getSavedTeams();
+    const idx = savedTeams.findIndex(team => team.id === currentEditingLocalTeamId);
+    if (idx === -1) {
+        alert(t('teamNotFound') || 'Team not found');
+        currentEditingLocalTeamId = null;
+        renderEditingBanner();
+        return;
+    }
+    // Update slots, keep name/author/description/created/id intact
+    savedTeams[idx].slots = dreamTeam.map(slot => ({
+        pokemon: slot.pokemon,
+        moves: [...slot.moves],
+        ability: slot.ability,
+        item: slot.item,
+        shiny: slot.shiny,
+        starSign: slot.starSign || null,
+        nature: slot.nature || null,
+        ivs: slot.ivs || { hp: 6, atk: 6, def: 6, satk: 6, sdef: 6, spe: 6 }
+    }));
+    savedTeams[idx].updated = new Date().toISOString();
+    setSavedTeams(savedTeams);
+    renderEditingBanner();
+    alert(t('teamUpdatedSuccess') || 'Team updated!');
+}
+
+// Quick edit: update name/author/description without touching slots
+function editTeamMetadata(teamId) {
+    const savedTeams = getSavedTeams();
+    const team = savedTeams.find(team => team.id === teamId);
+    if (!team) return;
+    const newName = prompt(t('teamNamePrompt') || 'Team name:', team.name);
+    if (newName === null) return;
+    const newAuthor = prompt(t('teamAuthorPrompt') || 'Author:', team.author);
+    if (newAuthor === null) return;
+    const newDesc = prompt(t('teamDescPrompt') || 'Description (optional):', team.description || '');
+    if (newDesc === null) return;
+    team.name = newName.trim() || team.name;
+    team.author = newAuthor.trim() || team.author;
+    team.description = newDesc.trim();
+    team.updated = new Date().toISOString();
+    setSavedTeams(savedTeams);
+    loadSavedTeams();
+    if (currentEditingLocalTeamId === teamId) renderEditingBanner();
+}
+
 function switchTeamSubtab(subtab) {
     currentTeamSubtab = subtab;
 
@@ -32,13 +204,13 @@ function saveCurrentTeam() {
     }
     
     // Prompt for team info
-    const name = prompt(t('teamNamePrompt') || 'Nom de l\'équipe:', 'Ma Team');
+    const name = prompt(t('teamNamePrompt') || 'Team name:', t('defaultTeamName') || 'My Team');
     if (!name) return;
-    
-    const author = prompt(t('teamAuthorPrompt') || 'Auteur:', 'Moi');
+
+    const author = prompt(t('teamAuthorPrompt') || 'Author:', t('defaultTeamAuthor') || 'Me');
     if (!author) return;
-    
-    const description = prompt(t('teamDescPrompt') || 'Description (optionnelle):', '');
+
+    const description = prompt(t('teamDescPrompt') || 'Description (optional):', '');
     
     // Create team object
     const teamData = {
@@ -60,17 +232,52 @@ function saveCurrentTeam() {
     };
     
     // Save to localStorage (teamsDB key - separate from cache)
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+    const savedTeams = getSavedTeams();
     savedTeams.push(teamData);
-    localStorage.setItem('teamsDB', JSON.stringify(savedTeams));
-    
+    setSavedTeams(savedTeams);
+
+    // "Save" creates a NEW team → if we were editing, that edit session ends
+    if (currentEditingLocalTeamId) {
+        currentEditingLocalTeamId = null;
+        renderEditingBanner();
+    }
     alert(t('teamSavedSuccess') || 'Team saved successfully!');
 }
 
 function loadSavedTeams() {
     const container = document.getElementById('saved-teams-list');
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
-    
+    const sortBar = document.getElementById('saved-teams-sortbar');
+    const savedTeams = getSavedTeams();
+
+    // Preserve focus & caret of the search box across re-renders
+    const focused = document.activeElement;
+    const focusedId = focused?.id;
+    const caretPos = (focused?.tagName === 'INPUT') ? focused.selectionStart : null;
+
+    // ----- Sort + filter bar -----
+    if (sortBar) {
+        if (savedTeams.length === 0) {
+            sortBar.style.display = 'none';
+        } else {
+            sortBar.style.display = 'flex';
+            const opt = (val, label) => `<option value="${val}"${savedTeamsSortMode === val ? ' selected' : ''}>${label}</option>`;
+            sortBar.innerHTML = `
+                <label style="font-size:0.8rem;color:var(--text-dim)">${t('sortBy') || 'Sort by'}:</label>
+                <select onchange="setSavedTeamsSort(this.value)" class="dmg-select" style="min-width:180px">
+                    ${opt('manual',    `✋ ${t('sortManual') || 'Manual'}`)}
+                    ${opt('date_desc', `📅 ${t('sortDateNewest') || 'Date (newest)'}`)}
+                    ${opt('date_asc',  `📅 ${t('sortDateOldest') || 'Date (oldest)'}`)}
+                    ${opt('name_asc',  `🔤 ${t('sortNameAZ') || 'Name (A→Z)'}`)}
+                    ${opt('name_desc', `🔤 ${t('sortNameZA') || 'Name (Z→A)'}`)}
+                    ${opt('author_asc',`👤 ${t('sortAuthor') || 'Author (A→Z)'}`)}
+                    ${opt('pkmn_desc', `⭐ ${t('sortMostPkmn') || 'Most Pokémon'}`)}
+                </select>
+                <input type="text" id="saved-teams-search" oninput="setSavedTeamsFilter(this.value)" value="${escapeAttr(savedTeamsFilter)}" placeholder="🔍 ${t('searchTeam') || 'Search by name / author / description'}" class="dmg-input" style="flex:1;min-width:140px">
+                <span style="font-size:0.8rem;color:var(--text-dim);white-space:nowrap">${savedTeams.length} ${t('teams') || 'teams'}</span>
+            `;
+        }
+    }
+
     if (savedTeams.length === 0) {
         container.innerHTML = `
             <div style="padding:30px;text-align:center;color:var(--text-dim);background:var(--bg-card);border-radius:12px;border:2px dashed var(--border);grid-column:1/-1">
@@ -80,41 +287,78 @@ function loadSavedTeams() {
             </div>`;
         return;
     }
-    
-    // Sort by date (newest first)
-    savedTeams.sort((a, b) => new Date(b.created) - new Date(a.created));
-    
-    container.innerHTML = savedTeams.map(team => `
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:15px;position:relative">
-            <button onclick="deleteSavedTeam('${team.id}')" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--accent-red);cursor:pointer;font-size:1.2rem" title="${t('delete') || 'Delete'}">🗑️</button>
-            <div style="font-size:1.1rem;font-weight:700;color:var(--accent-blue);margin-bottom:5px">${escapeHtml(team.name)}</div>
-            <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:5px">👤 ${escapeHtml(team.author)} • ${new Date(team.created).toLocaleDateString()}</div>
-            ${team.description ? `<div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:10px;font-style:italic">${escapeHtml(team.description)}</div>` : ''}
-            <div style="display:flex;gap:5px;margin:10px 0;flex-wrap:wrap">
-                ${team.slots.map(slot => slot.pokemon ? `
-                    <img src="${slot.shiny ? spriteShiny(slot.pokemon) : sprite(slot.pokemon)}" style="width:40px;height:40px;image-rendering:pixelated;${slot.starSign ? getStellarStyle(slot.starSign) : ''}" title="${pokemons[slot.pokemon]?.displayName || slot.pokemon}">
-                ` : '').join('')}
+
+    // Sort + filter
+    const sortFn = SAVED_TEAMS_SORTS[savedTeamsSortMode] || SAVED_TEAMS_SORTS.date_desc;
+    const visible = [...savedTeams].sort(sortFn).filter(passesSavedTeamsFilter);
+
+    if (visible.length === 0) {
+        container.innerHTML = `
+            <div style="padding:30px;text-align:center;color:var(--text-dim);background:var(--bg-card);border-radius:12px;border:2px dashed var(--border);grid-column:1/-1">
+                <div style="font-size:2rem;margin-bottom:10px">🔍</div>
+                <div>${t('noMatchingTeams') || 'No team matches your search'}</div>
+            </div>`;
+    } else {
+        container.innerHTML = visible.map((team, i) => {
+            const isEditing = currentEditingLocalTeamId === team.id;
+            const editingHighlight = isEditing
+                ? 'border-color:var(--accent-gold);box-shadow:0 0 12px rgba(255,215,0,0.3)'
+                : '';
+            const editingBadge = isEditing
+                ? `<span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:10px;font-size:0.7rem;background:rgba(255,215,0,0.2);color:var(--accent-gold)">✏️ ${t('editing') || 'editing'}</span>`
+                : '';
+            const updatedAt = team.updated ? ` · ${t('updated') || 'updated'} ${new Date(team.updated).toLocaleDateString()}` : '';
+            const upDisabled = i === 0 ? 'opacity:0.3;pointer-events:none' : '';
+            const downDisabled = i === visible.length - 1 ? 'opacity:0.3;pointer-events:none' : '';
+            return `
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:15px;position:relative;${editingHighlight}">
+                <div style="position:absolute;top:10px;right:10px;display:flex;gap:4px;align-items:center">
+                    <button onclick="moveSavedTeam('${team.id}','up')" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:1rem;padding:2px 4px;${upDisabled}" title="${t('moveUp') || 'Move up'}">▲</button>
+                    <button onclick="moveSavedTeam('${team.id}','down')" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:1rem;padding:2px 4px;${downDisabled}" title="${t('moveDown') || 'Move down'}">▼</button>
+                    <button onclick="editTeamMetadata('${team.id}')" style="background:none;border:none;color:var(--accent-blue);cursor:pointer;font-size:1.1rem;padding:2px 4px" title="${t('editMetadata') || 'Edit name/author/description'}">✏️</button>
+                    <button onclick="deleteSavedTeam('${team.id}')" style="background:none;border:none;color:var(--accent-red);cursor:pointer;font-size:1.2rem;padding:2px 4px" title="${t('delete') || 'Delete'}">🗑️</button>
+                </div>
+                <div style="font-size:1.1rem;font-weight:700;color:var(--accent-blue);margin-bottom:5px;padding-right:130px">${escapeHtml(team.name)}${editingBadge}</div>
+                <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:5px">👤 ${escapeHtml(team.author)} • ${new Date(team.created).toLocaleDateString()}${updatedAt}</div>
+                ${team.description ? `<div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:10px;font-style:italic">${escapeHtml(team.description)}</div>` : ''}
+                <div style="display:flex;gap:5px;margin:10px 0;flex-wrap:wrap">
+                    ${team.slots.map(slot => slot.pokemon ? `
+                        <img src="${slot.shiny ? spriteShiny(slot.pokemon) : sprite(slot.pokemon)}" style="width:40px;height:40px;image-rendering:pixelated;${slot.starSign ? getStellarStyle(slot.starSign) : ''}" title="${pokemons[slot.pokemon]?.displayName || slot.pokemon}">
+                    ` : '').join('')}
+                </div>
+                <div style="display:flex;gap:8px;margin-top:10px">
+                    <button class="btn btn-small" onclick="loadTeamIntoBuilder('${team.id}')" style="flex:1;background:linear-gradient(135deg,rgba(0,255,136,0.2),rgba(0,200,83,0.2));border-color:var(--success)">📝 ${t('load') || 'Load'}</button>
+                    <button class="btn btn-small" onclick="shareTeamCompact('${team.id}')" style="background:var(--bg-input)">🔗</button>
+                    <button class="btn btn-small" onclick="exportTeamToJSON('${team.id}')" style="background:var(--bg-input)" title="Export JSON">📤</button>
+                </div>
             </div>
-            <div style="display:flex;gap:8px;margin-top:10px">
-                <button class="btn btn-small" onclick="loadTeamIntoBuilder('${team.id}')" style="flex:1;background:linear-gradient(135deg,rgba(0,255,136,0.2),rgba(0,200,83,0.2));border-color:var(--success)">📝 ${t('load') || 'Load'}</button>
-                <button class="btn btn-small" onclick="shareTeamCompact('${team.id}')" style="background:var(--bg-input)">🔗</button>
-                <button class="btn btn-small" onclick="exportTeamToJSON('${team.id}')" style="background:var(--bg-input)" title="Export JSON">📤</button>
-            </div>
-        </div>
-    `).join('');
+        `;
+        }).join('');
+    }
+
+    // Restore focus on the search box (lost during innerHTML rebuild)
+    if (focusedId) {
+        const el = document.getElementById(focusedId);
+        if (el) {
+            el.focus();
+            if (caretPos != null && el.setSelectionRange) {
+                try { el.setSelectionRange(caretPos, caretPos); } catch (e) {}
+            }
+        }
+    }
 }
 
 function deleteSavedTeam(teamId) {
     if (!confirm(t('confirmDeleteTeam') || 'Delete this team?')) return;
     
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+    const savedTeams = getSavedTeams();
     const filtered = savedTeams.filter(t => t.id !== teamId);
-    localStorage.setItem('teamsDB', JSON.stringify(filtered));
+    setSavedTeams(filtered);
     loadSavedTeams();
 }
 
 function loadTeamIntoBuilder(teamId) {
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+    const savedTeams = getSavedTeams();
     const team = savedTeams.find(t => t.id === teamId);
     
     if (!team) return;
@@ -137,12 +381,15 @@ function loadTeamIntoBuilder(teamId) {
     }
     
     renderDreamTeam();
+    // Enter edit mode for this team — banner in builder lets the user "Save changes" or cancel
+    currentEditingLocalTeamId = teamId;
+    renderEditingBanner();
     switchTeamSubtab('builder');
     alert(t('teamLoaded') || 'Team loaded into Builder!');
 }
 
 function exportAllTeams() {
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+    const savedTeams = getSavedTeams();
     if (savedTeams.length === 0) {
         alert(t('noTeamsToExport') || 'No teams to export');
         return;
@@ -181,7 +428,7 @@ function onTeamsFileImport(input) {
                 return;
             }
             
-            const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+            const savedTeams = getSavedTeams();
             let imported = 0;
             
             data.teams.forEach(team => {
@@ -193,7 +440,7 @@ function onTeamsFileImport(input) {
                 imported++;
             });
             
-            localStorage.setItem('teamsDB', JSON.stringify(savedTeams));
+            setSavedTeams(savedTeams);
             loadSavedTeams();
             alert(`${t('teamsImported') || 'Teams imported'}: ${imported}`);
             
@@ -205,7 +452,7 @@ function onTeamsFileImport(input) {
 }
 
 function exportTeamToJSON(teamId) {
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+    const savedTeams = getSavedTeams();
     const team = savedTeams.find(t => t.id === teamId);
     
     if (!team) return;
@@ -307,7 +554,7 @@ function decodeTeamCompact(encoded) {
 
 function shareTeamCompact(teamId) {
     // Share a saved team from localStorage
-    const savedTeams = JSON.parse(localStorage.getItem('teamsDB') || '[]');
+    const savedTeams = getSavedTeams();
     const team = savedTeams.find(t => t.id === teamId);
     
     if (!team) {
@@ -1032,7 +1279,13 @@ window.deleteOwnTeam = async function(teamName, teamAuthor) {
     const isAdmin = (requestingAuthor === 'Undi' || requestingAuthor === 'undi');
     
     if (!isAdmin && requestingAuthor !== teamAuthor) {
-        alert('Vous ne pouvez supprimer que vos propres teams !\n\nVotre pseudo: ' + (requestingAuthor || '(non défini)') + '\nAuteur de la team: ' + teamAuthor);
+        alert(
+            (t('deleteOwnTeamOnly') || 'You can only delete your own teams!')
+            + '\n\n'
+            + (t('yourNickname') || 'Your nickname') + ': ' + (requestingAuthor || (t('notSet') || '(not set)'))
+            + '\n'
+            + (t('teamAuthorLabel') || 'Team author') + ': ' + teamAuthor
+        );
         return;
     }
     
