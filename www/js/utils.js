@@ -11,6 +11,18 @@
         .replace(/Gmax/gi, 'Gmax');
 }
 
+function isMegaPokemon(name) {
+    return typeof name === 'string' && /^mega[A-Z]/.test(name);
+}
+
+// True only if the shiny color should actually be rendered.
+// If shinyDisabled is set, the player has turned the shiny color off
+// (typically to expose the underlying star sign hue).
+function showsShinyColor(saveEntry) {
+    if (!saveEntry) return false;
+    return !!saveEntry.shiny && !saveEntry.shinyDisabled;
+}
+
 // Search helper - creates searchable text from name
 function searchText(name, rename) {
     const display = format(name, rename);

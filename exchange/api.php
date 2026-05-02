@@ -71,6 +71,29 @@ function cleanupOldSaves() {
     // }
 }
 
+// Safety net: PHP's json_decode/encode round-trips empty objects {} as []. The
+// game expects empty preview team slots to be objects — convert empty arrays
+// (and nulls) inside saved.previewTeams.*.slot1..slot6 to stdClass so they
+// re-encode as {}. Mutates and returns the input.
+function normalizeSaveTeamsPHP(&$saveData) {
+    if (!is_array($saveData)) return $saveData;
+    if (!isset($saveData['saved']) || !is_array($saveData['saved'])) return $saveData;
+    if (!isset($saveData['saved']['previewTeams']) || !is_array($saveData['saved']['previewTeams'])) return $saveData;
+    foreach ($saveData['saved']['previewTeams'] as $teamKey => &$team) {
+        if (!is_array($team)) continue;
+        for ($i = 1; $i <= 6; $i++) {
+            $slotKey = 'slot' . $i;
+            $slot = $team[$slotKey] ?? null;
+            // Treat null, missing, or empty array as "empty slot" → restore {}
+            if ($slot === null || (is_array($slot) && count($slot) === 0)) {
+                $team[$slotKey] = new stdClass();
+            }
+        }
+    }
+    unset($team);
+    return $saveData;
+}
+
 // Calculate challenges completed from save data (simplified version of JS logic)
 function calculateChallengesFromSave($saveData) {
     $completedCount = 0;
@@ -363,10 +386,13 @@ switch ($action) {
             }
         }
         
+        // Safety net: restore {} for empty preview team slots before storing/encoding
+        normalizeSaveTeamsPHP($input['saveData']);
+
         // Calculate stats with challenges count from client
         $challengesCount = isset($input['challengesCount']) ? intval($input['challengesCount']) : null;
         $stats = calculateSaveStats($input['saveData'], $challengesCount);
-        
+
         // Save to slot
         $saveEntry = [
             'date' => time(),
@@ -416,14 +442,16 @@ switch ($action) {
         if (file_exists($saveFile)) {
             $saves = json_decode(file_get_contents($saveFile), true);
             if (isset($saves['slot1']) && $saves['slot1'] !== null) {
+                $slot1Data = $saves['slot1']['data'] ?? null;
+                if ($slot1Data !== null) normalizeSaveTeamsPHP($slot1Data);
                 $formattedSaves['slot1'] = [
                     'date' => date('Y-m-d H:i:s', $saves['slot1']['date']),
                     'stats' => $saves['slot1']['stats'] ?? ['achievements' => 0, 'caught' => 0],
-                    'data' => $saves['slot1']['data'] ?? null
+                    'data' => $slot1Data
                 ];
             }
         }
-        
+
         // Read slot 2 from backup file
         if (file_exists($backupFile)) {
             $backup = json_decode(file_get_contents($backupFile), true);
@@ -436,10 +464,12 @@ switch ($action) {
                     // New format - flat structure
                     $backupData = $backup;
                 }
+                $slot2Data = $backupData['data'] ?? null;
+                if ($slot2Data !== null) normalizeSaveTeamsPHP($slot2Data);
                 $formattedSaves['slot2'] = [
                     'date' => date('Y-m-d H:i:s', $backupData['date'] ?? time()),
                     'stats' => $backupData['stats'] ?? ['achievements' => 0, 'caught' => 0],
-                    'data' => $backupData['data'] ?? null
+                    'data' => $slot2Data
                 ];
             }
         }
@@ -481,38 +511,43 @@ switch ($action) {
                 exit;
             }
             
-            echo json_encode(['success' => true, 'saveData' => $saves['slot1']['data']]);
+            $downloadData = $saves['slot1']['data'];
+            // Safety net: re-shape empty preview team slots back to {} for the game.
+            normalizeSaveTeamsPHP($downloadData);
+            echo json_encode(['success' => true, 'saveData' => $downloadData]);
         } else {
             // Download from backup file
             $backupFile = getBackupFile($username);
-            
+
             if (!file_exists($backupFile)) {
                 http_response_code(404);
                 echo json_encode(['error' => 'No backup found']);
                 exit;
             }
-            
+
             $backup = json_decode(file_get_contents($backupFile), true);
-            
+
             if ($backup === null) {
                 http_response_code(404);
                 echo json_encode(['error' => 'Backup not found']);
                 exit;
             }
-            
+
             // Handle both old format (with slot1 wrapper) and new format (flat)
             if (isset($backup['slot1']) && is_array($backup['slot1'])) {
                 $saveData = $backup['slot1']['data'] ?? null;
             } else {
                 $saveData = $backup['data'] ?? null;
             }
-            
+
             if ($saveData === null) {
                 http_response_code(404);
                 echo json_encode(['error' => 'Save data not found in backup']);
                 exit;
             }
-            
+
+            // Safety net: re-shape empty preview team slots back to {} for the game.
+            normalizeSaveTeamsPHP($saveData);
             echo json_encode(['success' => true, 'saveData' => $saveData]);
         }
         break;
@@ -872,6 +907,9 @@ switch ($action) {
         $gifts[$giftIndex]['failedItems'] = $failedItems;
         file_put_contents($giftsFile, json_encode($gifts, JSON_PRETTY_PRINT), LOCK_EX);
         
+        // Safety net: re-shape empty preview team slots back to {} for the game.
+        normalizeSaveTeamsPHP($saveData);
+
         // Return modified save for download
         echo json_encode([
             'success' => true,

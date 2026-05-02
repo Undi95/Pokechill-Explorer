@@ -1866,7 +1866,8 @@ function calculateObtainability() {
         pokemons[name].obtainedIn = null;
         
         // Check if this is a Mega Pokemon without available mega stone
-        if (name.startsWith('mega') && !name.includes('Z')) {
+        // Use isMegaPokemon to avoid matching "meganium" (not a Mega)
+        if (isMegaPokemon(name) && !name.includes('Z')) {
             // Use evolveMethod to find exact stone name for this mega
             const method = evolutionRelations.evolveMethod[name];
             const stoneName = method?.type === 'item' ? method.value : null;

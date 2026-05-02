@@ -61,6 +61,7 @@ const I18N = {
           tabMoves: "Attaques", sameType: "Même Type", movesetMatch: "Via Moveset", allMoves: "Tous Types", geneticsOnly: "Génétique Seul.",
           geneticsHint: "Ces attaques ne sont apprises que par héritage génétique (clonage/reproduction)",
           obtWild: "Sauvage", obtEvent: "Event", obtMart: "Boutique", obtPark: "Parc", obtFrontier: "Frontier", obtEvolve: "Évolution", obtUnavailable: "Indisponible", obtAvailable: "Disponible",
+          wonderTrade: "Wonder Trade", frontierWonderTradeHint: "Récompense aléatoire du Battle Frontier — peut aussi tomber par chance via le Wonder Trade.",
           type2: "Type 2", allTypes: "Tous Types", haOnly: "HA Uniquement", signatureOnly: "Signature seul.", noSignature: "Sans signature", eggMove: "Egg Move", obtainability: "Obtention",
           evolutionFamily: "Famille d'évolution", reward: "Récompense", evolve: "Évolution", unobtainable: "Indisponible", notCaught: "Non capturé",
           tabActive: "Actif", activeNow: "Zones actives actuellement", rotationHint: "Les rotations changent toutes les 12h (Wild/Dungeon) ou tous les 3 jours (Event/Frontier)", swipeTabs: "Glisser",
@@ -235,7 +236,7 @@ const I18N = {
           // Item drops
           rareDrop: "Drop Rare", uncommonDrop: "Drop Peu commun", commonDrop: "Drop Commun",
           // Misc UI
-          localOnly: "100% Local", madeWith: "Fait avec ❤️ par", forCommunity: "pour la communauté PokeChill", share: "Partager", copied: "Copié !", officialGame: "Jouer à PokeChill", frenchVersion: "Version FR",
+          localOnly: "100% Local", madeWith: "Fait avec ❤️ par", forCommunity: "pour la communauté PokeChill", share: "Partager", copied: "Copié !", officialGame: "Jouer à PokeChill", frenchVersion: "Version FR", hoennModBtn: "Version FR/US + MOD Hoenn",
           addToComparePrompt: "Ajoutez des Pokémon pour comparer", selectBothHostSample: "Sélectionnez Hôte et Échantillon",
           totalStars: "TOTAL ★", haPrefix: "TC:", shopFor: "Boutique", allItemsDefault: "Tous les objets",
           // Move properties
@@ -399,7 +400,7 @@ const I18N = {
           frontierTrainersTitle: "Dresseurs Frontier (Battle Arena)", frontierTrainersDesc: "Affrontez 5 dresseurs avec difficulté sélectionnable. Effets de terrain et modificateurs aléatoires. Réinitialisation quotidienne. Vainquez les 5 pour des récompenses spéciales !",
           arenaCardsTitle: "Cartes Arène (Sélection Difficulté)", trainerRewardsTitle: "Récompenses Dresseurs", goldCapsReward: "Capsules d'Or", goldCapsDesc: "Chaque dresseur donne des Capsules d'Or selon la difficulté (2-4 par dresseur).",
           pokemonReward: "Pokémon Exclusifs", pokemonRewardDesc: "Chaque dresseur a une chance de donner un Pokémon Frontier exclusif aléatoire !",
-          exclusivePokemonTitle: "67 Pokémon Frontier Exclusifs", exclusivePokemonDesc: "Ces Pokémon ne peuvent être obtenus QUE comme récompenses aléatoires des Dresseurs Frontier (Tiers 1-5) ou de l'Usine de Combat !",
+          exclusivePokemonTitle: "67 Pokémon Frontier Exclusifs", exclusivePokemonDesc: "Ces Pokémon s'obtiennent comme récompenses aléatoires des Dresseurs Frontier (Tiers 1-5) ou de l'Usine de Combat — ou par chance via le Wonder Trade.",
           frontierSummaryTitle: "Résumé Rapide", summaryTower: "Tour de Combat", summaryTowerDesc: "Montez les étages pour des items aléatoires. Max 50 items + 100 CO.",
           summaryFactory: "Usine de Combat", summaryFactoryDesc: "1 cible passive, max de dégâts. Max 30 items + 100 CO.",
           summaryArena: "Battle Arena", summaryArenaDesc: "5 dresseurs, choisissez difficulté. CO + Pokémon exclusifs !",
@@ -703,6 +704,7 @@ const I18N = {
           tabMoves: "Moves", sameType: "Same Type", movesetMatch: "Via Moveset", allMoves: "All Types", geneticsOnly: "Genetics Only",
           geneticsHint: "These moves can only be learned through genetic inheritance (cloning/breeding)",
           obtWild: "Wild", obtEvent: "Event", obtMart: "Shop", obtPark: "Park", obtFrontier: "Frontier", obtEvolve: "Evolution", obtUnavailable: "Unavailable", obtAvailable: "Available",
+          wonderTrade: "Wonder Trade", frontierWonderTradeHint: "Random reward from the Battle Frontier — can also drop by chance through Wonder Trade.",
           type2: "Type 2", allTypes: "All Types", haOnly: "HA Only", signatureOnly: "Signature only", noSignature: "No signature", eggMove: "Egg Move", obtainability: "Obtainability",
           evolutionFamily: "Evolution Family", reward: "Reward", evolve: "Evolution", unobtainable: "Unavailable", notCaught: "Not caught",
           tabActive: "Active", activeNow: "Currently Active Zones", rotationHint: "Rotations change every 12h (Wild/Dungeon) or every 3 days (Event/Frontier)", swipeTabs: "Swipe",
@@ -877,7 +879,7 @@ const I18N = {
           // Item drops
           rareDrop: "Rare Drop", uncommonDrop: "Uncommon Drop", commonDrop: "Common Drop",
           // Misc UI
-          localOnly: "100% Local", madeWith: "Made with ❤️ by", forCommunity: "for the PokeChill community", share: "Share", copied: "Copied!", officialGame: "Play PokeChill", frenchVersion: "FR Version",
+          localOnly: "100% Local", madeWith: "Made with ❤️ by", forCommunity: "for the PokeChill community", share: "Share", copied: "Copied!", officialGame: "Play PokeChill", frenchVersion: "FR Version", hoennModBtn: "FR/US Version + Hoenn MOD",
           addToComparePrompt: "Add Pokémon to compare", selectBothHostSample: "Select both Host and Sample",
           totalStars: "TOTAL ★", haPrefix: "HA:", shopFor: "Shop", allItemsDefault: "All Items",
           // Move properties
@@ -1044,7 +1046,7 @@ const I18N = {
           frontierTrainersTitle: "Frontier Trainers (Battle Arena)", frontierTrainersDesc: "Fight 5 trainers with selectable difficulty. Field effects and battle modifiers are randomized. Daily reset. Defeat all 5 for special rewards!",
           arenaCardsTitle: "Arena Cards (Difficulty Selection)", trainerRewardsTitle: "Trainer Rewards", goldCapsReward: "Golden Bottle Caps", goldCapsDesc: "Every trainer gives Golden Bottle Caps based on selected difficulty (2-4 per trainer).",
           pokemonReward: "Exclusive Pokémon", pokemonRewardDesc: "Each trainer has a chance to drop a random exclusive Frontier Pokémon!",
-          exclusivePokemonTitle: "67 Exclusive Frontier Pokémon", exclusivePokemonDesc: "These Pokémon can ONLY be obtained as random rewards from Frontier Trainers (Tiers 1-5) or the Battle Factory!",
+          exclusivePokemonTitle: "67 Exclusive Frontier Pokémon", exclusivePokemonDesc: "These Pokémon are obtained as random rewards from Frontier Trainers (Tiers 1-5) or the Battle Factory — or by chance through Wonder Trade.",
           frontierSummaryTitle: "Quick Summary", summaryTower: "Battle Tower", summaryTowerDesc: "Climb floors for random items. Max 50 items + 100 GB Caps.",
           summaryFactory: "Battle Factory", summaryFactoryDesc: "1 passive target, max damage. Max 30 items + 100 GB Caps.",
           summaryArena: "Battle Arena", summaryArenaDesc: "5 trainers, choose difficulty. GB Caps + exclusive Pokémon!",

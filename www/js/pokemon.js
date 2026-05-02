@@ -136,7 +136,7 @@ function renderPokemonCard(p, clickAction = 'details') {
     
     // Check if this Mega has its stone available (use evolveMethod for exact match)
     let megaStoneIcon = '';
-    if (p.name.startsWith('mega') && !p.noMegaStone) {
+    if (isMegaPokemon(p.name) && !p.noMegaStone) {
         const method = evolutionRelations.evolveMethod[p.name];
         if (method?.type === 'item') {
             megaStoneIcon = `<span title="Mega Stone disponible en Event" style="font-size:0.8rem">💎</span>`;

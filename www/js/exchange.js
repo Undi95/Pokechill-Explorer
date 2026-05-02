@@ -270,9 +270,10 @@ function exchangePopulatePokemonGrid() {
             const reasonText = legality.reasons.length > 0 ? legality.reasons.join('; ') : 'Problème détecté';
             div.dataset.illegalReasons = reasonText;
             div.title = (t('illegalPokemonTooltip') || 'Pokémon illégal') + ': ' + reasonText;
-            
-            const shinyBadge = p.data.shiny ? '<span class="shiny-badge">✨</span>' : '';
-            const folder = p.data.shiny ? 'shiny' : 'sprite';
+
+            const isShinyVisual = showsShinyColor(p.data);
+            const shinyBadge = isShinyVisual ? '<span class="shiny-badge">✨</span>' : '';
+            const folder = isShinyVisual ? 'shiny' : 'sprite';
             const spriteUrl = `https://play-pokechill.github.io/img/pkmn/${folder}/${p.name}.png`;
             
             div.innerHTML = `
@@ -287,9 +288,10 @@ function exchangePopulatePokemonGrid() {
             const reasonText = legality.reasons.length > 0 ? legality.reasons.join('; ') : 'Non échangeable';
             div.dataset.restrictedReasons = reasonText;
             div.title = reasonText;
-            
-            const shinyBadge = p.data.shiny ? '<span class="shiny-badge">✨</span>' : '';
-            const folder = p.data.shiny ? 'shiny' : 'sprite';
+
+            const isShinyVisual = showsShinyColor(p.data);
+            const shinyBadge = isShinyVisual ? '<span class="shiny-badge">✨</span>' : '';
+            const folder = isShinyVisual ? 'shiny' : 'sprite';
             const spriteUrl = `https://play-pokechill.github.io/img/pkmn/${folder}/${p.name}.png`;
             
             div.innerHTML = `
@@ -302,9 +304,10 @@ function exchangePopulatePokemonGrid() {
             // Pokémon normal: cliquable
             div.className = 'exchange-pokemon-item';
             div.onclick = () => exchangeSelectPokemon(p.name, p.data);
-            
-            const shinyBadge = p.data.shiny ? '<span class="shiny-badge">✨</span>' : '';
-            const folder = p.data.shiny ? 'shiny' : 'sprite';
+
+            const isShinyVisual = showsShinyColor(p.data);
+            const shinyBadge = isShinyVisual ? '<span class="shiny-badge">✨</span>' : '';
+            const folder = isShinyVisual ? 'shiny' : 'sprite';
             const spriteUrl = `https://play-pokechill.github.io/img/pkmn/${folder}/${p.name}.png`;
             
             div.innerHTML = `
@@ -368,9 +371,10 @@ function exchangeSelectPokemon(name, data) {
     const hiddenAbility = pkmnData?.hiddenAbility || '';
     const hasHAUnlocked = data.hiddenAbilityUnlocked || false;
     const isHA = data.ability === hiddenAbility && hasHAUnlocked;
-    
-    // Sprite URL
-    const folder = data.shiny ? 'shiny' : 'sprite';
+
+    // Sprite URL — respecte shinyDisabled pour ne pas forcer la couleur shiny
+    const isShinyVisual = showsShinyColor(data);
+    const folder = isShinyVisual ? 'shiny' : 'sprite';
     const spriteUrl = `https://play-pokechill.github.io/img/pkmn/${folder}/${name}.png`;
     
     // Moves équipés
@@ -403,7 +407,7 @@ function exchangeSelectPokemon(name, data) {
                              onerror="this.style.display='none'">
                     </div>
                     <div style="font-size:1.3rem;font-weight:700;color:var(--text-main)">${format(name)}</div>
-                    ${data.shiny ? '<div style="color:var(--accent-gold);font-size:0.9rem;margin-top:5px">✨ Shiny</div>' : ''}
+                    ${isShinyVisual ? '<div style="color:var(--accent-gold);font-size:0.9rem;margin-top:5px">✨ Shiny</div>' : ''}
                     ${geneticsCount > 0 ? `<div style="color:var(--accent-purple);font-size:0.8rem;margin-top:5px">🧬 ${geneticsCount} génétiques</div>` : ''}
                 </div>
                 
@@ -542,7 +546,8 @@ async function exchangeConfirmPokemon() {
 function exchangeGenerateDetailCard(pokemon, isMine) {
     const data = pokemon.data;
     const name = pokemon.name;
-    const folder = data.shiny ? 'shiny' : 'sprite';
+    const isShinyVisual = showsShinyColor(data);
+    const folder = isShinyVisual ? 'shiny' : 'sprite';
     const spriteUrl = `https://play-pokechill.github.io/img/pkmn/${folder}/${escapeHtml(name)}.png`;
     
     // IVs - sanitize all numeric values
@@ -579,7 +584,7 @@ function exchangeGenerateDetailCard(pokemon, isMine) {
                 <div style="flex:1;min-width:0;">
                     <div style="font-size:1rem;font-weight:700;color:var(--text-main);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(format(name))}</div>
                     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
-                        ${data.shiny ? '<span style="color:var(--accent-gold);font-size:0.75rem;">✨ Shiny</span>' : ''}
+                        ${isShinyVisual ? '<span style="color:var(--accent-gold);font-size:0.75rem;">✨ Shiny</span>' : ''}
                         ${data.starSign ? `<span style="color:var(--accent-gold);font-size:0.75rem;text-shadow:0 0 8px rgba(255,215,0,0.5);">✨ ${format(data.starSign)}</span>` : ''}
                         ${geneticsMoves.length > 0 ? `<span style="color:var(--accent-purple);font-size:0.75rem;">🧬 ${geneticsMoves.length}</span>` : ''}
                     </div>
@@ -782,8 +787,8 @@ function showCableLinkAnimation() {
         display:flex;flex-direction:column;align-items:center;justify-content:center;
     `;
     
-    const myFolder = mine.data.shiny ? 'shiny' : 'sprite';
-    const theirFolder = theirs.data.shiny ? 'shiny' : 'sprite';
+    const myFolder = showsShinyColor(mine.data) ? 'shiny' : 'sprite';
+    const theirFolder = showsShinyColor(theirs.data) ? 'shiny' : 'sprite';
     const mySprite = `https://play-pokechill.github.io/img/pkmn/${myFolder}/${mine.name}.png`;
     const theirSprite = `https://play-pokechill.github.io/img/pkmn/${theirFolder}/${theirs.name}.png`;
     
@@ -885,8 +890,8 @@ function exchangeGenerateNewSave() {
             for (let i = 1; i <= 6; i++) {
                 const slot = team[`slot${i}`];
                 if (slot && slot.pkmn === givenName) {
-                    // Remplacer par null pour garder le slot disponible
-                    team[`slot${i}`] = null;
+                    // Vide le slot — la game attend {} (pas null/[]) sinon le chargement casse.
+                    team[`slot${i}`] = {};
                 }
             }
         }
@@ -975,8 +980,10 @@ function exchangeGenerateNewSave() {
 // Télécharger la sauvegarde
 function exchangeDownloadSave() {
     if (!exchangeState.generatedSave) return;
-    
+
     const receivedName = exchangeState.otherPlayerPokemon.name;
+    // Safety net: ensure empty preview team slots are {} (not null/[]) for the game to reload
+    if (typeof normalizeSaveTeams === 'function') normalizeSaveTeams(exchangeState.generatedSave);
     const blob = new Blob([JSON.stringify(exchangeState.generatedSave, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

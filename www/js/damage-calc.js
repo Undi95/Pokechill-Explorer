@@ -1333,7 +1333,7 @@ function updateItemSelectForPokemon(side, pokemon) {
     const itemSelect = document.getElementById(`dmg-${side}-item`);
     if (!itemSelect) return;
     
-    const isMega = pokemon.name?.startsWith('mega');
+    const isMega = isMegaPokemon(pokemon.name);
     const specificMegaGem = isMega ? megaToGemMap[pokemon.name] : null;
     
     // Save current selection

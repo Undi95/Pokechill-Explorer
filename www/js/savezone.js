@@ -3,6 +3,30 @@
 
 const SAVEZONE_API_URL = 'https://pokechill-explorer.alwaysdata.net/exchange/api.php';
 
+// Safety net: the game expects empty preview team slots to be objects ({}),
+// but PHP's json_decode/encode round-trip turns them into arrays ([]).
+// This mutates the save in-place to restore the {} shape so the game can
+// reload it. Returns the same object for convenience.
+function normalizeSaveTeams(saveData) {
+    if (!saveData || typeof saveData !== 'object') return saveData;
+    const previewTeams = saveData?.saved?.previewTeams;
+    if (!previewTeams || typeof previewTeams !== 'object') return saveData;
+    for (const teamKey in previewTeams) {
+        const team = previewTeams[teamKey];
+        if (!team || typeof team !== 'object') continue;
+        for (let i = 1; i <= 6; i++) {
+            const slotKey = `slot${i}`;
+            const slot = team[slotKey];
+            // PHP turns the game's {} into [] on round-trip — convert back.
+            // Also normalize null / missing slots to {} so the game can read them.
+            if (slot == null || (Array.isArray(slot) && slot.length === 0)) {
+                team[slotKey] = {};
+            }
+        }
+    }
+    return saveData;
+}
+
 // Show/hide savezone UI elements
 function showSavezoneUI(show) {
     const tabBtn = document.getElementById('savezone-tab-btn');
@@ -48,16 +72,21 @@ async function loadSavezoneData() {
     try {
         const response = await fetch(`${SAVEZONE_API_URL}?action=savezone_get&username=${encodeURIComponent(username)}`);
         const data = await response.json();
-        
+
         console.log('[Savezone] Loaded data:', data);
-        
+
         if (data.success) {
+            // Safety net: re-shape any [] preview team slots back to {} (PHP round-trip)
+            if (data.saves) {
+                if (data.saves.slot1?.data) normalizeSaveTeams(data.saves.slot1.data);
+                if (data.saves.slot2?.data) normalizeSaveTeams(data.saves.slot2.data);
+            }
             updateSavezoneSlots(data.saves);
             renderSavezonePokedex(data.saves);
         } else {
             console.error('[Savezone] API error:', data.error);
         }
-        
+
         loadCommunityStats();
     } catch (err) {
         console.error('[Savezone] Load error:', err);
@@ -174,7 +203,7 @@ function calculateChallengesCompleted(data) {
             case 'mega_evolutions':
                 let megaCount = 0;
                 for (let key in data) {
-                    if (key.startsWith('mega') && data[key]?.caught > 0 && data[key]?.shiny &&
+                    if (isMegaPokemon(key) && data[key]?.caught > 0 && data[key]?.shiny &&
                         hasMegaStoneInSave(key, data)) megaCount++;
                 }
                 currentValue = megaCount;
@@ -261,8 +290,8 @@ async function uploadSavezoneSave(slot) {
             // SECURITY: Sanitize tagList HTML in all Pokemon
             for (const key in saveData) {
                 const value = saveData[key];
-                if (typeof value === 'object' && value !== null && 
-                    'caught' in value && 'movepool' in value && 
+                if (typeof value === 'object' && value !== null &&
+                    'caught' in value && 'movepool' in value &&
                     value.caught >= 1 && value.tagList) {
                     // Sanitize tag icons
                     value.tagList = value.tagList.map(tag => ({
@@ -272,6 +301,9 @@ async function uploadSavezoneSave(slot) {
                     }));
                 }
             }
+
+            // Safety net: normalize empty team slots to {} (game expects objects, not arrays)
+            normalizeSaveTeams(saveData);
             
             // Calculer les challenges directement depuis la save
             const challengesCount = calculateChallengesCompleted(saveData);
@@ -313,6 +345,8 @@ async function downloadSavezoneSave(slot) {
         const data = await response.json();
         
         if (data.success && data.saveData) {
+            // Safety net: PHP round-trips {} as [] for empty preview slots — restore {} so the game can reload.
+            normalizeSaveTeams(data.saveData);
             const blob = new Blob([JSON.stringify(data.saveData, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -769,7 +803,10 @@ function renderPokedexPage() {
     const isMissingShinyMode = evolutionFilter === 'missing-shiny';
     
     const html = pageData.map(p => {
-        const spriteUrl = p.shiny ? spriteShiny(p.name) : sprite(p.name);
+        // shinyDisabled: la couleur shiny est OFF, donc on prend le sprite normal
+        // (le hue du starSign s'applique alors sur la forme non-shiny, comme dans le jeu)
+        const showShinySprite = p.shiny && !p.shinyDisabled;
+        const spriteUrl = showShinySprite ? spriteShiny(p.name) : sprite(p.name);
         const starStyle = p.starSign ? getStellarStyle(p.starSign) : '';
         const badges = [];
         if (p.shiny && !p.shinyDisabled) badges.push('✨');
@@ -1743,8 +1780,10 @@ function showPokemonDetail(pokemonName) {
 function createPokemonModal(p) {
     const existing = document.getElementById('pokemon-detail-modal');
     if (existing) existing.remove();
-    
-    const spriteUrl = p.shiny ? spriteShiny(p.name) : sprite(p.name);
+
+    // Si shinyDisabled, on prend le sprite normal pour que le hue du starSign soit visible
+    const showShinySprite = p.shiny && !p.shinyDisabled;
+    const spriteUrl = showShinySprite ? spriteShiny(p.name) : sprite(p.name);
     const starStyle = p.starSign ? getStellarStyle(p.starSign) : '';
     
     // Format moves (moves is an object with slot1, slot2, etc.)
@@ -2128,8 +2167,10 @@ function showPokemonInfo(pokemonName) {
     
     const existing = document.getElementById('pokemon-info-modal');
     if (existing) existing.remove();
-    
-    const spriteUrl = p.shiny ? spriteShiny(p.name) : sprite(p.name);
+
+    // Si shinyDisabled, on prend le sprite normal pour que le hue du starSign soit visible
+    const showShinySprite = p.shiny && !p.shinyDisabled;
+    const spriteUrl = showShinySprite ? spriteShiny(p.name) : sprite(p.name);
     const starStyle = p.starSign ? getStellarStyle(p.starSign) : '';
     const pData = pokemons[p.name];
     
@@ -3984,7 +4025,8 @@ function showSenderModifiedSaveDownload(saveData, giftId) {
         // Extract actual save data from slot1 structure
         // saveData is {slot1: {date, data, stats}}, we need saveData.slot1.data
         const actualSaveData = saveData && saveData.slot1 && saveData.slot1.data ? saveData.slot1.data : saveData;
-        
+        // Safety net: restore {} for empty preview team slots so the game can reload.
+        normalizeSaveTeams(actualSaveData);
         const blob = new Blob([JSON.stringify(actualSaveData, null, 2)], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -4065,7 +4107,8 @@ function showModifiedSaveDownload(saveData, giftId) {
         const username = localStorage.getItem('lastTeamAuthor') || 'save';
         const date = new Date().toISOString().split('T')[0];
         const filename = `${username}_with_items_${date}.json`;
-        
+        // Safety net: restore {} for empty preview team slots so the game can reload.
+        normalizeSaveTeams(saveData);
         const blob = new Blob([JSON.stringify(saveData, null, 2)], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');

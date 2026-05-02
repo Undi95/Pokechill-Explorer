@@ -86,7 +86,7 @@ function showPokemonDetails(name) {
     
     // For Mega Pokemon, find where to get the mega stone (use evolveMethod for exact match)
     let megaStoneSource = null;
-    if (name.startsWith('mega')) {
+    if (isMegaPokemon(name)) {
         const method = evolutionRelations.evolveMethod[name];
         const stoneName = method?.type === 'item' ? method.value : null;
         if (stoneName) {
@@ -377,8 +377,8 @@ function showPokemonDetails(name) {
     
     // Battle Frontier exclusive
     if (exclusiveFrontierPkmn.includes(name)) {
-        html += `<span style="padding:6px 12px;background:rgba(255,215,0,0.1);border:1px solid var(--accent-gold);border-radius:6px;font-size:0.85rem">
-            🏆 Battle Frontier
+        html += `<span style="padding:6px 12px;background:rgba(255,215,0,0.1);border:1px solid var(--accent-gold);border-radius:6px;font-size:0.85rem" title="${t('frontierWonderTradeHint')}">
+            🏆 Battle Frontier <span style="opacity:0.75;font-size:0.75rem">+ ${t('wonderTrade')}</span>
         </span>`;
     }
     
